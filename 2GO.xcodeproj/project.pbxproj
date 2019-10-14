@@ -12,6 +12,9 @@
 		2827DE75232E5CDC00912312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2827DE73232E5CDC00912312 /* Main.storyboard */; };
 		2827DE77232E5CE600912312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2827DE76232E5CE600912312 /* Assets.xcassets */; };
 		2827DE7A232E5CE700912312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2827DE78232E5CE700912312 /* LaunchScreen.storyboard */; };
+		B90DC621235400A1006B6C23 /* Tatiana.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC620235400A1006B6C23 /* Tatiana.storyboard */; };
+		B90DC62323540340006B6C23 /* Monica.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC62223540340006B6C23 /* Monica.storyboard */; };
+		B90DC62523540350006B6C23 /* Maira.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC62423540350006B6C23 /* Maira.storyboard */; };
 		B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9382F56232F12DF00F81D44 /* LoginViewController.swift */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +27,9 @@
 		2827DE76232E5CE600912312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2827DE79232E5CE700912312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2827DE7B232E5CE700912312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B90DC620235400A1006B6C23 /* Tatiana.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tatiana.storyboard; sourceTree = "<group>"; };
+		B90DC62223540340006B6C23 /* Monica.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monica.storyboard; sourceTree = "<group>"; };
+		B90DC62423540350006B6C23 /* Maira.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maira.storyboard; sourceTree = "<group>"; };
 		B9382F56232F12DF00F81D44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +62,9 @@
 		0C101DD6233D7F0900419B80 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B9382F56232F12DF00F81D44 /* LoginViewController.swift */,
+				2827DE71232E5CDC00912312 /* TelaDoEventoViewController.swift */,
+				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,17 +88,17 @@
 		2827DE6E232E5CDC00912312 /* 2GO */ = {
 			isa = PBXGroup;
 			children = (
-				0C101DD6233D7F0900419B80 /* View */,
-				2827DE71232E5CDC00912312 /* TelaDoEventoViewController.swift */,
-				B9382F56232F12DF00F81D44 /* LoginViewController.swift */,
-				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
-				0C101DD5233D7EF600419B80 /* Controller */,
-				0C101DD4233D7EEC00419B80 /* Model */,
 				2827DE6F232E5CDC00912312 /* AppDelegate.swift */,
+				0C101DD6233D7F0900419B80 /* View */,
+				0C101DD4233D7EEC00419B80 /* Model */,
+				0C101DD5233D7EF600419B80 /* Controller */,
 				2827DE73232E5CDC00912312 /* Main.storyboard */,
 				2827DE76232E5CE600912312 /* Assets.xcassets */,
 				2827DE78232E5CE700912312 /* LaunchScreen.storyboard */,
 				2827DE7B232E5CE700912312 /* Info.plist */,
+				B90DC620235400A1006B6C23 /* Tatiana.storyboard */,
+				B90DC62223540340006B6C23 /* Monica.storyboard */,
+				B90DC62423540350006B6C23 /* Maira.storyboard */,
 			);
 			path = 2GO;
 			sourceTree = "<group>";
@@ -154,7 +163,10 @@
 			files = (
 				2827DE7A232E5CE700912312 /* LaunchScreen.storyboard in Resources */,
 				2827DE77232E5CE600912312 /* Assets.xcassets in Resources */,
+				B90DC62323540340006B6C23 /* Monica.storyboard in Resources */,
+				B90DC62523540350006B6C23 /* Maira.storyboard in Resources */,
 				2827DE75232E5CDC00912312 /* Main.storyboard in Resources */,
+				B90DC621235400A1006B6C23 /* Tatiana.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
