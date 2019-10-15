@@ -17,6 +17,10 @@
 		B90DC62523540350006B6C23 /* Maira.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC62423540350006B6C23 /* Maira.storyboard */; };
 		B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9382F56232F12DF00F81D44 /* LoginViewController.swift */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
+		BE8D4BF7235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D4BF5235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift */; };
+		BE8D4BF8235553C300DBC6F5 /* ListaDeConfirmadosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8D4BF6235553C300DBC6F5 /* ListaDeConfirmadosViewController.xib */; };
+		BE8D4BFB2355559800DBC6F5 /* ConfirmadosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D4BF92355559800DBC6F5 /* ConfirmadosTableViewCell.swift */; };
+		BE8D4BFC2355559800DBC6F5 /* ConfirmadosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8D4BFA2355559800DBC6F5 /* ConfirmadosTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		B90DC62423540350006B6C23 /* Maira.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maira.storyboard; sourceTree = "<group>"; };
 		B9382F56232F12DF00F81D44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		BE8D4BF5235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeConfirmadosViewController.swift; sourceTree = "<group>"; };
+		BE8D4BF6235553C300DBC6F5 /* ListaDeConfirmadosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListaDeConfirmadosViewController.xib; sourceTree = "<group>"; };
+		BE8D4BF92355559800DBC6F5 /* ConfirmadosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmadosTableViewCell.swift; sourceTree = "<group>"; };
+		BE8D4BFA2355559800DBC6F5 /* ConfirmadosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmadosTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,13 +53,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C101DD4233D7EEC00419B80 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		0C101DD5233D7EF600419B80 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +66,10 @@
 				B9382F56232F12DF00F81D44 /* LoginViewController.swift */,
 				2827DE71232E5CDC00912312 /* TelaDoEventoViewController.swift */,
 				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
+				BE8D4BF5235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift */,
+				BE8D4BF6235553C300DBC6F5 /* ListaDeConfirmadosViewController.xib */,
+				BE8D4BF92355559800DBC6F5 /* ConfirmadosTableViewCell.swift */,
+				BE8D4BFA2355559800DBC6F5 /* ConfirmadosTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,7 +95,6 @@
 			children = (
 				2827DE6F232E5CDC00912312 /* AppDelegate.swift */,
 				0C101DD6233D7F0900419B80 /* View */,
-				0C101DD4233D7EEC00419B80 /* Model */,
 				0C101DD5233D7EF600419B80 /* Controller */,
 				2827DE73232E5CDC00912312 /* Main.storyboard */,
 				2827DE76232E5CE600912312 /* Assets.xcassets */,
@@ -163,8 +167,10 @@
 			files = (
 				2827DE7A232E5CE700912312 /* LaunchScreen.storyboard in Resources */,
 				2827DE77232E5CE600912312 /* Assets.xcassets in Resources */,
+				BE8D4BF8235553C300DBC6F5 /* ListaDeConfirmadosViewController.xib in Resources */,
 				B90DC62323540340006B6C23 /* Monica.storyboard in Resources */,
 				B90DC62523540350006B6C23 /* Maira.storyboard in Resources */,
+				BE8D4BFC2355559800DBC6F5 /* ConfirmadosTableViewCell.xib in Resources */,
 				2827DE75232E5CDC00912312 /* Main.storyboard in Resources */,
 				B90DC621235400A1006B6C23 /* Tatiana.storyboard in Resources */,
 			);
@@ -178,7 +184,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */,
+				BE8D4BFB2355559800DBC6F5 /* ConfirmadosTableViewCell.swift in Sources */,
 				2827DE72232E5CDC00912312 /* TelaDoEventoViewController.swift in Sources */,
+				BE8D4BF7235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift in Sources */,
 				2827DE70232E5CDC00912312 /* AppDelegate.swift in Sources */,
 				BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */,
 			);
