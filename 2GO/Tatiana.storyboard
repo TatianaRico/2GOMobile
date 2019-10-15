@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wC4-N2-mPQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -19,18 +19,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="festa - imagem " translatesAutoresizingMaskIntoConstraints="NO" id="XWA-Qx-4jW">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wiU-QR-mk0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_2go" translatesAutoresizingMaskIntoConstraints="NO" id="wiU-QR-mk0">
                                 <rect key="frame" x="87" y="106" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="RiZ-mT-slA"/>
+                                </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGP-Sl-USi">
                                 <rect key="frame" x="87" y="284" width="240" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNH-5A-UOs">
-                                <rect key="frame" x="87" y="354" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -69,12 +65,21 @@
                                     <action selector="acessarButton:" destination="4CZ-5s-tOj" eventType="touchUpInside" id="iVx-0y-CTg"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNH-5A-UOs">
+                                <rect key="frame" x="87" y="354" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wiU-QR-mk0" firstAttribute="top" secondItem="JWO-pS-f27" secondAttribute="top" constant="62" id="6RD-cj-m4a"/>
                             <constraint firstItem="XWA-Qx-4jW" firstAttribute="top" secondItem="JWO-pS-f27" secondAttribute="top" id="782-R8-giL"/>
                             <constraint firstItem="XWA-Qx-4jW" firstAttribute="trailing" secondItem="JWO-pS-f27" secondAttribute="trailing" id="XHY-Kb-cgv"/>
                             <constraint firstItem="JWO-pS-f27" firstAttribute="bottom" secondItem="XWA-Qx-4jW" secondAttribute="bottom" id="eZE-Zm-D7H"/>
+                            <constraint firstItem="JWO-pS-f27" firstAttribute="trailing" secondItem="wiU-QR-mk0" secondAttribute="trailing" constant="87" id="hwS-dg-6X8"/>
+                            <constraint firstItem="wiU-QR-mk0" firstAttribute="leading" secondItem="JWO-pS-f27" secondAttribute="leading" constant="87" id="nCx-RU-KRf"/>
                             <constraint firstItem="XWA-Qx-4jW" firstAttribute="leading" secondItem="JWO-pS-f27" secondAttribute="leading" id="vL7-Tt-Lz7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JWO-pS-f27"/>
@@ -314,7 +319,84 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVQ-gY-Odu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2071.0144927536235" y="-88.392857142857139"/>
+            <point key="canvasLocation" x="4071" y="-399"/>
+        </scene>
+        <!--Favorito-->
+        <scene sceneID="XBJ-dS-KE0">
+            <objects>
+                <viewController id="w1s-WP-WY2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IyG-UH-zkG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ROg-j2-elo"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorito" id="GPp-lx-2aF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d9t-al-zUH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2016" y="314"/>
+        </scene>
+        <!--Perfil-->
+        <scene sceneID="GFm-V6-onT">
+            <objects>
+                <viewController id="elK-mO-aW2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="utj-3g-UTC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="F1C-fu-Ssw"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Perfil" id="s9K-wc-28E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IEd-cb-WUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2016" y="1041"/>
+        </scene>
+        <!--Agenda-->
+        <scene sceneID="qyM-cI-6Ck">
+            <objects>
+                <viewController id="U3d-z2-gel" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rHa-kw-fah">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_2go" translatesAutoresizingMaskIntoConstraints="NO" id="yc6-PM-Yww">
+                                <rect key="frame" x="20" y="61" width="80" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sb2-Wl-gut">
+                                <rect key="frame" x="10" y="118" width="384" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="AvS-0k-6UZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Agenda" id="rhP-pH-0be"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lBK-er-lp3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015.9420289855075" y="-381.02678571428572"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vx8-WJ-qHp">
+            <objects>
+                <tabBarController id="wC4-N2-mPQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xOt-vQ-LDx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="U3d-z2-gel" kind="relationship" relationship="viewControllers" id="mMp-X9-Vym"/>
+                        <segue destination="w1s-WP-WY2" kind="relationship" relationship="viewControllers" id="kqd-oN-Y5Z"/>
+                        <segue destination="elK-mO-aW2" kind="relationship" relationship="viewControllers" id="R2B-XG-Pca"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEN-8w-miq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="-90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ohe-6l-4uP">
@@ -332,12 +414,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6L-Ji-jgm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160.8695652173915" y="-88.392857142857139"/>
+            <point key="canvasLocation" x="3023" y="-399"/>
         </scene>
     </scenes>
     <resources>
         <image name="calendar.badge.plus" catalog="system" width="64" height="50"/>
         <image name="festa - imagem " width="1881" height="1140"/>
+        <image name="logo_2go" width="626" height="360"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>
