@@ -16,6 +16,8 @@
 		B90DC62323540340006B6C23 /* Monica.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC62223540340006B6C23 /* Monica.storyboard */; };
 		B90DC62523540350006B6C23 /* Maira.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC62423540350006B6C23 /* Maira.storyboard */; };
 		B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9382F56232F12DF00F81D44 /* LoginViewController.swift */; };
+		B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629252356A34F00AB1459 /* HomeViewController.swift */; };
+		B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
 		BE8D4BF7235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D4BF5235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift */; };
 		BE8D4BF8235553C300DBC6F5 /* ListaDeConfirmadosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8D4BF6235553C300DBC6F5 /* ListaDeConfirmadosViewController.xib */; };
@@ -35,6 +37,8 @@
 		B90DC62223540340006B6C23 /* Monica.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monica.storyboard; sourceTree = "<group>"; };
 		B90DC62423540350006B6C23 /* Maira.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maira.storyboard; sourceTree = "<group>"; };
 		B9382F56232F12DF00F81D44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B9E629252356A34F00AB1459 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		BE8D4BF5235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeConfirmadosViewController.swift; sourceTree = "<group>"; };
 		BE8D4BF6235553C300DBC6F5 /* ListaDeConfirmadosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListaDeConfirmadosViewController.xib; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				B9382F56232F12DF00F81D44 /* LoginViewController.swift */,
+				B9E629252356A34F00AB1459 /* HomeViewController.swift */,
+				B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */,
 				2827DE71232E5CDC00912312 /* TelaDoEventoViewController.swift */,
 				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
 				BE8D4BF5235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift */,
@@ -188,7 +194,9 @@
 				2827DE72232E5CDC00912312 /* TelaDoEventoViewController.swift in Sources */,
 				BE8D4BF7235553C300DBC6F5 /* ListaDeConfirmadosViewController.swift in Sources */,
 				2827DE70232E5CDC00912312 /* AppDelegate.swift in Sources */,
+				B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */,
 				BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */,
+				B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
