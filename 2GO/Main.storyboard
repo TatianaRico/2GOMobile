@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H5k-q0-G0z">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -51,7 +51,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="acessarFacebookButton:" destination="H5k-q0-G0z" eventType="touchUpInside" id="ZoG-q4-6Kh"/>
                                     <action selector="semLoginButton:" destination="H5k-q0-G0z" eventType="touchUpInside" id="CWR-d7-XIa"/>
                                 </connections>
                             </button>
@@ -98,7 +97,7 @@
         <!--Cadastro View Controller-->
         <scene sceneID="Cxf-wh-lZn">
             <objects>
-                <viewController restorationIdentifier="CadastroViewController" storyboardIdentifier="CadastroViewController" id="RBL-Nx-feH" customClass="CadastroViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CadastroViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RBL-Nx-feH" customClass="CadastroViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dRl-cM-xOp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -455,7 +454,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4bO-ix-L3o">
             <objects>
-                <tabBarController id="uTg-UA-shH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarTelas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uTg-UA-shH" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bqx-kQ-paE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

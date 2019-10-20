@@ -16,7 +16,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginTextField.delegate = self
+        senhaTextField.delegate = self
     
     }
 
@@ -38,7 +39,8 @@ class LoginViewController: UIViewController {
     }
     
     func vaiPraHome(){
-        if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
+        if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: "tabBarTelas"){
+            proximaTela.modalPresentationStyle = .fullScreen
             self.present(proximaTela, animated: true, completion: nil)
         }
     }
@@ -53,14 +55,26 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func semLoginButton(_ sender: UIButton) {
-        if loginTextField.text == "" || senhaTextField.text == ""{
-            print("clicou")
-        }else{
+     
             vaiParaTelaDeCadastro()
-        }
     
     }
     
 }
 
+extension LoginViewController: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == loginTextField{
+        senhaTextField.becomeFirstResponder()
+        }
+        if textField == senhaTextField{
+            senhaTextField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+}
 
