@@ -15,9 +15,10 @@
 		B90DC62323540340006B6C23 /* Monica.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC62223540340006B6C23 /* Monica.storyboard */; };
 		B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9382F56232F12DF00F81D44 /* LoginViewController.swift */; };
 		B95DA75B235C02DE002E9082 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DA75A235C02DE002E9082 /* LoginController.swift */; };
+		B95DA762235C2E5A002E9082 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DA760235C2E5A002E9082 /* HomeCollectionViewCell.swift */; };
+		B95DA763235C2E5A002E9082 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95DA761235C2E5A002E9082 /* HomeCollectionViewCell.xib */; };
 		B9B3868A235A870900EB7DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B38689235A870900EB7DB6 /* Main.storyboard */; };
 		B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629252356A34F00AB1459 /* HomeViewController.swift */; };
-		B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */; };
 		B9E6292A23588F0D00AB1459 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6292923588F0D00AB1459 /* MapViewController.swift */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
 /* End PBXBuildFile section */
@@ -33,9 +34,11 @@
 		B90DC62223540340006B6C23 /* Monica.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monica.storyboard; sourceTree = "<group>"; };
 		B9382F56232F12DF00F81D44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B95DA75A235C02DE002E9082 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = ../../../../LoginController.swift; sourceTree = "<group>"; };
+		B95DA760235C2E5A002E9082 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCollectionViewCell.swift; path = 2GO/View/HomeCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		B95DA761235C2E5A002E9082 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeCollectionViewCell.xib; path = 2GO/View/HomeCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		B95DA764235C2E7E002E9082 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = ../../../../../../LoginController.swift; sourceTree = "<group>"; };
 		B9B38689235A870900EB7DB6 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B9E629252356A34F00AB1459 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B9E6292923588F0D00AB1459 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,10 +67,12 @@
 			children = (
 				B9382F56232F12DF00F81D44 /* LoginViewController.swift */,
 				B9E629252356A34F00AB1459 /* HomeViewController.swift */,
-				B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */,
 				B9E6292923588F0D00AB1459 /* MapViewController.swift */,
 				2827DE71232E5CDC00912312 /* TelaDoEventoViewController.swift */,
 				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
+				B95DA760235C2E5A002E9082 /* HomeCollectionViewCell.swift */,
+				B95DA761235C2E5A002E9082 /* HomeCollectionViewCell.xib */,
+				B95DA764235C2E7E002E9082 /* LoginController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2827DE7A232E5CE700912312 /* LaunchScreen.storyboard in Resources */,
+				B95DA763235C2E5A002E9082 /* HomeCollectionViewCell.xib in Resources */,
 				B9B3868A235A870900EB7DB6 /* Main.storyboard in Resources */,
 				2827DE77232E5CE600912312 /* Assets.xcassets in Resources */,
 				B90DC62323540340006B6C23 /* Monica.storyboard in Resources */,
@@ -184,7 +190,7 @@
 				B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */,
 				B95DA75B235C02DE002E9082 /* LoginController.swift in Sources */,
 				BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */,
-				B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */,
+				B95DA762235C2E5A002E9082 /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

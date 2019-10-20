@@ -47,6 +47,7 @@ class LoginViewController: UIViewController {
     
     func vaiParaTelaDeCadastro(){
         if let telaCadastro = self.storyboard?.instantiateViewController(withIdentifier: "CadastroViewController") as? CadastroViewController {
+            telaCadastro.modalPresentationStyle = .fullScreen
           self.present(telaCadastro, animated: true, completion: nil)
         }
     }

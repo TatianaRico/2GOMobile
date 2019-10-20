@@ -373,7 +373,7 @@
                                     <constraint firstAttribute="height" constant="44" id="x2J-AW-UBX"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F4l-jK-Nr4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sao Paulo" translatesAutoresizingMaskIntoConstraints="NO" id="F4l-jK-Nr4">
                                 <rect key="frame" x="20" y="108" width="374" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="KrR-5z-OCf"/>
@@ -395,32 +395,8 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="skd-O0-Zwn">
                                             <rect key="frame" x="0.0" y="0.0" width="413" height="118"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pDo-eP-1te">
-                                                    <rect key="frame" x="5" y="5" width="113" height="97"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="113" id="6cl-jT-I7j"/>
-                                                        <constraint firstAttribute="height" constant="97" id="plE-a6-lL9"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGf-Gw-heF">
-                                                    <rect key="frame" x="373" y="48" width="32" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="greaterthan" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="clicouSeguirButton:" destination="iDN-sH-Akr" eventType="touchUpInside" id="Smc-O9-vuA"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="pDo-eP-1te" firstAttribute="top" secondItem="skd-O0-Zwn" secondAttribute="top" constant="5" id="2wa-yE-Uie"/>
-                                                <constraint firstItem="pDo-eP-1te" firstAttribute="leading" secondItem="skd-O0-Zwn" secondAttribute="leading" constant="5" id="YLy-kk-5mj"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="413" height="118"/>
-                                        <connections>
-                                            <outlet property="eventoImagem" destination="pDo-eP-1te" id="PuM-94-XRb"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -443,6 +419,7 @@
                     <navigationItem key="navigationItem" id="0pe-Ke-IO6"/>
                     <connections>
                         <outlet property="eventoImagem" destination="F4l-jK-Nr4" id="8mT-LV-EgV"/>
+                        <outlet property="homeCollectionView" destination="5KR-iF-RIK" id="N5C-dx-Sok"/>
                         <outlet property="searchUiSearch" destination="d8g-g5-VVS" id="tEq-kp-9WJ"/>
                         <outlet property="searchView" destination="0Ur-06-Hr1" id="ctX-K9-YSW"/>
                     </connections>
@@ -534,10 +511,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Sao Paulo" width="1920" height="1275"/>
         <image name="calendar.badge.plus" catalog="system" width="64" height="50"/>
         <image name="command" catalog="system" width="64" height="56"/>
         <image name="foto 2go" width="850" height="532"/>
-        <image name="greaterthan" catalog="system" width="64" height="54"/>
         <image name="logo_2go" width="626" height="360"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>

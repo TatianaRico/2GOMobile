@@ -10,17 +10,39 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+  
+    
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchUiSearch: UISearchBar!
     
     @IBOutlet weak var eventoImagem: UIImageView!
     
+    @IBOutlet weak var homeCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        homeCollectionView.delegate = self
+        homeCollectionView.dataSource = self
+        self.homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
     
 
+    
+}
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell
+        
+        //cell?.imageXibCollection.image = UIImage(named: self.fotoEvento)
+        
+        return cell ?? HomeCollectionViewCell()
+    }
+    
     
 }
