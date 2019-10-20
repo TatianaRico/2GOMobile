@@ -9,8 +9,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-  
+    
+    
     
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchUiSearch: UISearchBar!
@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
         self.homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellXib")
     }
     
-
+    
     
 }
 
@@ -40,12 +40,23 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellXib", for: indexPath) as? HomeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellXib", for: indexPath) as? HomeCollectionViewCell
         
         cell?.imageXibCollection.image = UIImage(named: testeImage)
         
         return cell ?? HomeCollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if #available(iOS 13.0, *) {
+            if let vc = self.storyboard?.instantiateViewController(identifier: "TelaDoEventoViewController") {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+    }
     
 }

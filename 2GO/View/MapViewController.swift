@@ -18,7 +18,14 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func voltarParaTelaHome(_ sender: UIButton) {
+        
+         voltarHome()
+    }
+    
+    func voltarHome(){
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
