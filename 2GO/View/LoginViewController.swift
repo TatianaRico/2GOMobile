@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
             
         }else {
             
-            vaiPraTelaDeEvento()
+            vaiPraHome()
         }
     }
     
@@ -37,17 +37,14 @@ class LoginViewController: UIViewController {
         self.present(alerta, animated: true, completion: nil)
     }
     
-    func vaiPraTelaDeEvento(){
-        if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: ""){
-            //withidentifier : colocar o indentificardor da outra view controller evento
+    func vaiPraHome(){
+        if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
             self.present(proximaTela, animated: true, completion: nil)
-            //usar esse metodo para ir para proxima tela
         }
     }
     
     func vaiParaTelaDeCadastro(){
-        if let telaCadastro = self.storyboard?.instantiateViewController(withIdentifier: ""){
-            // colocar o indentificador da tela cadastro
+        if let telaCadastro = self.storyboard?.instantiateViewController(withIdentifier: "CadastroViewController") as? CadastroViewController {
           self.present(telaCadastro, animated: true, completion: nil)
         }
     }
