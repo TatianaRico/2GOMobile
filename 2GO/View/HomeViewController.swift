@@ -19,11 +19,14 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
+    var testeImage: String = "show metalica"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
-        self.homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        
+        self.homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellXib")
     }
     
 
@@ -32,14 +35,14 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell
+       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellXib", for: indexPath) as? HomeCollectionViewCell
         
-        //cell?.imageXibCollection.image = UIImage(named: self.fotoEvento)
+        cell?.imageXibCollection.image = UIImage(named: testeImage)
         
         return cell ?? HomeCollectionViewCell()
     }

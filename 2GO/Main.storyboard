@@ -380,7 +380,7 @@
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5KR-iF-RIK">
-                                <rect key="frame" x="0.0" y="280" width="414" height="533"/>
+                                <rect key="frame" x="0.0" y="295" width="414" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yGH-W8-29f">
                                     <size key="itemSize" width="413" height="118"/>
@@ -407,7 +407,7 @@
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="5KR-iF-RIK" secondAttribute="trailing" id="3jZ-rV-D4L"/>
                             <constraint firstItem="F4l-jK-Nr4" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" constant="20" id="4xU-25-Fjb"/>
                             <constraint firstItem="F4l-jK-Nr4" firstAttribute="top" secondItem="0Ur-06-Hr1" secondAttribute="bottom" constant="20" id="8mJ-k7-6a2"/>
-                            <constraint firstItem="5KR-iF-RIK" firstAttribute="top" secondItem="F4l-jK-Nr4" secondAttribute="bottom" id="Pab-Gy-iro"/>
+                            <constraint firstItem="5KR-iF-RIK" firstAttribute="top" secondItem="F4l-jK-Nr4" secondAttribute="bottom" constant="15" id="Pab-Gy-iro"/>
                             <constraint firstItem="0Ur-06-Hr1" firstAttribute="top" secondItem="iUC-sW-hdc" secondAttribute="top" id="X6S-YP-4Tb"/>
                             <constraint firstItem="0Ur-06-Hr1" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" id="jBw-zg-mti"/>
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="F4l-jK-Nr4" secondAttribute="trailing" constant="20" id="kQQ-rK-jxC"/>
