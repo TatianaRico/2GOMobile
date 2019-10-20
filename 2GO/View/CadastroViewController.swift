@@ -30,7 +30,7 @@ class CadastroViewController: UIViewController {
         if nomeTextField.text == "" || nascimentoTextField.text == "" || generoTextField.text == "" || cpfTextField.text == "" || emailTextField.text == "" || senhaTextField.text == "" || confirmacaoSenhaTextField.text == "" {
             mensagemDeErro(mensagem: "Verifique suas informações")
         }else {
-            vaiParaTelaDeEvento()
+            vaiParaHome()
         }
     }
     
@@ -41,11 +41,9 @@ class CadastroViewController: UIViewController {
         self.present(alerta, animated: true, completion: nil)
     }
     
-    func vaiParaTelaDeEvento(){
-        if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: ""){
-            //withidentifier : colocar o indentificardor da outra view controller evento
+    func vaiParaHome(){
+        if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController{
             self.present(proximaTela, animated: true, completion: nil)
-            //usar esse metodo para ir para proxima tela
         }
     }
     
