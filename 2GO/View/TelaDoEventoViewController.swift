@@ -18,12 +18,7 @@ class TelaDoEventoViewController: UIViewController {
     @IBOutlet weak var descricaoEventoTextView: UITextView!
     
     @IBOutlet weak var fotoEvento: UIImageView!
-    
-    
-    @IBOutlet weak var tenhoInteresseButton: UIButton!
-    
-    @IBOutlet weak var pessoasConfirmadasButoon: UIButton!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,25 +27,8 @@ class TelaDoEventoViewController: UIViewController {
         self.nomeEventoLabel.text = "Pocah"
         self.dataEventoLabel.text = "22/10"
         self.fotoEvento.image = UIImage (named: "fotoPocah")
-        self.tenhoInteresseButton.layer.cornerRadius = 5
-        self.tenhoInteresseButton.layer.borderWidth = 1
-        self.tenhoInteresseButton.layer.masksToBounds = true
-        self.tenhoInteresseButton.layer.borderColor = UIColor.blue.cgColor
-        self.pessoasConfirmadasButoon.layer.cornerRadius = 5
-        self.pessoasConfirmadasButoon.layer.borderWidth = 1
-        self.pessoasConfirmadasButoon.layer.masksToBounds = true
-        self.pessoasConfirmadasButoon.layer.borderColor = UIColor.blue.cgColor
+        
         
     }
 
-    @IBAction func tenhoInteresseButtonTapped(_ sender: Any) {
-        
-    }
-    
-    @IBAction func pessoasConfirmadasButtonTapped(_ sender: Any) {
-    }
-    
-    @IBAction func confirmarPresencaButtonTapped(_ sender: Any) {
-    }
 }
-
