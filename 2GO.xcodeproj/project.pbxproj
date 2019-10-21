@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		2827DE72232E5CDC00912312 /* TelaDoEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2827DE71232E5CDC00912312 /* TelaDoEventoViewController.swift */; };
 		2827DE77232E5CE600912312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2827DE76232E5CE600912312 /* Assets.xcassets */; };
 		2827DE7A232E5CE700912312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2827DE78232E5CE700912312 /* LaunchScreen.storyboard */; };
+		2A6BB7C2235CFD57000AA1A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A6BB7C1235CFD57000AA1A0 /* GoogleService-Info.plist */; };
+		539668B85424BC481A9AE5F4 /* Pods_2GO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E770FA3D49056E68373223 /* Pods_2GO.framework */; };
 		B90DC621235400A1006B6C23 /* Tatiana.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC620235400A1006B6C23 /* Tatiana.storyboard */; };
 		B90DC62323540340006B6C23 /* Monica.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC62223540340006B6C23 /* Monica.storyboard */; };
 		B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9382F56232F12DF00F81D44 /* LoginViewController.swift */; };
@@ -19,15 +21,20 @@
 		B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */; };
 		B9E6292A23588F0D00AB1459 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6292923588F0D00AB1459 /* MapViewController.swift */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
+		BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13E770FA3D49056E68373223 /* Pods_2GO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2GO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27ECAA02F15A8AE9438F2905 /* Pods-2GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GO.release.xcconfig"; path = "Target Support Files/Pods-2GO/Pods-2GO.release.xcconfig"; sourceTree = "<group>"; };
 		2827DE6C232E5CDC00912312 /* 2GO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2GO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2827DE6F232E5CDC00912312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2827DE71232E5CDC00912312 /* TelaDoEventoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaDoEventoViewController.swift; sourceTree = "<group>"; };
 		2827DE76232E5CE600912312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2827DE79232E5CE700912312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2827DE7B232E5CE700912312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A6BB7C1235CFD57000AA1A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A94DF0DBE297984FF7EDD2D /* Pods-2GO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GO.debug.xcconfig"; path = "Target Support Files/Pods-2GO/Pods-2GO.debug.xcconfig"; sourceTree = "<group>"; };
 		B90DC620235400A1006B6C23 /* Tatiana.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tatiana.storyboard; sourceTree = "<group>"; };
 		B90DC62223540340006B6C23 /* Monica.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monica.storyboard; sourceTree = "<group>"; };
 		B9382F56232F12DF00F81D44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B9E6292923588F0D00AB1459 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				539668B85424BC481A9AE5F4 /* Pods_2GO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +74,7 @@
 				B9E6292923588F0D00AB1459 /* MapViewController.swift */,
 				2827DE71232E5CDC00912312 /* TelaDoEventoViewController.swift */,
 				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
+				BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -74,6 +84,8 @@
 			children = (
 				2827DE6E232E5CDC00912312 /* 2GO */,
 				2827DE6D232E5CDC00912312 /* Products */,
+				FEBB77FAE889B524269644B5 /* Pods */,
+				B1D4A7737CF5BC877173FC5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,9 +108,27 @@
 				B9B38689235A870900EB7DB6 /* Main.storyboard */,
 				2827DE7B232E5CE700912312 /* Info.plist */,
 				B90DC620235400A1006B6C23 /* Tatiana.storyboard */,
+				2A6BB7C1235CFD57000AA1A0 /* GoogleService-Info.plist */,
 				B90DC62223540340006B6C23 /* Monica.storyboard */,
 			);
 			path = 2GO;
+			sourceTree = "<group>";
+		};
+		B1D4A7737CF5BC877173FC5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13E770FA3D49056E68373223 /* Pods_2GO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEBB77FAE889B524269644B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A94DF0DBE297984FF7EDD2D /* Pods-2GO.debug.xcconfig */,
+				27ECAA02F15A8AE9438F2905 /* Pods-2GO.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2827DE7E232E5CE700912312 /* Build configuration list for PBXNativeTarget "2GO" */;
 			buildPhases = (
+				51B5901DC97D0DAB3531EECB /* [CP] Check Pods Manifest.lock */,
 				2827DE68232E5CDC00912312 /* Sources */,
 				2827DE69232E5CDC00912312 /* Frameworks */,
 				2827DE6A232E5CDC00912312 /* Resources */,
+				FA3D324FBFCDDF7852C869A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,10 +196,53 @@
 				2827DE77232E5CE600912312 /* Assets.xcassets in Resources */,
 				B90DC62323540340006B6C23 /* Monica.storyboard in Resources */,
 				B90DC621235400A1006B6C23 /* Tatiana.storyboard in Resources */,
+				2A6BB7C2235CFD57000AA1A0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51B5901DC97D0DAB3531EECB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-2GO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA3D324FBFCDDF7852C869A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-2GO/Pods-2GO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-2GO/Pods-2GO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-2GO/Pods-2GO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2827DE68232E5CDC00912312 /* Sources */ = {
@@ -180,6 +255,7 @@
 				2827DE70232E5CDC00912312 /* AppDelegate.swift in Sources */,
 				B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */,
 				BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */,
+				BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */,
 				B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,9 +392,11 @@
 		};
 		2827DE7F232E5CE700912312 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A94DF0DBE297984FF7EDD2D /* Pods-2GO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z7BBP9U4Y2;
 				INFOPLIST_FILE = 2GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,9 +412,11 @@
 		};
 		2827DE80232E5CE700912312 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27ECAA02F15A8AE9438F2905 /* Pods-2GO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z7BBP9U4Y2;
 				INFOPLIST_FILE = 2GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (

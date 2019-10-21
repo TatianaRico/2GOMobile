@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var twoGoImage: UIImageView!
@@ -26,8 +27,41 @@ class LoginViewController: UIViewController {
             
         }else {
             
-            vaiPraHome()
+            self.verificarLogin()
         }
+    }
+    
+    func verificarLogin() {
+        
+        guard let email = self.loginTextField.text, let senha = self.senhaTextField.text else {
+            return
+        }
+        
+        let ref: DatabaseReference! = Database.database().reference()
+        var achou = false
+        
+        ref.child("usuarios").observe(.value, with: { (snapshot) in
+          let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+            
+            for userData in postDict.values {
+                if let userEmail = userData["email"] as? String, userEmail == email,
+                   let userSenha = userData["senha"] as? String, userSenha == senha{
+                    achou = true
+                }
+            }
+            
+            if achou {
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(self.loginTextField.text, forKey: "email")
+                userDefaults.synchronize()
+                self.vaiPraHome()
+            }else {
+                self.mensagemDeErro(mensagem: "Login ou Senha Incorreto")
+            }
+        })
+        
+        
+    
     }
     
     func mensagemDeErro(mensagem:String) {
@@ -38,13 +72,16 @@ class LoginViewController: UIViewController {
     }
     
     func vaiPraHome(){
-        if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
+        
+        if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: "TabViewController")  {
+            proximaTela.modalPresentationStyle = .fullScreen
             self.present(proximaTela, animated: true, completion: nil)
         }
     }
     
     func vaiParaTelaDeCadastro(){
         if let telaCadastro = self.storyboard?.instantiateViewController(withIdentifier: "CadastroViewController") as? CadastroViewController {
+            telaCadastro.modalPresentationStyle = .fullScreen
           self.present(telaCadastro, animated: true, completion: nil)
         }
     }
@@ -53,12 +90,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func semLoginButton(_ sender: UIButton) {
-        if loginTextField.text == "" || senhaTextField.text == ""{
-            print("clicou")
-        }else{
-            vaiParaTelaDeCadastro()
-        }
-    
+        self.vaiParaTelaDeCadastro()
     }
     
 }
