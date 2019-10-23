@@ -2,15 +2,19 @@
 //  HomeCollectionViewCell.swift
 //  2GO
 //
-//  Created by Tatiana Rico on 15/10/19.
+//  Created by Tatiana Rico on 20/10/19.
 //  Copyright © 2019 2GO. All rights reserved.
 //
 
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var eventoImagem: UIImageView!
+
+    @IBOutlet weak var imageXibCollection: UIImageView!
     
-    @IBAction func clicouSeguirButton(_ sender: UIButton) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
     }
+
 }

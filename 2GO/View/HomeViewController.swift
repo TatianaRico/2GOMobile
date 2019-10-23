@@ -9,18 +9,53 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    
+    
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchUiSearch: UISearchBar!
     
     @IBOutlet weak var eventoImagem: UIImageView!
     
+    @IBOutlet weak var homeCollectionView: UICollectionView!
+    
+    var testeImage: String = "show metalica"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        homeCollectionView.delegate = self
+        homeCollectionView.dataSource = self
+        
     }
     
+    
+    
+}
 
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellXib", for: indexPath) as? HomeCollectionViewCell
+        
+        cell?.imageXibCollection.image = UIImage(named: testeImage)
+        
+        return cell ?? HomeCollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if #available(iOS 13.0, *) {
+            if let vc = self.storyboard?.instantiateViewController(identifier: "TelaDoEventoViewController") {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+    }
     
 }
