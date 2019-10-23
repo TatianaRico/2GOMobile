@@ -69,7 +69,10 @@ class CadastroViewController: UIViewController {
         }
     }
             
-        
+    @IBAction func voltarButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
         @IBAction func cadastrarButton(_ sender: UIButton) {
             
             if nomeTextField.text == "" || nascimentoTextField.text == "" || generoTextField.text == "" || cpfTextField.text == "" || emailTextField.text == "" || senhaTextField.text == "" || confirmacaoSenhaTextField.text == "" {
