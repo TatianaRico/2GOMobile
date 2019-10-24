@@ -76,6 +76,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fku-RA-MBS" firstAttribute="bottom" secondItem="xow-yp-Vrt" secondAttribute="bottom" id="4Dn-8J-OBt"/>
+                            <constraint firstItem="Oa8-Ax-uGj" firstAttribute="centerX" secondItem="aJk-27-pKx" secondAttribute="centerX" id="9vn-Ab-bcJ"/>
                             <constraint firstItem="Oa8-Ax-uGj" firstAttribute="leading" secondItem="Fku-RA-MBS" secondAttribute="leading" constant="87" id="BfL-Au-Rs5"/>
                             <constraint firstItem="xow-yp-Vrt" firstAttribute="top" secondItem="aJk-27-pKx" secondAttribute="top" id="Ftl-Zl-tGr"/>
                             <constraint firstItem="xow-yp-Vrt" firstAttribute="trailing" secondItem="Fku-RA-MBS" secondAttribute="trailing" id="WMj-DH-0iw"/>
@@ -235,11 +236,14 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzq-rN-pbK">
                                                 <rect key="frame" x="107" y="566" width="200" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="IiW-aw-AZI"/>
                                                     <constraint firstAttribute="width" constant="200" id="MaF-g7-9gC"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="Editar">
+                                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="alteracaoButton:" destination="THT-6d-oO4" eventType="touchUpInside" id="tuJ-Wo-6TQ"/>
                                                 </connections>
@@ -393,19 +397,30 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8X-aq-flY">
+                                <rect key="frame" x="337" y="278" width="65" height="23"/>
+                                <state key="normal" title="Ver mapa"/>
+                                <connections>
+                                    <segue destination="ElU-zr-KLk" kind="show" id="b6p-FD-JON"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="0Ur-06-Hr1" secondAttribute="trailing" id="0e9-7m-VOK"/>
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="5KR-iF-RIK" secondAttribute="trailing" id="3jZ-rV-D4L"/>
                             <constraint firstItem="F4l-jK-Nr4" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" constant="20" id="4xU-25-Fjb"/>
+                            <constraint firstItem="H8X-aq-flY" firstAttribute="top" secondItem="0Ur-06-Hr1" secondAttribute="bottom" constant="190" id="7f5-9h-CfH"/>
                             <constraint firstItem="F4l-jK-Nr4" firstAttribute="top" secondItem="0Ur-06-Hr1" secondAttribute="bottom" constant="20" id="8mJ-k7-6a2"/>
                             <constraint firstItem="5KR-iF-RIK" firstAttribute="top" secondItem="F4l-jK-Nr4" secondAttribute="bottom" constant="29" id="Pab-Gy-iro"/>
+                            <constraint firstItem="5KR-iF-RIK" firstAttribute="top" secondItem="H8X-aq-flY" secondAttribute="bottom" constant="8" id="TOO-2d-CkR"/>
                             <constraint firstItem="0Ur-06-Hr1" firstAttribute="top" secondItem="iUC-sW-hdc" secondAttribute="top" id="X6S-YP-4Tb"/>
+                            <constraint firstItem="H8X-aq-flY" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" constant="337" id="arz-gC-7Z5"/>
                             <constraint firstItem="0Ur-06-Hr1" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" id="jBw-zg-mti"/>
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="F4l-jK-Nr4" secondAttribute="trailing" constant="20" id="kQQ-rK-jxC"/>
                             <constraint firstItem="5KR-iF-RIK" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" id="pyW-MO-R2f"/>
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="bottom" secondItem="5KR-iF-RIK" secondAttribute="bottom" id="rCp-WP-evh"/>
+                            <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="H8X-aq-flY" secondAttribute="trailing" constant="12" id="zKl-6x-ltu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iUC-sW-hdc"/>
                     </view>
@@ -485,7 +500,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mwW-KR-XVa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -497,6 +512,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="68l-Vi-XZJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aCB-HQ-CHj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIe-nZ-liv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
