@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class CadastroViewController: UIViewController {
 
-    @IBOutlet var scrollView: UIScrollView!
+
     @IBOutlet weak var perfilImage: UIImageView!
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var nascimentoTextField: UITextField!
@@ -30,10 +30,10 @@ class CadastroViewController: UIViewController {
         self.perfilImage.isUserInteractionEnabled = true
         self.perfilImage.addGestureRecognizer(toqueImagemPerfil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow),
+//                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide),
+//                                               name: UIResponder.keyboardWillHideNotification, object: nil)
         self.nomeTextField.delegate = self
         self.nascimentoTextField.delegate = self
         self.generoTextField.delegate = self
@@ -119,17 +119,17 @@ class CadastroViewController: UIViewController {
             }
         }
     
-        @objc func keyboardWillShow(notification: NSNotification) {
-            let userInfo = (notification as NSNotification).userInfo!
-            let keyboardSize = (userInfo [UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
-            
-            self.scrollView.contentInset.bottom = (keyboardSize.height + 500 )
-            self.view.layoutIfNeeded()
-        }
-
-        @objc func keyboardWillHide(notification: NSNotification) {
-            self.scrollView.contentInset = .zero
-        }
+//        @objc func keyboardWillShow(notification: NSNotification) {
+//            let userInfo = (notification as NSNotification).userInfo!
+//            let keyboardSize = (userInfo [UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
+//            
+//            self.scrollView.contentInset.bottom = (keyboardSize.height + 500 )
+//            self.view.layoutIfNeeded()
+//        }
+//
+//        @objc func keyboardWillHide(notification: NSNotification) {
+//            self.scrollView.contentInset = .zero
+//        }
     
     }
 
@@ -166,9 +166,5 @@ extension CadastroViewController: UITextFieldDelegate {
         }
         return true
     }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.scrollView.scrollRectToVisible(CGRect(x: 0, y: textField.frame.origin.y, width: 0, height: 0), animated: true)
-    }
-    
+        
 }
