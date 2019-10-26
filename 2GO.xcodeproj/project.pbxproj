@@ -20,8 +20,8 @@
 		B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629252356A34F00AB1459 /* HomeViewController.swift */; };
 		B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */; };
 		B9E6292A23588F0D00AB1459 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6292923588F0D00AB1459 /* MapViewController.swift */; };
-		B9F21FC52364BDBB00E607AD /* animacao.json in Resources */ = {isa = PBXBuildFile; fileRef = B9F21FC42364BDBB00E607AD /* animacao.json */; };
 		B9F21FC72364BE0700E607AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F21FC62364BE0700E607AD /* BaseViewController.swift */; };
+		B9F21FE92364FE8800E607AD /* animacao.json in Resources */ = {isa = PBXBuildFile; fileRef = B9F21FE82364FE8800E607AD /* animacao.json */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
 		BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */; };
 /* End PBXBuildFile section */
@@ -44,8 +44,8 @@
 		B9E629252356A34F00AB1459 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B9E6292923588F0D00AB1459 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		B9F21FC42364BDBB00E607AD /* animacao.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = animacao.json; path = ../../../../animacao.json; sourceTree = "<group>"; };
 		B9F21FC62364BE0700E607AD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B9F21FE82364FE8800E607AD /* animacao.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animacao.json; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +131,7 @@
 		B9F21FC12364BCA400E607AD /* Reasurce */ = {
 			isa = PBXGroup;
 			children = (
-				B9F21FC42364BDBB00E607AD /* animacao.json */,
+				B9F21FE82364FE8800E607AD /* animacao.json */,
 			);
 			path = Reasurce;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 				B90DC62323540340006B6C23 /* Monica.storyboard in Resources */,
 				B90DC621235400A1006B6C23 /* Tatiana.storyboard in Resources */,
 				2A6BB7C2235CFD57000AA1A0 /* GoogleService-Info.plist in Resources */,
-				B9F21FC52364BDBB00E607AD /* animacao.json in Resources */,
+				B9F21FE92364FE8800E607AD /* animacao.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
