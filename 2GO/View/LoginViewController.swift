@@ -84,7 +84,9 @@ class LoginViewController: BaseViewController{
     func vaiParaTelaDeCadastro(){
         if let telaCadastro = self.storyboard?.instantiateViewController(withIdentifier: "CadastroViewController") as? CadastroViewController {
             telaCadastro.modalPresentationStyle = .fullScreen
-          self.present(telaCadastro, animated: true, completion: nil)
+            self.present(telaCadastro, animated: true) {
+                self.hiddenLoading()
+            }
         }
     }
     
@@ -94,6 +96,7 @@ class LoginViewController: BaseViewController{
     @IBAction func semLoginButton(_ sender: UIButton) {
         self.vaiParaTelaDeCadastro()
         self.showLoading()
+       
     }
     
 }
