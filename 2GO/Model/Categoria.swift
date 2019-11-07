@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Categoria
 struct Categoria: Codable {
     let locale: String
-    let pagination: Pagination
+    let pagination: PaginationEvent
     let categories: [Category]
 }
 
@@ -31,7 +31,7 @@ struct Category: Codable {
 }
 
 // MARK: - Pagination
-struct Pagination: Codable {
+struct PaginationEvent: Codable {
     let objectCount, pageNumber, pageSize, pageCount: Int
     let hasMoreItems: Bool
 
