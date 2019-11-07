@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class PerfilViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+
     @IBOutlet weak var perfilImage: UIImageView!
     
     @IBOutlet weak var nomeTextField: UITextField!
@@ -29,6 +29,12 @@ class PerfilViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func fecharButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func voltarButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func alteracaoButton(_ sender: UIButton) {
     }
     

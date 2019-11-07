@@ -21,6 +21,9 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var confirmacaoSenhaTextField: UITextField!
     
+    let genero = ["Feminino", "Masculino"]
+    var selectGenero: String?
+    
     var ref: DatabaseReference! = Database.database().reference()
     
     override func viewDidLoad() {
@@ -29,11 +32,9 @@ class CadastroViewController: UIViewController {
         toqueImagemPerfil.numberOfTouchesRequired = 1
         self.perfilImage.isUserInteractionEnabled = true
         self.perfilImage.addGestureRecognizer(toqueImagemPerfil)
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow),
-//                                               name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide),
-//                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+        self.createPickerGenero()
+        self.createToolbar()
+
         self.nomeTextField.delegate = self
         self.nascimentoTextField.delegate = self
         self.generoTextField.delegate = self
@@ -42,6 +43,32 @@ class CadastroViewController: UIViewController {
         self.senhaTextField.delegate = self
         self.confirmacaoSenhaTextField.delegate = self
     }
+    
+    func createPickerGenero() {
+        
+        let generoPicker = UIPickerView()
+        generoPicker.delegate = self
+        
+        generoTextField.inputView = generoPicker
+    }
+    
+    func createToolbar() {
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let buttonOk = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(CadastroViewController.dismissKeyboard))
+        
+        toolBar.setItems([buttonOk], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        generoTextField.inputAccessoryView = toolBar
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     
     @objc func fotoButton(_ sender: UIButton) {
             
@@ -119,18 +146,6 @@ class CadastroViewController: UIViewController {
             }
         }
     
-//        @objc func keyboardWillShow(notification: NSNotification) {
-//            let userInfo = (notification as NSNotification).userInfo!
-//            let keyboardSize = (userInfo [UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
-//            
-//            self.scrollView.contentInset.bottom = (keyboardSize.height + 500 )
-//            self.view.layoutIfNeeded()
-//        }
-//
-//        @objc func keyboardWillHide(notification: NSNotification) {
-//            self.scrollView.contentInset = .zero
-//        }
-    
     }
 
 extension CadastroViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -167,4 +182,24 @@ extension CadastroViewController: UITextFieldDelegate {
         return true
     }
         
+}
+
+extension CadastroViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return genero.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return genero[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectGenero = genero[row]
+        generoTextField.text = selectGenero
+        
+    }
 }
