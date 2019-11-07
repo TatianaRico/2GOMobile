@@ -43,3 +43,6 @@ struct PaginationEvent: Codable {
         case hasMoreItems = "has_more_items"
     }
 }
+typealias CategoryA = [Categoria]
+
+ 

@@ -9,6 +9,7 @@ target '2GO' do
    pod 'Firebase/Analytics'
    pod 'Firebase/Database'
    pod 'lottie-ios'
+   pod 'Alamofire'
 
    
 end

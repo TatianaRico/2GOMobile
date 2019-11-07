@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.9.0)
   - Firebase/Analytics (6.10.0):
     - Firebase/Core
   - Firebase/Core (6.10.0):
@@ -76,12 +77,14 @@ PODS:
   - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
+  - Alamofire
   - Firebase/Analytics
   - Firebase/Database
   - lottie-ios
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuthInterop
@@ -99,6 +102,7 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
   FirebaseAnalytics: 0e3ecff2c5d86070f7d4325e21f1edabfbd558dc
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
@@ -115,6 +119,6 @@ SPEC CHECKSUMS:
   lottie-ios: 496ac5cea1bbf1a7bd1f1f472f3232eb1b8d744b
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 3cbd1bc7e091fb445540e8a55fb6484f835b68fe
+PODFILE CHECKSUM: 94ca9b569f3041bab7bd93b7a2172efeb08bde47
 
 COCOAPODS: 1.8.4
