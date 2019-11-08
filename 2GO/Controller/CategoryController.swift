@@ -12,13 +12,15 @@ class CategoryController{
     
     let event = EventProvider()
     
-    private var categoria: CategoryA = []
+
+    private var categoria: Categoria?
     
     
 //
 //    func category(){
-//        event.requestCategory { (sucess) in
-//            self.event
+//        event.requestCategory { (object) in
+//            self.categoria = object
 //        }
-    }
+//    }
 
+}

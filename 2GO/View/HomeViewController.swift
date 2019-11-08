@@ -21,20 +21,34 @@ class HomeViewController: UIViewController {
     
     var testeImage: String = "show metalica"
     
+    let event  = EventProvider()
+    
+    private var categoria: Categoria?
+    
+    //event.alamofireEvent()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
-        
+        self.category()
     }
     
-    
+    func category(){
+        event.requestCategory { (object) in
+            self.categoria = object
+            self.homeCollectionView.reloadData()
+         
+        }
+        
+    }
     
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        
+        return categoria?.categories.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
