@@ -208,7 +208,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5KR-iF-RIK">
                                 <rect key="frame" x="0.0" y="309" width="414" height="504"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yGH-W8-29f">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yGH-W8-29f">
                                     <size key="itemSize" width="122" height="111"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -222,24 +222,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="122" height="111"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pDo-eP-1te">
-                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="111"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aWj-Cb-KDn">
+                                                    <rect key="frame" x="0.0" y="22" width="122" height="67"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="97" id="80K-qT-Nzf"/>
-                                                        <constraint firstAttribute="width" constant="108" id="PUC-Fm-azw"/>
+                                                        <constraint firstAttribute="width" constant="122" id="6Pp-1Z-v1B"/>
+                                                        <constraint firstAttribute="height" constant="67" id="ZpQ-oe-GNY"/>
                                                     </constraints>
-                                                </imageView>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pDo-eP-1te" firstAttribute="leading" secondItem="skd-O0-Zwn" secondAttribute="leading" id="9Tc-7o-gHP"/>
-                                                <constraint firstAttribute="bottom" secondItem="pDo-eP-1te" secondAttribute="bottom" id="FrN-IW-THB"/>
-                                                <constraint firstItem="pDo-eP-1te" firstAttribute="top" secondItem="skd-O0-Zwn" secondAttribute="top" id="ZkN-Gt-uL4"/>
-                                                <constraint firstAttribute="trailing" secondItem="pDo-eP-1te" secondAttribute="trailing" id="esE-AT-wSh"/>
+                                                <constraint firstAttribute="trailing" secondItem="aWj-Cb-KDn" secondAttribute="trailing" id="W4b-Ru-jbb"/>
+                                                <constraint firstItem="aWj-Cb-KDn" firstAttribute="top" secondItem="skd-O0-Zwn" secondAttribute="top" constant="22" id="nct-JL-2yn"/>
+                                                <constraint firstItem="aWj-Cb-KDn" firstAttribute="leading" secondItem="skd-O0-Zwn" secondAttribute="leading" id="xuI-rC-P9q"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="122" height="111"/>
                                         <connections>
-                                            <outlet property="imageXibCollection" destination="pDo-eP-1te" id="USd-GM-a4c"/>
+                                            <outlet property="titleCategoryLabel" destination="aWj-Cb-KDn" id="jDI-Yz-t1X"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

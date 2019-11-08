@@ -10,11 +10,11 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var imageXibCollection: UIImageView!
+    @IBOutlet weak var titleCategoryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      //  self.layer.cornerRadius = 
     }
 
 }

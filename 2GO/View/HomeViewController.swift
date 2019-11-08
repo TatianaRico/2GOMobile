@@ -55,7 +55,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellXib", for: indexPath) as? HomeCollectionViewCell
         
-        cell?.imageXibCollection.image = UIImage(named: testeImage)
+        cell?.titleCategoryLabel.text = categoria?.categories[indexPath.row].name
         
         return cell ?? HomeCollectionViewCell()
     }
