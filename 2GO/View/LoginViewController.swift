@@ -23,15 +23,15 @@ class LoginViewController: BaseViewController{
         
     }
     
-    @IBAction func acessarButton(_ sender: UIButton) {
+    @IBAction func acessarButton(_ sender: UIButton){
         if loginTextField.text == "" || senhaTextField.text == "" {
             mensagemDeErro(mensagem: "Login ou Senha Incorreto")
             
         }else {
-            
+            self.showLoading()
             self.verificarLogin()
         }
-        self.showLoading()
+        
     }
     
     func verificarLogin() {
@@ -66,6 +66,8 @@ class LoginViewController: BaseViewController{
                         }
                     }
         
+                   self.hiddenLoading()
+                    
                     if achou {
                         let userDefaults = UserDefaults.standard
                         userDefaults.set(self.loginTextField.text, forKey: "email")
@@ -99,7 +101,6 @@ class LoginViewController: BaseViewController{
         if let telaCadastro = self.storyboard?.instantiateViewController(withIdentifier: "CadastroViewController") as? CadastroViewController {
             telaCadastro.modalPresentationStyle = .fullScreen
             self.present(telaCadastro, animated: true) {
-                self.hiddenLoading()
             }
         }
     }
@@ -109,8 +110,6 @@ class LoginViewController: BaseViewController{
     
     @IBAction func semLoginButton(_ sender: UIButton) {
         self.vaiParaTelaDeCadastro()
-        self.showLoading()
-        
     }
     
 }
