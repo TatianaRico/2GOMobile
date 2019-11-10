@@ -8,8 +8,9 @@ target '2GO' do
  
    pod 'Firebase/Analytics'
    pod 'Firebase/Database'
+   pod 'Firebase/Auth'
    pod 'lottie-ios'
    pod 'Alamofire'
-
+   pod 'SDWebImage'
    
 end

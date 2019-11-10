@@ -8,10 +8,11 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class CadastroViewController: UIViewController {
-
-
+    
+    
     @IBOutlet weak var perfilImage: UIImageView!
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var nascimentoTextField: UITextField!
@@ -34,7 +35,7 @@ class CadastroViewController: UIViewController {
         self.perfilImage.addGestureRecognizer(toqueImagemPerfil)
         self.createPickerGenero()
         self.createToolbar()
-
+        
         self.nomeTextField.delegate = self
         self.nascimentoTextField.delegate = self
         self.generoTextField.delegate = self
@@ -71,20 +72,20 @@ class CadastroViewController: UIViewController {
     
     
     @objc func fotoButton(_ sender: UIButton) {
-            
+        
         let alert = UIAlertController(title: "Alerta", message: "Selecione o tipo desejado", preferredStyle: .actionSheet)
-            
+        
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
             self.getImage(fromSourceType: .camera)
         }))
-            
+        
         alert.addAction(UIAlertAction(title: "Album", style: .default, handler: { (action) in
             self.getImage(fromSourceType: .photoLibrary)
         }))
-            
-            self.present(alert, animated: true, completion: nil)
-        }
-                
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
         
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
@@ -95,28 +96,38 @@ class CadastroViewController: UIViewController {
             self.present(imagePickerController, animated: true, completion: nil)
         }
     }
-            
+    
     @IBAction func voltarButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-        @IBAction func cadastrarButton(_ sender: UIButton) {
-            
-            if nomeTextField.text == "" || nascimentoTextField.text == "" || generoTextField.text == "" || cpfTextField.text == "" || emailTextField.text == "" || senhaTextField.text == "" || confirmacaoSenhaTextField.text == "" {
-                self.mensagemDeErro(mensagem: "Verifique suas informações")
-            }else {
+    @IBAction func cadastrarButton(_ sender: UIButton) {
+        
+        if nomeTextField.text == "" || nascimentoTextField.text == "" || generoTextField.text == "" || cpfTextField.text == "" || emailTextField.text == "" || senhaTextField.text == "" || confirmacaoSenhaTextField.text == "" {
+            self.mensagemDeErro(mensagem: "Verifique suas informações")
+        }else {
+            self.criarUsuario()
+        }
+    }
+    
+    func criarUsuario() {
+        Auth.auth().createUser(withEmail: self.emailTextField.text ?? "", password: self.senhaTextField.text ?? "") { authResult, error in
+            if error == nil {
                 self.cadastrarUsuario()
+            } else {
+                self.mensagemDeErro(mensagem: "houve um erro ao cadastrar no nosso banco.")
             }
         }
-    
+    }
+        
     func cadastrarUsuario() {
         
         self.ref.child("usuarios").childByAutoId().setValue(["nome": self.nomeTextField.text,
-                                             "nascimento": self.nascimentoTextField.text,
-                                             "cpf": self.cpfTextField.text,
-                                             "genero": self.generoTextField.text,
-                                             "senha": self.senhaTextField.text,
-                                             "email": self.emailTextField.text])
+                                                             "nascimento": self.nascimentoTextField.text,
+                                                             "cpf": self.cpfTextField.text,
+                                                             "genero": self.generoTextField.text,
+                                                             "senha": self.senhaTextField.text,
+                                                             "email": self.emailTextField.text])
         { (error:Error?, ref:DatabaseReference) in
             if let _ = error {
                 self.mensagemDeErro(mensagem: "houve um erro ao cadastrar no nosso banco.")
@@ -131,33 +142,33 @@ class CadastroViewController: UIViewController {
             }
         }
     }
-        
-        func mensagemDeErro(mensagem:String) {
-            let alerta = UIAlertController(title: "Alerta", message: mensagem, preferredStyle: .alert)
-            let botaoAlerta = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alerta.addAction(botaoAlerta)
-            self.present(alerta, animated: true, completion: nil)
-        }
-        
-        func vaiParaHome(){
-            if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: "TabViewController") {
-                proximaTela.modalPresentationStyle = .fullScreen
-                self.present(proximaTela, animated: true, completion: nil)
-            }
-        }
     
+    func mensagemDeErro(mensagem:String) {
+        let alerta = UIAlertController(title: "Alerta", message: mensagem, preferredStyle: .alert)
+        let botaoAlerta = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alerta.addAction(botaoAlerta)
+        self.present(alerta, animated: true, completion: nil)
     }
+    
+    func vaiParaHome(){
+        if let proximaTela = self.storyboard?.instantiateViewController(withIdentifier: "TabViewController") {
+            proximaTela.modalPresentationStyle = .fullScreen
+            self.present(proximaTela, animated: true, completion: nil)
+        }
+    }
+    
+}
 
 extension CadastroViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-         
-         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-         
-         self.perfilImage.image = image
+        
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        self.perfilImage.image = image
         picker.dismiss(animated: true, completion: nil)
         
-     }
+    }
 }
 
 extension CadastroViewController: UITextFieldDelegate {
@@ -181,7 +192,7 @@ extension CadastroViewController: UITextFieldDelegate {
         }
         return true
     }
-        
+    
 }
 
 extension CadastroViewController: UIPickerViewDelegate, UIPickerViewDataSource {

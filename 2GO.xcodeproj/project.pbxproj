@@ -15,6 +15,9 @@
 		539668B85424BC481A9AE5F4 /* Pods_2GO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E770FA3D49056E68373223 /* Pods_2GO.framework */; };
 		B90DC621235400A1006B6C23 /* Tatiana.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC620235400A1006B6C23 /* Tatiana.storyboard */; };
 		B90DC62323540340006B6C23 /* Monica.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC62223540340006B6C23 /* Monica.storyboard */; };
+		B92813D82377A7D1004AA5D5 /* DetalheDoEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92813D72377A7D1004AA5D5 /* DetalheDoEventoViewController.swift */; };
+		B92813DD2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92813DB2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.swift */; };
+		B92813DE2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92813DC2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.xib */; };
 		B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9382F56232F12DF00F81D44 /* LoginViewController.swift */; };
 		B94FE2E82373A62800664A5B /* categoria.json in Resources */ = {isa = PBXBuildFile; fileRef = B94FE2E72373A62800664A5B /* categoria.json */; };
 		B94FE2EA2373A6BD00664A5B /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FE2E92373A6BD00664A5B /* Categoria.swift */; };
@@ -45,6 +48,9 @@
 		5A94DF0DBE297984FF7EDD2D /* Pods-2GO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GO.debug.xcconfig"; path = "Target Support Files/Pods-2GO/Pods-2GO.debug.xcconfig"; sourceTree = "<group>"; };
 		B90DC620235400A1006B6C23 /* Tatiana.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tatiana.storyboard; sourceTree = "<group>"; };
 		B90DC62223540340006B6C23 /* Monica.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monica.storyboard; sourceTree = "<group>"; };
+		B92813D72377A7D1004AA5D5 /* DetalheDoEventoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheDoEventoViewController.swift; sourceTree = "<group>"; };
+		B92813DB2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaDoEventoCollectionViewCell.swift; sourceTree = "<group>"; };
+		B92813DC2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TelaDoEventoCollectionViewCell.xib; sourceTree = "<group>"; };
 		B9382F56232F12DF00F81D44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B94FE2E72373A62800664A5B /* categoria.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categoria.json; sourceTree = "<group>"; };
 		B94FE2E92373A6BD00664A5B /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
@@ -85,12 +91,13 @@
 		0C101DD6233D7F0900419B80 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B92813DF2377A89B004AA5D5 /* Cell */,
 				B9382F56232F12DF00F81D44 /* LoginViewController.swift */,
 				B9F21FC62364BE0700E607AD /* BaseViewController.swift */,
 				B9E629252356A34F00AB1459 /* HomeViewController.swift */,
-				B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */,
 				B9E6292923588F0D00AB1459 /* MapViewController.swift */,
 				2827DE71232E5CDC00912312 /* TelaDoEventoViewController.swift */,
+				B92813D72377A7D1004AA5D5 /* DetalheDoEventoViewController.swift */,
 				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
 				BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */,
 			);
@@ -141,6 +148,16 @@
 				13E770FA3D49056E68373223 /* Pods_2GO.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B92813DF2377A89B004AA5D5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */,
+				B92813DB2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.swift */,
+				B92813DC2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B94FE2E32373A58000664A5B /* Model */ = {
@@ -239,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B92813DE2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.xib in Resources */,
 				2827DE7A232E5CE700912312 /* LaunchScreen.storyboard in Resources */,
 				B9B3868A235A870900EB7DB6 /* Main.storyboard in Resources */,
 				2827DE77232E5CE600912312 /* Assets.xcassets in Resources */,
@@ -308,9 +326,11 @@
 				B9E6292A23588F0D00AB1459 /* MapViewController.swift in Sources */,
 				2827DE70232E5CDC00912312 /* AppDelegate.swift in Sources */,
 				B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */,
+				B92813D82377A7D1004AA5D5 /* DetalheDoEventoViewController.swift in Sources */,
 				B9F21FC72364BE0700E607AD /* BaseViewController.swift in Sources */,
 				BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */,
 				BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */,
+				B92813DD2377A88C004AA5D5 /* TelaDoEventoCollectionViewCell.swift in Sources */,
 				B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */,
 				B94FE2EA2373A6BD00664A5B /* Categoria.swift in Sources */,
 			);

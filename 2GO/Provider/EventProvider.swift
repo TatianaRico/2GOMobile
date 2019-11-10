@@ -11,25 +11,31 @@ import Alamofire
 
 class EventProvider{
     
-    func alamofireEvent(){
+    func alamofireEvent(id: String, completion: @escaping (Evento?,Bool) -> Void ){
         
-        let urlString: String = "https://www.eventbriteapi.com/v3/events/search/?categories=103"
+        let urlString: String = "https://www.eventbriteapi.com/v3/events/search/"
         
+        let parametro = ["categories" : id]
         let header = ["Authorization":"Bearer MDJJRHWI5ZI73GCRHCMT"]
         
         if let url: URL = URL(string: urlString){
-            Alamofire.request(url, method: .get, headers: header).responseJSON { (response) in
+            Alamofire.request(url, method: .get, parameters: parametro, headers: header).responseJSON { (response) in
                 if response.response?.statusCode == 200{
                     do{
                         if let data = response.data {
                             let object = try
                                 JSONDecoder().decode(Evento.self, from: data)
                             print(object)
+                            completion(object, true)
+                        } else {
+                            completion(nil, false)
                         }
                     }
                     catch{
-                        
+                        completion(nil, false)
                     }
+                } else {
+                    completion(nil, false)
                 }
             }
         }
