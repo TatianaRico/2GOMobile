@@ -113,8 +113,8 @@ enum InventoryType: String, Codable {
 
 // MARK: - Logo
 struct Logo: Codable {
-    let cropMask: CropMask?
-    let original: Original
+    let cropMask: CropMaskLocation?
+    let original: OriginalLocation
     let id: String
     let url: String
     let aspectRatio, edgeColor: String?
@@ -130,7 +130,7 @@ struct Logo: Codable {
 }
 
 // MARK: - CropMask
-struct CropMask: Codable {
+struct CropMaskLocation: Codable {
     let topLeft: TopLeft
     let width, height: Int
 
@@ -146,7 +146,7 @@ struct TopLeft: Codable {
 }
 
 // MARK: - Original
-struct Original: Codable {
+struct OriginalLocation: Codable {
     let url: String
     let width, height: Int?
 }

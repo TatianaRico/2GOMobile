@@ -28,6 +28,9 @@
 		B9E6292A23588F0D00AB1459 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6292923588F0D00AB1459 /* MapViewController.swift */; };
 		B9F21FC72364BE0700E607AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F21FC62364BE0700E607AD /* BaseViewController.swift */; };
 		B9F21FE92364FE8800E607AD /* animacao.json in Resources */ = {isa = PBXBuildFile; fileRef = B9F21FE82364FE8800E607AD /* animacao.json */; };
+		BE10D4D22378527000CEBFF6 /* localizacao.json in Resources */ = {isa = PBXBuildFile; fileRef = BE10D4D12378527000CEBFF6 /* localizacao.json */; };
+		BE10D4D42378552500CEBFF6 /* Localizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10D4D32378552500CEBFF6 /* Localizacao.swift */; };
+		BE10D4D62378585800CEBFF6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10D4D52378585800CEBFF6 /* LocationProvider.swift */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
 		BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +61,9 @@
 		B9E6292923588F0D00AB1459 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B9F21FC62364BE0700E607AD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B9F21FE82364FE8800E607AD /* animacao.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animacao.json; sourceTree = "<group>"; };
+		BE10D4D12378527000CEBFF6 /* localizacao.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = localizacao.json; sourceTree = "<group>"; };
+		BE10D4D32378552500CEBFF6 /* Localizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizacao.swift; sourceTree = "<group>"; };
+		BE10D4D52378585800CEBFF6 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +156,8 @@
 				B94FE2E92373A6BD00664A5B /* Categoria.swift */,
 				B94FE2EB2373A94900664A5B /* evento.json */,
 				B94FE2ED2373A95D00664A5B /* Evento.swift */,
+				BE10D4D12378527000CEBFF6 /* localizacao.json */,
+				BE10D4D32378552500CEBFF6 /* Localizacao.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B95ED53B23742C090033AA38 /* EventProvider.swift */,
+				BE10D4D52378585800CEBFF6 /* LocationProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -241,6 +250,7 @@
 			files = (
 				2827DE7A232E5CE700912312 /* LaunchScreen.storyboard in Resources */,
 				B9B3868A235A870900EB7DB6 /* Main.storyboard in Resources */,
+				BE10D4D22378527000CEBFF6 /* localizacao.json in Resources */,
 				2827DE77232E5CE600912312 /* Assets.xcassets in Resources */,
 				B90DC62323540340006B6C23 /* Monica.storyboard in Resources */,
 				B90DC621235400A1006B6C23 /* Tatiana.storyboard in Resources */,
@@ -308,6 +318,8 @@
 				B9E6292A23588F0D00AB1459 /* MapViewController.swift in Sources */,
 				2827DE70232E5CDC00912312 /* AppDelegate.swift in Sources */,
 				B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */,
+				BE10D4D42378552500CEBFF6 /* Localizacao.swift in Sources */,
+				BE10D4D62378585800CEBFF6 /* LocationProvider.swift in Sources */,
 				B9F21FC72364BE0700E607AD /* BaseViewController.swift in Sources */,
 				BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */,
 				BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */,
