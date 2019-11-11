@@ -18,8 +18,8 @@ struct Event: Codable {
     let url: String
     let start, end: End
     let organizationID: String
-    let created, changed: Date
-    let published: Date?
+    let created, changed: String
+    let published: String?
     let capacity, capacityIsCustom: JSONNull?
     let status: Status
     let currency: Currency

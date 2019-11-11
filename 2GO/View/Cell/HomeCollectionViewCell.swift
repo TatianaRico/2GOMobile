@@ -14,7 +14,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-      //  self.layer.cornerRadius = 
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.init(red: CGFloat(Int.random(in: 0...50))/255, green: CGFloat(Int.random(in: 0...50))/255, blue: CGFloat(Int.random(in: 240...255))/255, alpha: 1).cgColor
     }
 
 }

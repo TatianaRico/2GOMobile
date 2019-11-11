@@ -63,7 +63,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if #available(iOS 13.0, *) {
-            if let vc = self.storyboard?.instantiateViewController(identifier: "TelaDoEventoViewController") {
+            if let vc = self.storyboard?.instantiateViewController(identifier: "TelaDoEventoViewController") as? TelaDoEventoViewController {
+                vc.categoria = categoria?.categories[indexPath.row]
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } else {

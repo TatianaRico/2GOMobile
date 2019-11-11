@@ -96,10 +96,67 @@
             </objects>
             <point key="canvasLocation" x="-339.13043478260875" y="-90.401785714285708"/>
         </scene>
+        <!--Tela Do Evento View Controller-->
+        <scene sceneID="CJa-Oq-jai">
+            <objects>
+                <viewController storyboardIdentifier="TelaDoEventoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ey2-Mj-bAK" customClass="TelaDoEventoViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uku-0D-oQc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecV-7V-Kdf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="5ug-2i-aQW"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pHe-KA-hLs">
+                                <rect key="frame" x="0.0" y="131" width="414" height="731"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="84V-uH-Ekc">
+                                    <size key="itemSize" width="144" height="138"/>
+                                    <size key="estimatedItemSize" width="144" height="138"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gdo-IH-NyM">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="138"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AkJ-SG-qSY">
+                                            <rect key="frame" x="0.0" y="0.0" width="144" height="138"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ecV-7V-Kdf" firstAttribute="leading" secondItem="CXS-DS-ynK" secondAttribute="leading" id="3Gb-Gj-vpl"/>
+                            <constraint firstItem="ecV-7V-Kdf" firstAttribute="top" secondItem="CXS-DS-ynK" secondAttribute="top" id="8ny-7a-BwT"/>
+                            <constraint firstItem="ecV-7V-Kdf" firstAttribute="trailing" secondItem="CXS-DS-ynK" secondAttribute="trailing" id="GkR-r8-JGK"/>
+                            <constraint firstItem="CXS-DS-ynK" firstAttribute="bottom" secondItem="pHe-KA-hLs" secondAttribute="bottom" id="IhF-uj-4n2"/>
+                            <constraint firstItem="CXS-DS-ynK" firstAttribute="trailing" secondItem="pHe-KA-hLs" secondAttribute="trailing" id="KGn-4b-GXb"/>
+                            <constraint firstItem="pHe-KA-hLs" firstAttribute="leading" secondItem="CXS-DS-ynK" secondAttribute="leading" id="wF2-RF-PlO"/>
+                            <constraint firstItem="pHe-KA-hLs" firstAttribute="top" secondItem="ecV-7V-Kdf" secondAttribute="bottom" id="wuj-GU-RpO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CXS-DS-ynK"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pHe-KA-hLs" id="5Yv-ST-ruO"/>
+                        <outlet property="imagemLogo" destination="ecV-7V-Kdf" id="R7d-gq-tRW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFC-7w-QBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4502.898550724638" y="-370.3125"/>
+        </scene>
         <!--Title-->
         <scene sceneID="csQ-5X-dCJ">
             <objects>
-                <viewController storyboardIdentifier="TelaDoEventoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6u7-Fq-B4d" customClass="TelaDoEventoViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetalheDoEventoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6u7-Fq-B4d" customClass="DetalheDoEventoViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2I7-hu-ROn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2k-5M-E4E" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4622" y="-381"/>
+            <point key="canvasLocation" x="5235" y="-370"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="uPF-dx-Ctt">

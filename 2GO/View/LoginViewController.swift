@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseDatabase
 
 class LoginViewController: BaseViewController{
@@ -17,20 +18,20 @@ class LoginViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-    
+        
+        
     }
-
-    @IBAction func acessarButton(_ sender: UIButton) {
+    
+    @IBAction func acessarButton(_ sender: UIButton){
         if loginTextField.text == "" || senhaTextField.text == "" {
             mensagemDeErro(mensagem: "Login ou Senha Incorreto")
             
         }else {
-            
+            self.showLoading()
             self.verificarLogin()
         }
-        self.showLoading()
+        
     }
     
     func verificarLogin() {
@@ -39,31 +40,46 @@ class LoginViewController: BaseViewController{
             return
         }
         
-        let ref: DatabaseReference! = Database.database().reference()
-        var achou = false
-        
-        ref.child("usuarios").observe(.value, with: { (snapshot) in
-          let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-            
-            for userData in postDict.values {
-                if let userEmail = userData["email"] as? String, userEmail == email,
-                   let userSenha = userData["senha"] as? String, userSenha == senha{
-                    achou = true
-                }
-            }
-            
-            if achou {
-                let userDefaults = UserDefaults.standard
-                userDefaults.set(self.loginTextField.text, forKey: "email")
-                userDefaults.synchronize()
-                self.vaiPraHome()
-            }else {
-                self.mensagemDeErro(mensagem: "Login ou Senha Incorreto")
-            }
-        })
+//        Auth.auth().signIn(withEmail: email, password: senha) { [weak self] authResult, error in
+//            guard let strongSelf = self else { return }
+//            if error == nil {
+//                let userDefaults = UserDefaults.standard
+//                userDefaults.set(strongSelf.loginTextField.text, forKey: "email")
+//                userDefaults.synchronize()
+//                strongSelf.vaiPraHome()
+//            } else {
+//                strongSelf.mensagemDeErro(mensagem: "Email ou Senha Incorreto")
+//            }
+//        }
         
         
-    
+                let ref: DatabaseReference! = Database.database().reference()
+                var achou = false
+        
+                ref.child("usuarios").observe(.value, with: { (snapshot) in
+                  let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+        
+                    for userData in postDict.values {
+                        if let userEmail = userData["email"] as? String, userEmail == email,
+                           let userSenha = userData["senha"] as? String, userSenha == senha{
+                            achou = true
+                        }
+                    }
+        
+                   self.hiddenLoading()
+                    
+                    if achou {
+                        let userDefaults = UserDefaults.standard
+                        userDefaults.set(self.loginTextField.text, forKey: "email")
+                        userDefaults.synchronize()
+                        self.vaiPraHome()
+                    }else {
+                        self.mensagemDeErro(mensagem: "Login ou Senha Incorreto")
+                    }
+                })
+        
+        
+        
     }
     
     func mensagemDeErro(mensagem:String) {
@@ -85,7 +101,6 @@ class LoginViewController: BaseViewController{
         if let telaCadastro = self.storyboard?.instantiateViewController(withIdentifier: "CadastroViewController") as? CadastroViewController {
             telaCadastro.modalPresentationStyle = .fullScreen
             self.present(telaCadastro, animated: true) {
-                self.hiddenLoading()
             }
         }
     }
@@ -95,8 +110,6 @@ class LoginViewController: BaseViewController{
     
     @IBAction func semLoginButton(_ sender: UIButton) {
         self.vaiParaTelaDeCadastro()
-        self.showLoading()
-       
     }
     
 }
