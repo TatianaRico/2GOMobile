@@ -40,45 +40,45 @@ class LoginViewController: BaseViewController{
             return
         }
         
-//        Auth.auth().signIn(withEmail: email, password: senha) { [weak self] authResult, error in
-//            guard let strongSelf = self else { return }
-//            if error == nil {
-//                let userDefaults = UserDefaults.standard
-//                userDefaults.set(strongSelf.loginTextField.text, forKey: "email")
-//                userDefaults.synchronize()
-//                strongSelf.vaiPraHome()
-//            } else {
-//                strongSelf.mensagemDeErro(mensagem: "Email ou Senha Incorreto")
-//            }
-//        }
+        Auth.auth().signIn(withEmail: email, password: senha) { [weak self] authResult, error in
+            guard let strongSelf = self else { return }
+             strongSelf.hiddenLoading()
+            if error == nil {
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(strongSelf.loginTextField.text, forKey: "email")
+                userDefaults.synchronize()
+                strongSelf.vaiPraHome()
+              
+            } else {
+                strongSelf.mensagemDeErro(mensagem: "Email ou Senha Incorreto")
+            }
+        }
         
         
-                let ref: DatabaseReference! = Database.database().reference()
-                var achou = false
+//                let ref: DatabaseReference! = Database.database().reference()
+//                var achou = false
+//
+//                ref.child("usuarios").observe(.value, with: { (snapshot) in
+//                  let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+//
+//                    for userData in postDict.values {
+//                        if let userEmail = userData["email"] as? String, userEmail == email,
+//                           let userSenha = userData["senha"] as? String, userSenha == senha{
+//                            achou = true
+//                        }
+//                    }
         
-                ref.child("usuarios").observe(.value, with: { (snapshot) in
-                  let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-        
-                    for userData in postDict.values {
-                        if let userEmail = userData["email"] as? String, userEmail == email,
-                           let userSenha = userData["senha"] as? String, userSenha == senha{
-                            achou = true
-                        }
-                    }
-        
-                   self.hiddenLoading()
+                  
                     
-                    if achou {
-                        let userDefaults = UserDefaults.standard
-                        userDefaults.set(self.loginTextField.text, forKey: "email")
-                        userDefaults.synchronize()
-                        self.vaiPraHome()
-                    }else {
-                        self.mensagemDeErro(mensagem: "Login ou Senha Incorreto")
-                    }
-                })
-        
-        
+//                    if achou {
+//                        let userDefaults = UserDefaults.standard
+//                        userDefaults.set(self.loginTextField.text, forKey: "email")
+//                        userDefaults.synchronize()
+//                        self.vaiPraHome()
+//                    }else {
+//                        self.mensagemDeErro(mensagem: "Login ou Senha Incorreto")
+//                    }
+//                })
         
     }
     
