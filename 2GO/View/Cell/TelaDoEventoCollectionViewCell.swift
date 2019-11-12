@@ -20,8 +20,8 @@ class TelaDoEventoCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(event: Event?) {
-        imageEvento?.sd_setImage(with: URL(string: event?.logo?.original.url ?? ""), completed: nil)
-        titleEvento.text = event?.name.text ?? ""
+        imageEvento?.sd_setImage(with: URL(string: event?.logo?.original?.url ?? ""), completed: nil)
+        titleEvento.text = event?.name?.text ?? ""
     }
 
 }

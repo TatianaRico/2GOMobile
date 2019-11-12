@@ -22,11 +22,14 @@ class DetalheDoEventoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descricaoEventoTextView.text = evento?.eventDescription.text
-        self.nomeEventoLabel.text = evento?.name.text
-        self.fotoEvento.sd_setImage(with: URL(string: evento?.logo?.original.url ?? ""), completed: nil)
-        
-        
+        descricaoEventoTextView.text = evento?.eventDescription?.text
+        self.nomeEventoLabel.text = evento?.name?.text
+        self.fotoEvento.sd_setImage(with: URL(string: evento?.logo?.original?.url ?? ""), completed: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Detalhe"
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
 

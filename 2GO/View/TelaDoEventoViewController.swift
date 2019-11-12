@@ -19,11 +19,17 @@ class TelaDoEventoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.collectionView.register(UINib(nibName: "TelaDoEventoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellTelaDoEvento")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
         pegarEvento()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Evento"
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func pegarEvento() {

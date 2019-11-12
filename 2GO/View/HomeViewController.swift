@@ -34,11 +34,15 @@ class HomeViewController: UIViewController {
         self.category()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     func category(){
         event.requestCategory { (object) in
             self.categoria = object
             self.homeCollectionView.reloadData()
-         
+            
         }
         
     }
@@ -62,13 +66,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if #available(iOS 13.0, *) {
-            if let vc = self.storyboard?.instantiateViewController(identifier: "TelaDoEventoViewController") as? TelaDoEventoViewController {
-                vc.categoria = categoria?.categories[indexPath.row]
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        } else {
-            // Fallback on earlier versions
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TelaDoEventoViewController") as? TelaDoEventoViewController {
+            vc.categoria = categoria?.categories[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }

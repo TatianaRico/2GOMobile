@@ -114,18 +114,18 @@
                                 <rect key="frame" x="0.0" y="131" width="414" height="731"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="84V-uH-Ekc">
-                                    <size key="itemSize" width="144" height="138"/>
-                                    <size key="estimatedItemSize" width="144" height="138"/>
+                                    <size key="itemSize" width="117" height="107"/>
+                                    <size key="estimatedItemSize" width="117" height="107"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gdo-IH-NyM">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="138"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AkJ-SG-qSY">
-                                            <rect key="frame" x="0.0" y="0.0" width="144" height="138"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="117" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -422,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIe-nZ-liv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3777" y="-364"/>
+            <point key="canvasLocation" x="3746" y="-381"/>
         </scene>
         <!--Cadastro View Controller-->
         <scene sceneID="YJt-Ba-gDA">

@@ -13,35 +13,35 @@ struct Evento: Codable {
 
 // MARK: - Event
 struct Event: Codable {
-    let name, eventDescription: Description
-    let id: String
-    let url: String
-    let start, end: End
-    let organizationID: String
-    let created, changed: String
+    let name, eventDescription: Description?
+    let id: String?
+    let url: String?
+    let start, end: End?
+    let organizationID: String?
+    let created, changed: String?
     let published: String?
-    let capacity, capacityIsCustom: JSONNull?
-    let status: Status
-    let currency: Currency
-    let listed, shareable, onlineEvent: Bool
-    let txTimeLimit: Int
-    let hideStartDate, hideEndDate: Bool
-    let locale: String
-    let isLocked: Bool
-    let privacySetting: PrivacySetting
-    let isSeries, isSeriesParent: Bool
-    let inventoryType: InventoryType
-    let isReservedSeating, showPickASeat, showSeatmapThumbnail, showColorsInSeatmapThumbnail: Bool
+    let capacity, capacityIsCustom: JSONNull
+    let status: Status?
+    let currency: Currency?
+    let listed, shareable, onlineEvent: Bool?
+    let txTimeLimit: Int?
+    let hideStartDate, hideEndDate: Bool?
+    let locale: String?
+    let isLocked: Bool?
+    let privacySetting: PrivacySetting?
+    let isSeries, isSeriesParent: Bool?
+    let inventoryType: InventoryType?
+    let isReservedSeating, showPickASeat, showSeatmapThumbnail, showColorsInSeatmapThumbnail: Bool?
     let source: Source?
-    let isFree: Bool
-    let version: Version
-    let summary: String
+    let isFree: Bool?
+    let version: Version?
+    let summary: String?
     let logoID: String?
-    let organizerID, venueID, categoryID: String
+    let organizerID, venueID, categoryID: String?
     let subcategoryID: String?
-    let formatID: String
-    let resourceURI: String
-    let isExternallyTicketed: Bool
+    let formatID: String?
+    let resourceURI: String?
+    let isExternallyTicketed: Bool?
     let logo: Logo?
     let vanityURL: String?
     let seriesID: String?
@@ -97,13 +97,13 @@ enum Currency: String, Codable {
 
 // MARK: - End
 struct End: Codable {
-    let timezone, local: String
-    let utc: Date
+    let timezone, local: String?
+    let utc: String?
 }
 
 // MARK: - Description
 struct Description: Codable {
-    let text, html: String
+    let text, html: String?
 }
 
 enum InventoryType: String, Codable {
@@ -114,11 +114,11 @@ enum InventoryType: String, Codable {
 // MARK: - Logo
 struct Logo: Codable {
     let cropMask: CropMask?
-    let original: Original
-    let id: String
-    let url: String
+    let original: Original?
+    let id: String?
+    let url: String?
     let aspectRatio, edgeColor: String?
-    let edgeColorSet: Bool
+    let edgeColorSet: Bool?
 
     enum CodingKeys: String, CodingKey {
         case cropMask = "crop_mask"
@@ -131,8 +131,8 @@ struct Logo: Codable {
 
 // MARK: - CropMask
 struct CropMask: Codable {
-    let topLeft: TopLeft
-    let width, height: Int
+    let topLeft: TopLeft?
+    let width, height: Int?
 
     enum CodingKeys: String, CodingKey {
         case topLeft = "top_left"
@@ -142,12 +142,12 @@ struct CropMask: Codable {
 
 // MARK: - TopLeft
 struct TopLeft: Codable {
-    let x, y: Int
+    let x, y: Int?
 }
 
 // MARK: - Original
 struct Original: Codable {
-    let url: String
+    let url: String?
     let width, height: Int?
 }
 
@@ -174,8 +174,8 @@ enum Version: String, Codable {
 
 // MARK: - Pagination
 struct Pagination: Codable {
-    let objectCount, pageNumber, pageSize, pageCount: Int
-    let hasMoreItems: Bool
+    let objectCount, pageNumber, pageSize, pageCount: Int?
+    let hasMoreItems: Bool?
 
     enum CodingKeys: String, CodingKey {
         case objectCount = "object_count"
