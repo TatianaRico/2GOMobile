@@ -18,7 +18,8 @@ class LoginViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.loginTextField.text = "tatianarico1702@gmail.com"
+        self.senhaTextField.text = "123456"
         
         
     }

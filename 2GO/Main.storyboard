@@ -104,14 +104,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecV-7V-Kdf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="87"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="87" id="5ug-2i-aQW"/>
-                                </constraints>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pHe-KA-hLs">
-                                <rect key="frame" x="0.0" y="131" width="414" height="731"/>
+                                <rect key="frame" x="0.0" y="211" width="414" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="84V-uH-Ekc">
                                     <size key="itemSize" width="117" height="107"/>
@@ -131,25 +125,48 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbF-Ud-5xF">
+                                <rect key="frame" x="329" y="125" width="65" height="30"/>
+                                <state key="normal" title="Ver mapa"/>
+                                <connections>
+                                    <action selector="verMapaButton:" destination="UI7-Pu-Kwo" eventType="touchUpInside" id="HS0-YL-VXu"/>
+                                    <segue destination="ElU-zr-KLk" kind="show" id="wd0-uy-aLA"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="WNB-J7-xog">
+                                <rect key="frame" x="0.0" y="155" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NEQ-V3-PKp">
+                                <rect key="frame" x="0.0" y="100" width="137" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="17v-tH-Vsr"/>
+                                    <constraint firstAttribute="height" constant="55" id="eGh-X8-xv2"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ecV-7V-Kdf" firstAttribute="leading" secondItem="CXS-DS-ynK" secondAttribute="leading" id="3Gb-Gj-vpl"/>
-                            <constraint firstItem="ecV-7V-Kdf" firstAttribute="top" secondItem="CXS-DS-ynK" secondAttribute="top" id="8ny-7a-BwT"/>
-                            <constraint firstItem="ecV-7V-Kdf" firstAttribute="trailing" secondItem="CXS-DS-ynK" secondAttribute="trailing" id="GkR-r8-JGK"/>
+                            <constraint firstItem="WNB-J7-xog" firstAttribute="top" secondItem="NEQ-V3-PKp" secondAttribute="bottom" id="BfU-6s-97L"/>
                             <constraint firstItem="CXS-DS-ynK" firstAttribute="bottom" secondItem="pHe-KA-hLs" secondAttribute="bottom" id="IhF-uj-4n2"/>
                             <constraint firstItem="CXS-DS-ynK" firstAttribute="trailing" secondItem="pHe-KA-hLs" secondAttribute="trailing" id="KGn-4b-GXb"/>
+                            <constraint firstItem="CXS-DS-ynK" firstAttribute="trailing" secondItem="MbF-Ud-5xF" secondAttribute="trailing" constant="20" id="RWZ-7K-ASS"/>
+                            <constraint firstItem="WNB-J7-xog" firstAttribute="trailing" secondItem="CXS-DS-ynK" secondAttribute="trailing" id="W94-sJ-X7l"/>
+                            <constraint firstItem="WNB-J7-xog" firstAttribute="top" secondItem="MbF-Ud-5xF" secondAttribute="bottom" id="eGi-sj-vbT"/>
+                            <constraint firstItem="NEQ-V3-PKp" firstAttribute="leading" secondItem="uku-0D-oQc" secondAttribute="leading" id="gPu-iE-9z5"/>
+                            <constraint firstItem="pHe-KA-hLs" firstAttribute="top" secondItem="WNB-J7-xog" secondAttribute="bottom" id="hp1-eI-h0A"/>
+                            <constraint firstItem="NEQ-V3-PKp" firstAttribute="top" secondItem="uku-0D-oQc" secondAttribute="top" constant="100" id="ump-No-PiK"/>
+                            <constraint firstItem="WNB-J7-xog" firstAttribute="leading" secondItem="CXS-DS-ynK" secondAttribute="leading" id="v7L-2f-um1"/>
                             <constraint firstItem="pHe-KA-hLs" firstAttribute="leading" secondItem="CXS-DS-ynK" secondAttribute="leading" id="wF2-RF-PlO"/>
-                            <constraint firstItem="pHe-KA-hLs" firstAttribute="top" secondItem="ecV-7V-Kdf" secondAttribute="bottom" id="wuj-GU-RpO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CXS-DS-ynK"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="pHe-KA-hLs" id="5Yv-ST-ruO"/>
-                        <outlet property="imagemLogo" destination="ecV-7V-Kdf" id="R7d-gq-tRW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFC-7w-QBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="UI7-Pu-Kwo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4502.898550724638" y="-370.3125"/>
         </scene>
@@ -238,21 +255,11 @@
                                             <constraint firstAttribute="width" constant="137" id="J5T-Px-Of4"/>
                                         </constraints>
                                     </imageView>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" text="Search" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-g5-VVS">
-                                        <rect key="frame" x="138" y="5" width="268" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="268" id="QH5-qz-mD8"/>
-                                            <constraint firstAttribute="height" constant="44" id="p0E-BN-Vvr"/>
-                                        </constraints>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="jFe-m4-Q9O" firstAttribute="top" secondItem="0Ur-06-Hr1" secondAttribute="top" id="4Ll-51-snq"/>
-                                    <constraint firstItem="d8g-g5-VVS" firstAttribute="top" secondItem="0Ur-06-Hr1" secondAttribute="top" constant="5" id="J8W-iE-5tg"/>
                                     <constraint firstItem="jFe-m4-Q9O" firstAttribute="leading" secondItem="0Ur-06-Hr1" secondAttribute="leading" id="RXE-Ie-2Xs"/>
-                                    <constraint firstAttribute="trailing" secondItem="d8g-g5-VVS" secondAttribute="trailing" constant="8" id="aBo-jD-4hv"/>
                                     <constraint firstAttribute="height" constant="44" id="x2J-AW-UBX"/>
                                 </constraints>
                             </view>
@@ -303,30 +310,19 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8X-aq-flY">
-                                <rect key="frame" x="337" y="278" width="65" height="23"/>
-                                <state key="normal" title="Ver mapa"/>
-                                <connections>
-                                    <segue destination="ElU-zr-KLk" kind="show" id="b6p-FD-JON"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="0Ur-06-Hr1" secondAttribute="trailing" id="0e9-7m-VOK"/>
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="5KR-iF-RIK" secondAttribute="trailing" id="3jZ-rV-D4L"/>
                             <constraint firstItem="F4l-jK-Nr4" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" constant="20" id="4xU-25-Fjb"/>
-                            <constraint firstItem="H8X-aq-flY" firstAttribute="top" secondItem="0Ur-06-Hr1" secondAttribute="bottom" constant="190" id="7f5-9h-CfH"/>
                             <constraint firstItem="F4l-jK-Nr4" firstAttribute="top" secondItem="0Ur-06-Hr1" secondAttribute="bottom" constant="20" id="8mJ-k7-6a2"/>
                             <constraint firstItem="5KR-iF-RIK" firstAttribute="top" secondItem="F4l-jK-Nr4" secondAttribute="bottom" constant="29" id="Pab-Gy-iro"/>
-                            <constraint firstItem="5KR-iF-RIK" firstAttribute="top" secondItem="H8X-aq-flY" secondAttribute="bottom" constant="8" id="TOO-2d-CkR"/>
                             <constraint firstItem="0Ur-06-Hr1" firstAttribute="top" secondItem="iUC-sW-hdc" secondAttribute="top" id="X6S-YP-4Tb"/>
-                            <constraint firstItem="H8X-aq-flY" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" constant="337" id="arz-gC-7Z5"/>
                             <constraint firstItem="0Ur-06-Hr1" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" id="jBw-zg-mti"/>
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="F4l-jK-Nr4" secondAttribute="trailing" constant="20" id="kQQ-rK-jxC"/>
                             <constraint firstItem="5KR-iF-RIK" firstAttribute="leading" secondItem="iUC-sW-hdc" secondAttribute="leading" id="pyW-MO-R2f"/>
                             <constraint firstItem="iUC-sW-hdc" firstAttribute="bottom" secondItem="5KR-iF-RIK" secondAttribute="bottom" id="rCp-WP-evh"/>
-                            <constraint firstItem="iUC-sW-hdc" firstAttribute="trailing" secondItem="H8X-aq-flY" secondAttribute="trailing" constant="12" id="zKl-6x-ltu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iUC-sW-hdc"/>
                     </view>
@@ -334,7 +330,6 @@
                     <connections>
                         <outlet property="eventoImagem" destination="F4l-jK-Nr4" id="8mT-LV-EgV"/>
                         <outlet property="homeCollectionView" destination="5KR-iF-RIK" id="mhV-ls-YIe"/>
-                        <outlet property="searchUiSearch" destination="d8g-g5-VVS" id="tEq-kp-9WJ"/>
                         <outlet property="searchView" destination="0Ur-06-Hr1" id="ctX-K9-YSW"/>
                     </connections>
                 </viewController>
@@ -402,11 +397,11 @@
             <objects>
                 <viewController id="ElU-zr-KLk" customClass="MapViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vCT-2j-XAX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mwW-KR-XVa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -419,6 +414,9 @@
                         <viewLayoutGuide key="safeArea" id="68l-Vi-XZJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="aCB-HQ-CHj"/>
+                    <connections>
+                        <outlet property="mapView" destination="mwW-KR-XVa" id="sGv-YL-S5N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIe-nZ-liv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

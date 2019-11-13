@@ -10,12 +10,13 @@ import UIKit
 
 class TelaDoEventoViewController: UIViewController {
 
-    @IBOutlet weak var imagemLogo: UIImageView!
+
     @IBOutlet weak var collectionView: UICollectionView!
    
     let event  = EventProvider()
     var categoria: Category?
     var eventoLista: Evento?
+    let eventLocation = LocationProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +34,21 @@ class TelaDoEventoViewController: UIViewController {
     }
     
     func pegarEvento() {
-        event.alamofireEvent(id: categoria?.id ?? "") { (eventoLista, successo) in
-             if successo {
-                 self.eventoLista = eventoLista
-                 self.collectionView.reloadData()
-             } else {
-                 self.mostrarTelaDeError()
-             }
-         }
+        eventLocation.alamofireLocation { (location, sucesso) in
+            if sucesso {
+                print(location)
+            } else {
+                print("Deu errado")
+            }
+        }
+//        event.alamofireEvent(id: categoria?.id ?? "") { (eventoLista, successo) in
+//             if successo {
+//                 self.eventoLista = eventoLista
+//                 self.collectionView.reloadData()
+//             } else {
+//                 self.mostrarTelaDeError()
+//             }
+//         }
     }
     
     func mostrarTelaDeError() {
@@ -50,6 +58,21 @@ class TelaDoEventoViewController: UIViewController {
         }
         alerta.addAction(botaoAlerta)
         self.present(alerta, animated: true, completion: nil)
+    }
+    
+    @IBAction func verMapaButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "MapViewController", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let vc: MapViewController = segue.destination as? MapViewController else {
+            return
+            
+        }
+        
+        // vc.
+
     }
 }
 

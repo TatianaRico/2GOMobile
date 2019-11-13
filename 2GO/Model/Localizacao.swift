@@ -10,41 +10,41 @@ import Foundation
 
 // MARK: - Localizacao
 struct Localizacao: Codable {
-    let pagination: PaginationLocation
-    let events: [EventLocation]
-    let location: Location
+    let pagination: PaginationLocation?
+    let events: [EventLocation]?
+    let location: Location?
 }
 
 // MARK: - Event
 struct EventLocation: Codable {
-    let name, eventDescription: DescriptionLocation
-    let id: String
-    let url: String
-    let start, end: EndLocation
-    let organizationID: String
-    let created, changed, published: Date
+    let name, eventDescription: DescriptionLocation?
+    let id: String?
+    let url: String?
+    let start, end: EndLocation?
+    let organizationID: String?
+    let created, changed, published: String?
     let capacity, capacityIsCustom: JSONNull?
-    let status, currency: String
-    let listed, shareable, onlineEvent: Bool
-    let txTimeLimit: Int
-    let hideStartDate, hideEndDate: Bool
-    let locale: String
-    let isLocked: Bool
-    let privacySetting: String
-    let isSeries, isSeriesParent: Bool
-    let inventoryType: String
-    let isReservedSeating, showPickASeat, showSeatmapThumbnail, showColorsInSeatmapThumbnail: Bool
-    let source: String
-    let isFree: Bool
-    let version, summary, logoID, organizerID: String
-    let venueID, categoryID: String
+    let status, currency: String?
+    let listed, shareable, onlineEvent: Bool?
+    let txTimeLimit: Int?
+    let hideStartDate, hideEndDate: Bool?
+    let locale: String?
+    let isLocked: Bool?
+    let privacySetting: String?
+    let isSeries, isSeriesParent: Bool?
+    let inventoryType: String?
+    let isReservedSeating, showPickASeat, showSeatmapThumbnail, showColorsInSeatmapThumbnail: Bool?
+    let source: String?
+    let isFree: Bool?
+    let version, summary, logoID, organizerID: String?
+    let venueID, categoryID: String?
     let subcategoryID: String?
-    let formatID: String
-    let resourceURI: String
-    let isExternallyTicketed: Bool
-    let logo: LogoLocation
-    let organizer: Organizer
-    let venue: Venue
+    let formatID: String?
+    let resourceURI: String?
+    let isExternallyTicketed: Bool?
+    let logo: LogoLocation?
+    let organizer: Organizer?
+    let venue: Venue?
 
     enum CodingKeys: String, CodingKey {
         case name
@@ -85,9 +85,9 @@ struct EventLocation: Codable {
 
 // MARK: - End
 struct EndLocation: Codable {
-    let timezone: Timezone
-    let local: String
-    let utc: Date
+    let timezone: Timezone?
+    let local: String?
+    let utc: String?
 }
 
 enum Timezone: String, Codable {
@@ -101,13 +101,13 @@ struct DescriptionLocation: Codable {
 
 // MARK: - Logo
 struct LogoLocation: Codable {
-    let cropMask: CropMask
-    let original: Original
-    let id: String
-    let url: String
-    let aspectRatio: String
+    let cropMask: CropMask?
+    let original: Original?
+    let id: String?
+    let url: String?
+    let aspectRatio: String?
     let edgeColor: String?
-    let edgeColorSet: Bool
+    let edgeColorSet: Bool?
 
     enum CodingKeys: String, CodingKey {
         case cropMask = "crop_mask"
@@ -120,22 +120,22 @@ struct LogoLocation: Codable {
 
 // MARK: - TopLeft
 struct TopLeftLocation: Codable {
-    let x, y: Int
+    let x, y: Int?
 }
 
 
 // MARK: - Organizer
 struct Organizer: Codable {
-    let organizerDescription, longDescription: Description
-    let resourceURI: String
-    let type, id: String
+    let organizerDescription, longDescription: Description?
+    let resourceURI: String?
+    let type, id: String?
     let name: String?
-    let url: String
-    let numPastEvents, numFutureEvents: Int
+    let url: String?
+    let numPastEvents, numFutureEvents: Int?
     let website: String?
     let twitter, facebook: String?
-    let organizationID: String
-    let disableMarketingOptIn: Bool
+    let organizationID: String?
+    let disableMarketingOptIn: Bool?
     let logoID: String?
 
     enum CodingKeys: String, CodingKey {
@@ -155,11 +155,11 @@ struct Organizer: Codable {
 
 // MARK: - Venue
 struct Venue: Codable {
-    let address: Address
-    let resourceURI: String
-    let id: String
+    let address: Address?
+    let resourceURI: String?
+    let id: String?
     let ageRestriction, capacity: JSONNull?
-    let name, latitude, longitude: String
+    let name, latitude, longitude: String?
 
     enum CodingKeys: String, CodingKey {
         case address
@@ -172,11 +172,11 @@ struct Venue: Codable {
 
 // MARK: - Address
 struct Address: Codable {
-    let address1: String
+    let address1: String?
     let address2: String?
-    let city, region, postalCode, country: String
-    let latitude, longitude, localizedAddressDisplay, localizedAreaDisplay: String
-    let localizedMultiLineAddressDisplay: [String]
+    let city, region, postalCode, country: String?
+    let latitude, longitude, localizedAddressDisplay, localizedAreaDisplay: String?
+    let localizedMultiLineAddressDisplay: [String]?
 
     enum CodingKeys: String, CodingKey {
         case address1 = "address_1"
@@ -192,9 +192,9 @@ struct Address: Codable {
 
 // MARK: - Location
 struct Location: Codable {
-    let latitude: String
-    let augmentedLocation: AugmentedLocation
-    let within, longitude, address: String
+    let latitude: String?
+    let augmentedLocation: AugmentedLocation?
+    let within, longitude, address: String?
 
     enum CodingKeys: String, CodingKey {
         case latitude
@@ -205,13 +205,13 @@ struct Location: Codable {
 
 // MARK: - AugmentedLocation
 struct AugmentedLocation: Codable {
-    let city, region, country: String
+    let city, region, country: String?
 }
 
 // MARK: - Pagination
 struct PaginationLocation: Codable {
-    let objectCount, pageNumber, pageSize, pageCount: Int
-    let hasMoreItems: Bool
+    let objectCount, pageNumber, pageSize, pageCount: Int?
+    let hasMoreItems: Bool?
 
     enum CodingKeys: String, CodingKey {
         case objectCount = "object_count"

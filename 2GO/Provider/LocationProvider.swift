@@ -12,10 +12,10 @@ import Alamofire
 
 class LocationProvider{
     
-    func alamofireLocation(){
+    func alamofireLocation(completion: @escaping (Localizacao,Bool) -> Void ){
         
         
-        let urlString: String = "https://www.eventbriteapi.com/v3/events/search/?location.address=Indore&expand=organizer,venue&token=DR4CWPA77JL3SSHXZBLD"
+        let urlString: String = "https://www.eventbriteapi.com/v3/events/search/?location.address=Indore&expand=venue&token=DR4CWPA77JL3SSHXZBLD"
         
         let header = ["Authorization":"Bearer DR4CWPA77JL3SSHXZBLD"]
         
@@ -29,9 +29,11 @@ class LocationProvider{
                             print(object)
                         }
                     }
-                    catch{
-                        
+                    catch let error {
+                        print(error.localizedDescription)
                     }
+                }else {
+                    print(response.result.debugDescription)
                 }
             }
         }
