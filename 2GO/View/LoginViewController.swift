@@ -23,6 +23,11 @@ class LoginViewController: BaseViewController{
         
         
     }
+    @IBAction func esqueciSenhaButton(_ sender: UIButton) {
+        
+        
+        
+    }
     
     @IBAction func acessarButton(_ sender: UIButton){
         if loginTextField.text == "" || senhaTextField.text == "" {

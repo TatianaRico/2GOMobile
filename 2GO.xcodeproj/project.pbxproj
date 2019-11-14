@@ -36,6 +36,7 @@
 		BE10D4D62378585800CEBFF6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10D4D52378585800CEBFF6 /* LocationProvider.swift */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
 		BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */; };
+		BEC7C5A6237E1088002502FB /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7C5A5237E1088002502FB /* RecoverPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		BE10D4D52378585800CEBFF6 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		BEC7C5A5237E1088002502FB /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B92813D72377A7D1004AA5D5 /* DetalheDoEventoViewController.swift */,
 				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
 				BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */,
+				BEC7C5A5237E1088002502FB /* RecoverPasswordViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				B94FE2EE2373A95D00664A5B /* Evento.swift in Sources */,
 				B95ED53C23742C090033AA38 /* EventProvider.swift in Sources */,
 				B9E6292A23588F0D00AB1459 /* MapViewController.swift in Sources */,
+				BEC7C5A6237E1088002502FB /* RecoverPasswordViewController.swift in Sources */,
 				2827DE70232E5CDC00912312 /* AppDelegate.swift in Sources */,
 				B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */,
 				B92813D82377A7D1004AA5D5 /* DetalheDoEventoViewController.swift in Sources */,
