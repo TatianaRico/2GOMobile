@@ -7,183 +7,95 @@ import Foundation
 
 // MARK: - Evento
 struct Evento: Codable {
-    let pagination: Pagination
-    let events: [Event]
+    let businesses: [Business]
+    let total: Int
+    let region: Region
 }
 
-// MARK: - Event
-struct Event: Codable {
-    let name, eventDescription: Description?
-    let id: String?
-    let url: String?
-    let start, end: End?
-    let organizationID: String?
-    let created, changed: String?
-    let published: String?
-    let capacity, capacityIsCustom: JSONNull
-    let status: Status?
-    let currency: Currency?
-    let listed, shareable, onlineEvent: Bool?
-    let txTimeLimit: Int?
-    let hideStartDate, hideEndDate: Bool?
-    let locale: String?
-    let isLocked: Bool?
-    let privacySetting: PrivacySetting?
-    let isSeries, isSeriesParent: Bool?
-    let inventoryType: InventoryType?
-    let isReservedSeating, showPickASeat, showSeatmapThumbnail, showColorsInSeatmapThumbnail: Bool?
-    let source: Source?
-    let isFree: Bool?
-    let version: Version?
-    let summary: String?
-    let logoID: String?
-    let organizerID, venueID, categoryID: String?
-    let subcategoryID: String?
-    let formatID: String?
-    let resourceURI: String?
-    let isExternallyTicketed: Bool?
-    let logo: Logo?
-    let vanityURL: String?
-    let seriesID: String?
+// MARK: - Business
+struct Business: Codable {
+    let id, alias, name: String
+    let imageURL: String
+    let isClosed: Bool
+    let url: String
+    let reviewCount: Int
+    let categories: [Category]
+    let rating: Double
+    let coordinates: Center
+    let transactions: [JSONAny]
+    let price: String?
+    let location: Location
+    let phone, displayPhone: String
+    let distance: Double
 
     enum CodingKeys: String, CodingKey {
-        case name
-        case eventDescription = "description"
-        case id, url, start, end
-        case organizationID = "organization_id"
-        case created, changed, published, capacity
-        case capacityIsCustom = "capacity_is_custom"
-        case status, currency, listed, shareable
-        case onlineEvent = "online_event"
-        case txTimeLimit = "tx_time_limit"
-        case hideStartDate = "hide_start_date"
-        case hideEndDate = "hide_end_date"
-        case locale
-        case isLocked = "is_locked"
-        case privacySetting = "privacy_setting"
-        case isSeries = "is_series"
-        case isSeriesParent = "is_series_parent"
-        case inventoryType = "inventory_type"
-        case isReservedSeating = "is_reserved_seating"
-        case showPickASeat = "show_pick_a_seat"
-        case showSeatmapThumbnail = "show_seatmap_thumbnail"
-        case showColorsInSeatmapThumbnail = "show_colors_in_seatmap_thumbnail"
-        case source
-        case isFree = "is_free"
-        case version, summary
-        case logoID = "logo_id"
-        case organizerID = "organizer_id"
-        case venueID = "venue_id"
-        case categoryID = "category_id"
-        case subcategoryID = "subcategory_id"
-        case formatID = "format_id"
-        case resourceURI = "resource_uri"
-        case isExternallyTicketed = "is_externally_ticketed"
-        case logo
-        case vanityURL = "vanity_url"
-        case seriesID = "series_id"
+        case id, alias, name
+        case imageURL = "image_url"
+        case isClosed = "is_closed"
+        case url
+        case reviewCount = "review_count"
+        case categories, rating, coordinates, transactions, price, location, phone
+        case displayPhone = "display_phone"
+        case distance
     }
 }
 
-enum Currency: String, Codable {
-    case aud = "AUD"
-    case brl = "BRL"
-    case cad = "CAD"
-    case eur = "EUR"
-    case gbp = "GBP"
-    case hkd = "HKD"
-    case usd = "USD"
+// MARK: - Category
+struct Category: Codable {
+    let alias, title: String
 }
 
-// MARK: - End
-struct End: Codable {
-    let timezone, local: String?
-    let utc: String?
+// MARK: - Center
+struct Center: Codable {
+    let latitude, longitude: Double
 }
 
-// MARK: - Description
-struct Description: Codable {
-    let text, html: String?
-}
-
-enum InventoryType: String, Codable {
-    case limited = "limited"
-    case reserved = "reserved"
-}
-
-// MARK: - Logo
-struct Logo: Codable {
-    let cropMask: CropMask?
-    let original: Original?
-    let id: String?
-    let url: String?
-    let aspectRatio, edgeColor: String?
-    let edgeColorSet: Bool?
+// MARK: - Location
+struct Location: Codable {
+    let address1: String
+    let address2: Address2?
+    let address3: Address3?
+    let city: City
+    let zipCode: String
+    let country: Country
+    let state: State
+    let displayAddress: [String]
 
     enum CodingKeys: String, CodingKey {
-        case cropMask = "crop_mask"
-        case original, id, url
-        case aspectRatio = "aspect_ratio"
-        case edgeColor = "edge_color"
-        case edgeColorSet = "edge_color_set"
+        case address1, address2, address3, city
+        case zipCode = "zip_code"
+        case country, state
+        case displayAddress = "display_address"
     }
 }
 
-// MARK: - CropMask
-struct CropMask: Codable {
-    let topLeft: TopLeft?
-    let width, height: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case topLeft = "top_left"
-        case width, height
-    }
+enum Address2: String, Codable {
+    case empty = ""
+    case loja2729 = "Loja 27-29"
+    case rDaCantareira306 = "R. da Cantareira, 306"
 }
 
-// MARK: - TopLeft
-struct TopLeft: Codable {
-    let x, y: Int?
+enum Address3: String, Codable {
+    case box5 = "Box 5"
+    case edifícioCopan = "Edifício Copan"
+    case empty = ""
 }
 
-// MARK: - Original
-struct Original: Codable {
-    let url: String?
-    let width, height: Int?
+enum City: String, Codable {
+    case sãoPaulo = "São Paulo"
 }
 
-enum PrivacySetting: String, Codable {
-    case unlocked = "unlocked"
+enum Country: String, Codable {
+    case br = "BR"
 }
 
-enum Source: String, Codable {
-    case apiv3Android = "apiv3_android"
-    case coyote = "coyote"
-    case create20 = "create_2.0"
+enum State: String, Codable {
+    case sp = "SP"
 }
 
-enum Status: String, Codable {
-    case live = "live"
-    case started = "started"
-}
-
-enum Version: String, Codable {
-    case the300 = "3.0.0"
-    case the370 = "3.7.0"
-    case the400 = "4.0.0"
-}
-
-// MARK: - Pagination
-struct Pagination: Codable {
-    let objectCount, pageNumber, pageSize, pageCount: Int?
-    let hasMoreItems: Bool?
-
-    enum CodingKeys: String, CodingKey {
-        case objectCount = "object_count"
-        case pageNumber = "page_number"
-        case pageSize = "page_size"
-        case pageCount = "page_count"
-        case hasMoreItems = "has_more_items"
-    }
+// MARK: - Region
+struct Region: Codable {
+    let center: Center
 }
 
 // MARK: - Encode/decode helpers
@@ -212,3 +124,219 @@ class JSONNull: Codable, Hashable {
         try container.encodeNil()
     }
 }
+
+class JSONCodingKey: CodingKey {
+    let key: String
+
+    required init?(intValue: Int) {
+        return nil
+    }
+
+    required init?(stringValue: String) {
+        key = stringValue
+    }
+
+    var intValue: Int? {
+        return nil
+    }
+
+    var stringValue: String {
+        return key
+    }
+}
+
+class JSONAny: Codable {
+
+    let value: Any
+
+    static func decodingError(forCodingPath codingPath: [CodingKey]) -> DecodingError {
+        let context = DecodingError.Context(codingPath: codingPath, debugDescription: "Cannot decode JSONAny")
+        return DecodingError.typeMismatch(JSONAny.self, context)
+    }
+
+    static func encodingError(forValue value: Any, codingPath: [CodingKey]) -> EncodingError {
+        let context = EncodingError.Context(codingPath: codingPath, debugDescription: "Cannot encode JSONAny")
+        return EncodingError.invalidValue(value, context)
+    }
+
+    static func decode(from container: SingleValueDecodingContainer) throws -> Any {
+        if let value = try? container.decode(Bool.self) {
+            return value
+        }
+        if let value = try? container.decode(Int64.self) {
+            return value
+        }
+        if let value = try? container.decode(Double.self) {
+            return value
+        }
+        if let value = try? container.decode(String.self) {
+            return value
+        }
+        if container.decodeNil() {
+            return JSONNull()
+        }
+        throw decodingError(forCodingPath: container.codingPath)
+    }
+
+    static func decode(from container: inout UnkeyedDecodingContainer) throws -> Any {
+        if let value = try? container.decode(Bool.self) {
+            return value
+        }
+        if let value = try? container.decode(Int64.self) {
+            return value
+        }
+        if let value = try? container.decode(Double.self) {
+            return value
+        }
+        if let value = try? container.decode(String.self) {
+            return value
+        }
+        if let value = try? container.decodeNil() {
+            if value {
+                return JSONNull()
+            }
+        }
+        if var container = try? container.nestedUnkeyedContainer() {
+            return try decodeArray(from: &container)
+        }
+        if var container = try? container.nestedContainer(keyedBy: JSONCodingKey.self) {
+            return try decodeDictionary(from: &container)
+        }
+        throw decodingError(forCodingPath: container.codingPath)
+    }
+
+    static func decode(from container: inout KeyedDecodingContainer<JSONCodingKey>, forKey key: JSONCodingKey) throws -> Any {
+        if let value = try? container.decode(Bool.self, forKey: key) {
+            return value
+        }
+        if let value = try? container.decode(Int64.self, forKey: key) {
+            return value
+        }
+        if let value = try? container.decode(Double.self, forKey: key) {
+            return value
+        }
+        if let value = try? container.decode(String.self, forKey: key) {
+            return value
+        }
+        if let value = try? container.decodeNil(forKey: key) {
+            if value {
+                return JSONNull()
+            }
+        }
+        if var container = try? container.nestedUnkeyedContainer(forKey: key) {
+            return try decodeArray(from: &container)
+        }
+        if var container = try? container.nestedContainer(keyedBy: JSONCodingKey.self, forKey: key) {
+            return try decodeDictionary(from: &container)
+        }
+        throw decodingError(forCodingPath: container.codingPath)
+    }
+
+    static func decodeArray(from container: inout UnkeyedDecodingContainer) throws -> [Any] {
+        var arr: [Any] = []
+        while !container.isAtEnd {
+            let value = try decode(from: &container)
+            arr.append(value)
+        }
+        return arr
+    }
+
+    static func decodeDictionary(from container: inout KeyedDecodingContainer<JSONCodingKey>) throws -> [String: Any] {
+        var dict = [String: Any]()
+        for key in container.allKeys {
+            let value = try decode(from: &container, forKey: key)
+            dict[key.stringValue] = value
+        }
+        return dict
+    }
+
+    static func encode(to container: inout UnkeyedEncodingContainer, array: [Any]) throws {
+        for value in array {
+            if let value = value as? Bool {
+                try container.encode(value)
+            } else if let value = value as? Int64 {
+                try container.encode(value)
+            } else if let value = value as? Double {
+                try container.encode(value)
+            } else if let value = value as? String {
+                try container.encode(value)
+            } else if value is JSONNull {
+                try container.encodeNil()
+            } else if let value = value as? [Any] {
+                var container = container.nestedUnkeyedContainer()
+                try encode(to: &container, array: value)
+            } else if let value = value as? [String: Any] {
+                var container = container.nestedContainer(keyedBy: JSONCodingKey.self)
+                try encode(to: &container, dictionary: value)
+            } else {
+                throw encodingError(forValue: value, codingPath: container.codingPath)
+            }
+        }
+    }
+
+    static func encode(to container: inout KeyedEncodingContainer<JSONCodingKey>, dictionary: [String: Any]) throws {
+        for (key, value) in dictionary {
+            let key = JSONCodingKey(stringValue: key)!
+            if let value = value as? Bool {
+                try container.encode(value, forKey: key)
+            } else if let value = value as? Int64 {
+                try container.encode(value, forKey: key)
+            } else if let value = value as? Double {
+                try container.encode(value, forKey: key)
+            } else if let value = value as? String {
+                try container.encode(value, forKey: key)
+            } else if value is JSONNull {
+                try container.encodeNil(forKey: key)
+            } else if let value = value as? [Any] {
+                var container = container.nestedUnkeyedContainer(forKey: key)
+                try encode(to: &container, array: value)
+            } else if let value = value as? [String: Any] {
+                var container = container.nestedContainer(keyedBy: JSONCodingKey.self, forKey: key)
+                try encode(to: &container, dictionary: value)
+            } else {
+                throw encodingError(forValue: value, codingPath: container.codingPath)
+            }
+        }
+    }
+
+    static func encode(to container: inout SingleValueEncodingContainer, value: Any) throws {
+        if let value = value as? Bool {
+            try container.encode(value)
+        } else if let value = value as? Int64 {
+            try container.encode(value)
+        } else if let value = value as? Double {
+            try container.encode(value)
+        } else if let value = value as? String {
+            try container.encode(value)
+        } else if value is JSONNull {
+            try container.encodeNil()
+        } else {
+            throw encodingError(forValue: value, codingPath: container.codingPath)
+        }
+    }
+
+    public required init(from decoder: Decoder) throws {
+        if var arrayContainer = try? decoder.unkeyedContainer() {
+            self.value = try JSONAny.decodeArray(from: &arrayContainer)
+        } else if var container = try? decoder.container(keyedBy: JSONCodingKey.self) {
+            self.value = try JSONAny.decodeDictionary(from: &container)
+        } else {
+            let container = try decoder.singleValueContainer()
+            self.value = try JSONAny.decode(from: container)
+        }
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        if let arr = self.value as? [Any] {
+            var container = encoder.unkeyedContainer()
+            try JSONAny.encode(to: &container, array: arr)
+        } else if let dict = self.value as? [String: Any] {
+            var container = encoder.container(keyedBy: JSONCodingKey.self)
+            try JSONAny.encode(to: &container, dictionary: dict)
+        } else {
+            var container = encoder.singleValueContainer()
+            try JSONAny.encode(to: &container, value: self.value)
+        }
+    }
+}
+

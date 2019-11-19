@@ -12,7 +12,7 @@ import Alamofire
 
 class LocationProvider{
     
-    func alamofireLocation(completion: @escaping (Localizacao,Bool) -> Void ){
+    func alamofireLocation(completion: @escaping (Evento,Bool) -> Void ){
         
         
         let urlString: String = "https://www.eventbriteapi.com/v3/events/search/?location.address=Indore&expand=venue&token=DR4CWPA77JL3SSHXZBLD"
@@ -25,7 +25,7 @@ class LocationProvider{
                     do{
                         if let data = response.data {
                             let object = try
-                                JSONDecoder().decode(Localizacao.self, from: data)
+                                JSONDecoder().decode(Evento.self, from: data)
                             print(object)
                         }
                     }

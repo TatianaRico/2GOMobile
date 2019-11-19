@@ -13,7 +13,7 @@ class CategoryController{
     let event = EventProvider()
     
 
-    private var categoria: Categoria?
+//    private var categoria: Categoria?
     
     
 //

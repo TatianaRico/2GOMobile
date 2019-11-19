@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     
     let event  = EventProvider()
     
-    private var categoria: Categoria?
+    private var categoria: Evento?
     
     //event.alamofireEvent()
     
@@ -31,20 +31,20 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
-        self.category()
+        self.getEvent()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    func category(){
-        event.requestCategory { (object) in
-            self.categoria = object
+    func getEvent(){
+        event.alamofireEvent { (event, success) in
+            self.categoria = event
             self.homeCollectionView.reloadData()
-            
         }
-        
     }
     
 }
@@ -52,22 +52,22 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return categoria?.categories.count ?? 0
+        return categoria?.businesses.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellXib", for: indexPath) as? HomeCollectionViewCell
         
-        cell?.titleCategoryLabel.text = categoria?.categories[indexPath.row].name
+        cell?.titleCategoryLabel.text = categoria?.businesses[indexPath.row].name
         
         return cell ?? HomeCollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TelaDoEventoViewController") as? TelaDoEventoViewController {
-            vc.categoria = categoria?.categories[indexPath.row]
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetalheSpViewController") as? DetalheSpViewController {
+            vc.localSp = categoria?.businesses[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
