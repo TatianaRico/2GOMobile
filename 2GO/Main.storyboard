@@ -227,24 +227,23 @@
                                 <rect key="frame" x="0.0" y="309" width="414" height="504"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yGH-W8-29f">
-                                    <size key="itemSize" width="122" height="111"/>
+                                    <size key="itemSize" width="331" height="58"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellXib" id="iDN-sH-Akr" customClass="HomeCollectionViewCell" customModule="_GO" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="122" height="111"/>
+                                        <rect key="frame" x="41.5" y="0.0" width="331" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="skd-O0-Zwn">
-                                            <rect key="frame" x="0.0" y="0.0" width="122" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="331" height="58"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aWj-Cb-KDn">
-                                                    <rect key="frame" x="0.0" y="22" width="122" height="67"/>
+                                                    <rect key="frame" x="8" y="0.0" width="315" height="58"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="122" id="6Pp-1Z-v1B"/>
-                                                        <constraint firstAttribute="height" constant="67" id="ZpQ-oe-GNY"/>
+                                                        <constraint firstAttribute="width" constant="315" id="zSm-qL-Xvl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -252,12 +251,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="aWj-Cb-KDn" secondAttribute="trailing" id="W4b-Ru-jbb"/>
-                                                <constraint firstItem="aWj-Cb-KDn" firstAttribute="top" secondItem="skd-O0-Zwn" secondAttribute="top" constant="22" id="nct-JL-2yn"/>
-                                                <constraint firstItem="aWj-Cb-KDn" firstAttribute="leading" secondItem="skd-O0-Zwn" secondAttribute="leading" id="xuI-rC-P9q"/>
+                                                <constraint firstItem="aWj-Cb-KDn" firstAttribute="leading" secondItem="skd-O0-Zwn" secondAttribute="leading" constant="8" id="HpG-jN-fnI"/>
+                                                <constraint firstAttribute="bottom" secondItem="aWj-Cb-KDn" secondAttribute="bottom" id="g3L-St-D5m"/>
+                                                <constraint firstItem="aWj-Cb-KDn" firstAttribute="top" secondItem="skd-O0-Zwn" secondAttribute="top" id="gkc-TR-s2V"/>
+                                                <constraint firstAttribute="trailing" secondItem="aWj-Cb-KDn" secondAttribute="trailing" constant="8" id="yzO-bS-6Y2"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="122" height="111"/>
+                                        <size key="customSize" width="331" height="58"/>
                                         <connections>
                                             <outlet property="titleCategoryLabel" destination="aWj-Cb-KDn" id="jDI-Yz-t1X"/>
                                         </connections>
