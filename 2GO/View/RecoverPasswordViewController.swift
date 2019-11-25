@@ -20,6 +20,9 @@ class RecoverPasswordViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    @IBAction func voltarButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func enviarButton(_ sender: UIButton) {
         if let email = emailTextField.text {
