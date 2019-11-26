@@ -20,13 +20,9 @@ class LoginViewController: BaseViewController{
         super.viewDidLoad()
         self.loginTextField.text = "tatianarico1702@gmail.com"
         self.senhaTextField.text = "123456"
-        
-        
     }
+    
     @IBAction func esqueciSenhaButton(_ sender: UIButton) {
-        
-        
-        
     }
     
     @IBAction func acessarButton(_ sender: UIButton){
@@ -59,33 +55,6 @@ class LoginViewController: BaseViewController{
                 strongSelf.mensagemDeErro(mensagem: "Email ou Senha Incorreto")
             }
         }
-        
-        
-//                let ref: DatabaseReference! = Database.database().reference()
-//                var achou = false
-//
-//                ref.child("usuarios").observe(.value, with: { (snapshot) in
-//                  let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-//
-//                    for userData in postDict.values {
-//                        if let userEmail = userData["email"] as? String, userEmail == email,
-//                           let userSenha = userData["senha"] as? String, userSenha == senha{
-//                            achou = true
-//                        }
-//                    }
-        
-                  
-                    
-//                    if achou {
-//                        let userDefaults = UserDefaults.standard
-//                        userDefaults.set(self.loginTextField.text, forKey: "email")
-//                        userDefaults.synchronize()
-//                        self.vaiPraHome()
-//                    }else {
-//                        self.mensagemDeErro(mensagem: "Login ou Senha Incorreto")
-//                    }
-//                })
-        
     }
     
     func mensagemDeErro(mensagem:String) {
