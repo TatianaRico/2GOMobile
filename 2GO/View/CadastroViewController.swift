@@ -22,10 +22,12 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var confirmacaoSenhaTextField: UITextField!
     
-    let genero = ["Feminino", "Masculino"]
-    var selectGenero: String?
+    
+    
     
     var ref: DatabaseReference! = Database.database().reference()
+    
+    let cadastroController = CadastroController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,43 +106,55 @@ class CadastroViewController: UIViewController {
     @IBAction func cadastrarButton(_ sender: UIButton) {
         
         if nomeTextField.text == "" || nascimentoTextField.text == "" || generoTextField.text == "" || cpfTextField.text == "" || emailTextField.text == "" || senhaTextField.text == "" || confirmacaoSenhaTextField.text == "" {
-            self.mensagemDeErro(mensagem: "Verifique suas informações")
+            self.mensagemDeErro(mensagem: cadastroController.mensagemErrorCadastrar)
         }else {
             self.criarUsuario()
         }
     }
     
     func criarUsuario() {
-        Auth.auth().createUser(withEmail: self.emailTextField.text ?? "", password: self.senhaTextField.text ?? "") { authResult, error in
-            if error == nil {
+        
+        cadastroController.criarUsuario(email: self.emailTextField.text ?? "", senha: self.emailTextField.text ?? "") { (sucesso) in
+            if sucesso {
                 self.cadastrarUsuario()
             } else {
-                self.mensagemDeErro(mensagem: "houve um erro ao cadastrar no nosso banco.")
+                self.mensagemDeErro(mensagem: self.cadastroController.mensagemErrorCriarUsuario)
             }
         }
     }
         
     func cadastrarUsuario() {
         
-        self.ref.child("usuarios").childByAutoId().setValue(["nome": self.nomeTextField.text,
-                                                             "nascimento": self.nascimentoTextField.text,
-                                                             "cpf": self.cpfTextField.text,
-                                                             "genero": self.generoTextField.text,
-                                                             "senha": self.senhaTextField.text,
-                                                             "email": self.emailTextField.text])
-        { (error:Error?, ref:DatabaseReference) in
-            if let _ = error {
-                self.mensagemDeErro(mensagem: "houve um erro ao cadastrar no nosso banco.")
-            } else {
-                print("cadastrou!")
-                
-                let userDefaults = UserDefaults.standard
-                userDefaults.set(self.emailTextField.text, forKey: "email")
-                userDefaults.synchronize()
-                
+        cadastroController.cadastrarUsuario(email: self.emailTextField.text ?? "", nascimento: self.nascimentoTextField.text ?? "", cpf: self.cpfTextField.text ?? "", genero: self.generoTextField.text ?? "", senha: self.senhaTextField.text ?? "", nome: self.nomeTextField.text ?? "") { (sucesso) in
+            if sucesso {
                 self.vaiParaHome()
+            } else {
+                self.mensagemDeErro(mensagem: self.cadastroController.mensagemErrorCriarUsuario)
             }
         }
+        
+        
+        
+//
+//        self.ref.child("usuarios").childByAutoId().setValue(["nome": self.nomeTextField.text,
+//                                                             "nascimento": self.nascimentoTextField.text,
+//                                                             "cpf": self.cpfTextField.text,
+//                                                             "genero": self.generoTextField.text,
+//                                                             "senha": self.senhaTextField.text,
+//                                                             "email": self.emailTextField.text])
+//        { (error:Error?, ref:DatabaseReference) in
+//            if let _ = error {
+//                self.mensagemDeErro(mensagem: "houve um erro ao cadastrar no nosso banco.")
+//            } else {
+//                print("cadastrou!")
+//
+//                let userDefaults = UserDefaults.standard
+//                userDefaults.set(self.emailTextField.text, forKey: "email")
+//                userDefaults.synchronize()
+//
+//                self.vaiParaHome()
+//            }
+//        }
     }
     
     func mensagemDeErro(mensagem:String) {
@@ -201,16 +215,16 @@ extension CadastroViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return genero.count
+        return cadastroController.generoCount()
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return genero[row]
+        return cadastroController.generoRow(row: row)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectGenero = genero[row]
-        generoTextField.text = selectGenero
+        cadastroController.setSelectGenero(genero: cadastroController.generoRow(row: row))
+        generoTextField.text = cadastroController.getSelectGenero()
         
     }
 }
