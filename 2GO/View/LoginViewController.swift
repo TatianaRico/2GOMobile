@@ -10,11 +10,13 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class LoginViewController: BaseViewController{
+class LoginViewController: BaseViewController {
+    
     @IBOutlet weak var twoGoImage: UIImageView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     
+    let loginController = LoginController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,17 +44,13 @@ class LoginViewController: BaseViewController{
             return
         }
         
-        Auth.auth().signIn(withEmail: email, password: senha) { [weak self] authResult, error in
+        loginController.logar(email: email, senha: senha) { [weak self] (sucesso) in
             guard let strongSelf = self else { return }
-             strongSelf.hiddenLoading()
-            if error == nil {
-                let userDefaults = UserDefaults.standard
-                userDefaults.set(strongSelf.loginTextField.text, forKey: "email")
-                userDefaults.synchronize()
+            strongSelf.hiddenLoading()
+            if sucesso {
                 strongSelf.vaiPraHome()
-              
             } else {
-                strongSelf.mensagemDeErro(mensagem: "Email ou Senha Incorreto")
+                strongSelf.mensagemDeErro(mensagem: strongSelf.loginController.mensagemErrorEmailOuSenhaIncorreto)
             }
         }
     }
