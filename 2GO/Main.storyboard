@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H5k-q0-G0z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H5k-q0-G0z">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -423,6 +423,7 @@
         <scene sceneID="4bO-ix-L3o">
             <objects>
                 <tabBarController storyboardIdentifier="TabViewController" id="uTg-UA-shH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JcR-Bg-nbG"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bqx-kQ-paE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -431,6 +432,7 @@
                     <connections>
                         <segue destination="zCb-1D-BKI" kind="relationship" relationship="viewControllers" id="sdB-Oo-kSf"/>
                         <segue destination="XpQ-x4-hQH" kind="relationship" relationship="viewControllers" id="xVE-ZS-JJ3"/>
+                        <segue destination="3aU-l3-eJb" kind="relationship" relationship="viewControllers" id="I0m-FJ-xhv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smA-bZ-POr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -477,19 +479,33 @@
         <!--Map View Controller-->
         <scene sceneID="Kup-xL-nz0">
             <objects>
-                <viewController id="ElU-zr-KLk" customClass="MapViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ElU-zr-KLk" customClass="MapViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vCT-2j-XAX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mwW-KR-XVa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nya-MO-42l">
+                                <rect key="frame" x="16" y="104" width="41" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SnI-FL-QUp"/>
+                                </constraints>
+                                <state key="normal" title="Voltar">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="voltarButton:" destination="ElU-zr-KLk" eventType="touchUpInside" id="HIV-z2-oor"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mwW-KR-XVa" firstAttribute="top" secondItem="68l-Vi-XZJ" secondAttribute="top" id="IbJ-sM-ZbU"/>
                             <constraint firstItem="68l-Vi-XZJ" firstAttribute="trailing" secondItem="mwW-KR-XVa" secondAttribute="trailing" id="KOO-V0-Ih7"/>
+                            <constraint firstItem="nya-MO-42l" firstAttribute="top" secondItem="68l-Vi-XZJ" secondAttribute="top" constant="16" id="b0e-ta-k24"/>
+                            <constraint firstItem="nya-MO-42l" firstAttribute="leading" secondItem="68l-Vi-XZJ" secondAttribute="leading" constant="16" id="moW-e8-lHF"/>
                             <constraint firstItem="68l-Vi-XZJ" firstAttribute="bottom" secondItem="mwW-KR-XVa" secondAttribute="bottom" id="pRe-qX-xR3"/>
                             <constraint firstItem="mwW-KR-XVa" firstAttribute="leading" secondItem="68l-Vi-XZJ" secondAttribute="leading" id="rTt-dk-dKI"/>
                         </constraints>
@@ -498,11 +514,12 @@
                     <navigationItem key="navigationItem" id="aCB-HQ-CHj"/>
                     <connections>
                         <outlet property="mapView" destination="mwW-KR-XVa" id="sGv-YL-S5N"/>
+                        <outlet property="voltarButton" destination="nya-MO-42l" id="een-0n-Du7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIe-nZ-liv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4593" y="-381"/>
+            <point key="canvasLocation" x="2719" y="1113"/>
         </scene>
         <!--Cadastro View Controller-->
         <scene sceneID="YJt-Ba-gDA">
@@ -755,6 +772,25 @@
             </objects>
             <point key="canvasLocation" x="2719" y="413"/>
         </scene>
+        <!--Mapa-->
+        <scene sceneID="eGb-mm-p4D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3aU-l3-eJb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mapa" image="map" catalog="system" id="IPW-2U-QZ8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XsP-0f-Ac3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ElU-zr-KLk" kind="relationship" relationship="rootViewController" id="rIp-rh-gN9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGf-Yl-Dj9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2016" y="1113"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Sao Paulo" width="1920" height="1275"/>
@@ -762,6 +798,7 @@
         <image name="command" catalog="system" width="64" height="56"/>
         <image name="fechar" width="225" height="225"/>
         <image name="logo_2go" width="626" height="360"/>
+        <image name="map" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="saopaulo3" width="691" height="444"/>
         <image name="voltar" width="459" height="510"/>

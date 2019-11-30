@@ -44,7 +44,15 @@ class DetalheSpViewController: UIViewController {
     }
     
     @IBAction func tracarRotaButton(_ sender: UIButton) {
+        
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController {
+            vc.localSp = self.localSp
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+             
+    }
     }
     
    
-}
+
