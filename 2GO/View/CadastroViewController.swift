@@ -187,6 +187,12 @@ extension CadastroViewController: UIImagePickerControllerDelegate, UINavigationC
 
 extension CadastroViewController: UITextFieldDelegate {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField .isEqual(self.generoTextField) {
+            textField.text = cadastroController.generoRow(row: 0)
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField .isEqual(self.nomeTextField) {
@@ -203,6 +209,16 @@ extension CadastroViewController: UITextFieldDelegate {
             self.confirmacaoSenhaTextField.becomeFirstResponder()
         }else if textField .isEqual(self.confirmacaoSenhaTextField) {
             self.view.endEditing(true)
+        }
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+         if textField .isEqual(self.cpfTextField) && string != ""  {
+            if textField.text?.count ?? 0 > 13 {
+                return false
+            }
+            
         }
         return true
     }
