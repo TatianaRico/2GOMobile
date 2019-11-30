@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     
     let event  = EventProvider()
     
-    private var categoria: Evento?
+    private var categoria: Localizacao?
     
     //event.alamofireEvent()
     
@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
     
     func getEvent(){
         event.alamofireEvent { (event, success) in
-            self.categoria = event
+             self.categoria = event
             self.homeCollectionView.reloadData()
         }
     }
