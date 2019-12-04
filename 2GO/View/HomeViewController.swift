@@ -19,47 +19,42 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
-    var testeImage: String = "show metalica"
-    
+    let controller = HomeController()
     let event  = EventProvider()
     
     private var categoria: Evento?
     
-    //event.alamofireEvent()
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
-        self.getEvent()
+        self.controller.getEvent { (success) in
+            if success {
+                self.homeCollectionView.reloadData()
+            }
+        }
         
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-    
-    func getEvent(){
-        event.alamofireEvent { (event, success) in
-            self.categoria = event
-            self.homeCollectionView.reloadData()
-        }
-    }
-    
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return categoria?.businesses.count ?? 0
+        return controller.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellXib", for: indexPath) as? HomeCollectionViewCell
         
-        cell?.titleCategoryLabel.text = categoria?.businesses[indexPath.row].name
+        cell?.setup(bussiness: controller.getItemByIndex(indexPath: indexPath))
         
         return cell ?? HomeCollectionViewCell()
     }

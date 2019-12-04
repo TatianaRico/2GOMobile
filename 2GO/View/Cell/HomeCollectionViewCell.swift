@@ -20,4 +20,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 4.0
     }
 
+    func setup(bussiness: Business) {
+        titleCategoryLabel.text = bussiness.name
+    }
 }
