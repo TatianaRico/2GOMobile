@@ -11,10 +11,9 @@ import Alamofire
 
 class EventProvider{
     
-    func alamofireEvent(completion: @escaping (Evento?,Bool) -> Void ){
+    func alamofireEvent(completion: @escaping (Localizacao?,Bool) -> Void ){
         
-        let urlString: String =
-    "https://api.yelp.com/v3/businesses/search"
+        let urlString: String = "https://api.yelp.com/v3/businesses/search"
         
         let parametro = ["latitude" : "-23.5475",
                         "longitude": "-46.63611"]
@@ -24,10 +23,11 @@ class EventProvider{
         if let url: URL = URL(string: urlString){
             Alamofire.request(url, method: .get, parameters: parametro, headers: header).responseJSON { (response) in
                 if response.response?.statusCode == 200{
+                    
                     do{
                         if let data = response.data {
                             let object = try
-                                JSONDecoder().decode(Evento.self, from: data)
+                                JSONDecoder().decode(Localizacao.self, from: data)
                             print(object)
                             completion(object, true)
                         } else {

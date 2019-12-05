@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class RecoverPasswordViewController: UIViewController {
     
+    let recoverPasswordController = RecoverPasswordController()
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     
@@ -30,23 +32,42 @@ class RecoverPasswordViewController: UIViewController {
                 let userMessage: String = "Insira seu email"
                 displayMessage(userMessage: userMessage)
                 return
+            } else {
+                self.sendPasswordReset()
             }
-           
-
-            Auth.auth().sendPasswordReset(withEmail: email) { error in
-                   if (error != nil) {
-                       let userMessage: String = error!.localizedDescription
-                       self.displayMessage(userMessage: userMessage)
-                   } else {
-                       let userMessage: String = "Enviamos um email para \(email)"
-                       self.displayMessage(userMessage: userMessage)
-                   }
-            }
+            
+            
         }
-        
     }
     
+    
+    func sendPasswordReset () {
+        
+        recoverPasswordController.sendPasswordReset(email: emailTextField.text ?? "") { (sucesso,mensagem)  in
+            if sucesso {
+                let userMessage: String = "Enviamos um email para \(self.emailTextField.text ?? "")"
+                self.displayMessage(userMessage: userMessage)
 
+            } else {
+                self.displayMessage(userMessage: mensagem)
+
+            }
+        }
+    }
+
+    //
+    //    func criarUsuario() {
+    //
+    //        cadastroController.criarUsuario(email: self.emailTextField.text ?? "", senha: self.emailTextField.text ?? "") { (sucesso) in
+    //            if sucesso {
+    //                self.cadastrarUsuario()
+    //            } else {
+    //                self.mensagemDeErro(mensagem: self.cadastroController.mensagemErrorCriarUsuario)
+    //            }
+    //        }
+    //    }
+    
+    
     func displayMessage(userMessage: String) {
         
         let alerta = UIAlertController(title: "Alerta", message: userMessage, preferredStyle: UIAlertController.Style.alert)

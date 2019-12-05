@@ -22,10 +22,6 @@ class HomeViewController: UIViewController {
     let controller = HomeController()
     let event  = EventProvider()
     
-    private var categoria: Evento?
-    
-  
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.delegate = self
@@ -42,6 +38,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+     
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
@@ -62,7 +59,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetalheSpViewController") as? DetalheSpViewController {
-            vc.localSp = categoria?.businesses[indexPath.row]
+            vc.localSp = controller.getItemByIndex(indexPath: indexPath)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

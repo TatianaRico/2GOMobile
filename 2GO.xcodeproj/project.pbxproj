@@ -19,6 +19,7 @@
 		B94FE2EC2373A94900664A5B /* evento.json in Resources */ = {isa = PBXBuildFile; fileRef = B94FE2EB2373A94900664A5B /* evento.json */; };
 		B94FE2EE2373A95D00664A5B /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FE2ED2373A95D00664A5B /* Evento.swift */; };
 		B95D71D423986CF7007796BB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D71D323986CF7007796BB /* HomeController.swift */; };
+		B95D71D62398793B007796BB /* DetalheRotaMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D71D52398793B007796BB /* DetalheRotaMapViewController.swift */; };
 		B95ED53C23742C090033AA38 /* EventProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95ED53B23742C090033AA38 /* EventProvider.swift */; };
 		B97F042B238CA97D00490AAB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F042A238CA97D00490AAB /* LoginController.swift */; };
 		B9B3868A235A870900EB7DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B38689235A870900EB7DB6 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		B9F21FE92364FE8800E607AD /* animacao.json in Resources */ = {isa = PBXBuildFile; fileRef = B9F21FE82364FE8800E607AD /* animacao.json */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
 		BE4A609F238DE8D00099523A /* CadastroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A609E238DE8D00099523A /* CadastroController.swift */; };
+		BE4A60A1238F2BED0099523A /* RecoverPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A60A0238F2BED0099523A /* RecoverPasswordController.swift */; };
 		BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */; };
 		BEC7C5A6237E1088002502FB /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7C5A5237E1088002502FB /* RecoverPasswordViewController.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,7 @@
 		B94FE2EB2373A94900664A5B /* evento.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = evento.json; sourceTree = "<group>"; };
 		B94FE2ED2373A95D00664A5B /* Evento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
 		B95D71D323986CF7007796BB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		B95D71D52398793B007796BB /* DetalheRotaMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheRotaMapViewController.swift; sourceTree = "<group>"; };
 		B95ED53B23742C090033AA38 /* EventProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventProvider.swift; sourceTree = "<group>"; };
 		B97F042A238CA97D00490AAB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B9B38689235A870900EB7DB6 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		B9F21FE82364FE8800E607AD /* animacao.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animacao.json; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		BE4A609E238DE8D00099523A /* CadastroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroController.swift; sourceTree = "<group>"; };
+		BE4A60A0238F2BED0099523A /* RecoverPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordController.swift; sourceTree = "<group>"; };
 		BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		BEC7C5A5237E1088002502FB /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +86,7 @@
 				B97F042A238CA97D00490AAB /* LoginController.swift */,
 				BE4A609E238DE8D00099523A /* CadastroController.swift */,
 				B95D71D323986CF7007796BB /* HomeController.swift */,
+				BE4A60A0238F2BED0099523A /* RecoverPasswordController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -90,14 +95,15 @@
 			isa = PBXGroup;
 			children = (
 				B92813DF2377A89B004AA5D5 /* Cell */,
-				B9382F56232F12DF00F81D44 /* LoginViewController.swift */,
 				B9F21FC62364BE0700E607AD /* BaseViewController.swift */,
-				B9E629252356A34F00AB1459 /* HomeViewController.swift */,
-				B9E6292923588F0D00AB1459 /* MapViewController.swift */,
-				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
+				B9382F56232F12DF00F81D44 /* LoginViewController.swift */,
 				BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */,
 				BEC7C5A5237E1088002502FB /* RecoverPasswordViewController.swift */,
+				BE40A4E72330298B00CCB773 /* CadastroViewController.swift */,
+				B9E629252356A34F00AB1459 /* HomeViewController.swift */,
 				B91F829823836A3400EF01D2 /* DetalheSpViewController.swift */,
+				B95D71D52398793B007796BB /* DetalheRotaMapViewController.swift */,
+				B9E6292923588F0D00AB1459 /* MapViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B95D71D62398793B007796BB /* DetalheRotaMapViewController.swift in Sources */,
 				B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */,
 				B94FE2EE2373A95D00664A5B /* Evento.swift in Sources */,
 				B95ED53C23742C090033AA38 /* EventProvider.swift in Sources */,
@@ -319,6 +326,7 @@
 				BEC7C5A6237E1088002502FB /* RecoverPasswordViewController.swift in Sources */,
 				2827DE70232E5CDC00912312 /* AppDelegate.swift in Sources */,
 				BE4A609F238DE8D00099523A /* CadastroController.swift in Sources */,
+				BE4A60A1238F2BED0099523A /* RecoverPasswordController.swift in Sources */,
 				B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */,
 				B9F21FC72364BE0700E607AD /* BaseViewController.swift in Sources */,
 				BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */,
@@ -464,14 +472,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z7BBP9U4Y2;
+				DEVELOPMENT_TEAM = V7FM6MN466;
 				INFOPLIST_FILE = 2GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.2go.-GO";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.2go-GO";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -484,14 +492,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z7BBP9U4Y2;
+				DEVELOPMENT_TEAM = V7FM6MN466;
 				INFOPLIST_FILE = 2GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.2go.-GO";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.2go-GO";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

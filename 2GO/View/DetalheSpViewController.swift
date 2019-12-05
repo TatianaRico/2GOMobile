@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 
 class DetalheSpViewController: UIViewController {
-
+    
     @IBOutlet weak var localImagem: UIImageView!
     @IBOutlet weak var nomeLocalLabel: UILabel!
     @IBOutlet weak var enderecoLabel: UILabel!
@@ -25,8 +25,8 @@ class DetalheSpViewController: UIViewController {
         
         let rua: String? =  localSp?.location.displayAddress[0]
         let cidade: String? = localSp?.location.displayAddress[1]
-    
-        self.localImagem?.sd_setImage(with: URL(string: localSp?.imageURL ?? ""), completed: nil)
+        
+        self.localImagem?.sd_setImage(with: URL(string: localSp?.imageURL ?? ""), placeholderImage: UIImage(named: "placeholderimage"), options: .handleCookies, progress: .none, completed: nil)
         self.nomeLocalLabel.text = localSp?.name
         self.enderecoLabel.text = "\(rua ?? ""), \(cidade ?? "")"
         self.telefoneLabel.text = localSp?.displayPhone
@@ -44,7 +44,14 @@ class DetalheSpViewController: UIViewController {
     }
     
     @IBAction func tracarRotaButton(_ sender: UIButton) {
+        
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetalheRotaMapViewController") as? DetalheRotaMapViewController {
+            vc.localSp = self.localSp
+            self.present(vc, animated: true, completion: nil)
+        }
+        
     }
-    
-   
 }
+
+
+

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saopaulo3" translatesAutoresizingMaskIntoConstraints="NO" id="xow-yp-Vrt">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="862"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_2go" translatesAutoresizingMaskIntoConstraints="NO" id="Oa8-Ax-uGj">
                                 <rect key="frame" x="87" y="44" width="240" height="128"/>
@@ -320,7 +320,7 @@
                                     <constraint firstAttribute="height" constant="200" id="Way-Ku-kvB"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oow-gc-rcM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Oow-gc-rcM">
                                 <rect key="frame" x="20" y="286" width="374" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="JF7-99-Woh"/>
@@ -366,10 +366,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTC-Zc-DZZ">
-                                <rect key="frame" x="40" y="691" width="334" height="60"/>
+                                <rect key="frame" x="40" y="782" width="334" height="60"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.52156862749999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="S9K-xx-fYX"/>
+                                    <constraint firstAttribute="height" constant="60" id="G2J-7r-jEh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
                                 <state key="normal" title="Rotas">
@@ -388,21 +388,21 @@
                             <constraint firstItem="5N9-b9-AIa" firstAttribute="trailing" secondItem="7kR-Pa-Vtp" secondAttribute="trailing" constant="20" id="ECa-yg-pwh"/>
                             <constraint firstItem="g63-PX-DdM" firstAttribute="leading" secondItem="5N9-b9-AIa" secondAttribute="leading" constant="20" id="JQs-ql-QwJ"/>
                             <constraint firstItem="Oow-gc-rcM" firstAttribute="leading" secondItem="5N9-b9-AIa" secondAttribute="leading" constant="20" id="LkD-ao-jRf"/>
-                            <constraint firstItem="ZTC-Zc-DZZ" firstAttribute="top" secondItem="7kR-Pa-Vtp" secondAttribute="bottom" constant="40" id="QCz-cP-K8u"/>
+                            <constraint firstItem="5N9-b9-AIa" firstAttribute="trailing" secondItem="ZTC-Zc-DZZ" secondAttribute="trailing" constant="40" id="Mg5-Aa-okf"/>
                             <constraint firstItem="dBh-EG-y8b" firstAttribute="leading" secondItem="5N9-b9-AIa" secondAttribute="leading" constant="20" id="QNH-ke-x1z"/>
                             <constraint firstItem="XVh-0v-Tef" firstAttribute="top" secondItem="5N9-b9-AIa" secondAttribute="top" id="QkK-jI-Emh"/>
                             <constraint firstItem="5N9-b9-AIa" firstAttribute="trailing" secondItem="XVh-0v-Tef" secondAttribute="trailing" id="RYO-iD-CSW"/>
-                            <constraint firstItem="ZTC-Zc-DZZ" firstAttribute="leading" secondItem="5N9-b9-AIa" secondAttribute="leading" constant="40" id="Z0g-6x-1vI"/>
                             <constraint firstItem="g63-PX-DdM" firstAttribute="top" secondItem="y6x-3d-aDk" secondAttribute="bottom" constant="-10" id="dQu-27-bwO"/>
                             <constraint firstItem="dBh-EG-y8b" firstAttribute="top" secondItem="g63-PX-DdM" secondAttribute="bottom" constant="20" id="fgl-JN-iWs"/>
                             <constraint firstItem="5N9-b9-AIa" firstAttribute="trailing" secondItem="g63-PX-DdM" secondAttribute="trailing" constant="20" id="fwN-hv-kgF"/>
                             <constraint firstItem="y6x-3d-aDk" firstAttribute="leading" secondItem="5N9-b9-AIa" secondAttribute="leading" constant="20" id="gJV-lD-tnL"/>
                             <constraint firstItem="5N9-b9-AIa" firstAttribute="trailing" secondItem="y6x-3d-aDk" secondAttribute="trailing" constant="20" id="gwb-3E-imT"/>
+                            <constraint firstItem="ZTC-Zc-DZZ" firstAttribute="leading" secondItem="5N9-b9-AIa" secondAttribute="leading" constant="40" id="igo-da-Xzq"/>
                             <constraint firstItem="XVh-0v-Tef" firstAttribute="leading" secondItem="5N9-b9-AIa" secondAttribute="leading" id="j4U-Xu-m0F"/>
                             <constraint firstItem="7kR-Pa-Vtp" firstAttribute="leading" secondItem="5N9-b9-AIa" secondAttribute="leading" constant="20" id="jlG-RP-FA0"/>
                             <constraint firstItem="y6x-3d-aDk" firstAttribute="top" secondItem="Oow-gc-rcM" secondAttribute="bottom" constant="20" id="l2Z-eb-1jc"/>
+                            <constraint firstItem="5N9-b9-AIa" firstAttribute="bottom" secondItem="ZTC-Zc-DZZ" secondAttribute="bottom" constant="20" id="q5J-qK-blX"/>
                             <constraint firstItem="5N9-b9-AIa" firstAttribute="trailing" secondItem="dBh-EG-y8b" secondAttribute="trailing" constant="20" id="vtH-of-8EO"/>
-                            <constraint firstItem="5N9-b9-AIa" firstAttribute="trailing" secondItem="ZTC-Zc-DZZ" secondAttribute="trailing" constant="40" id="yCm-nI-fY4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5N9-b9-AIa"/>
                     </view>
@@ -419,10 +419,68 @@
             </objects>
             <point key="canvasLocation" x="3724.6376811594205" y="-381.02678571428572"/>
         </scene>
+        <!--Detalhe Rota Map View Controller-->
+        <scene sceneID="srM-ZF-4aC">
+            <objects>
+                <viewController storyboardIdentifier="DetalheRotaMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AcU-uI-FoI" customClass="DetalheRotaMapViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oGE-Na-pQ9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LZa-eH-ngh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoV-t7-rQf">
+                                <rect key="frame" x="0.0" y="44" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="nLZ-1m-Iav"/>
+                                    <constraint firstAttribute="height" constant="46" id="tGV-3g-1Bo"/>
+                                </constraints>
+                                <state key="normal" title="Voltar"/>
+                                <connections>
+                                    <action selector="btnVoltar:" destination="AcU-uI-FoI" eventType="touchUpInside" id="zh9-eS-eD1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y88-XM-xK6">
+                                <rect key="frame" x="170.5" y="791" width="73" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="b8z-lh-6zY"/>
+                                    <constraint firstAttribute="height" constant="30" id="m1S-cX-pWS"/>
+                                </constraints>
+                                <state key="normal" title="Fazer Rota"/>
+                                <connections>
+                                    <action selector="btnRota:" destination="wQX-mF-dyL" eventType="touchUpInside" id="ime-ZQ-8gY"/>
+                                    <action selector="fazerRota:" destination="AcU-uI-FoI" eventType="touchUpInside" id="kMK-Ug-rOj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hoV-t7-rQf" firstAttribute="leading" secondItem="Mwf-sL-M4t" secondAttribute="leading" id="7aI-LL-L1R"/>
+                            <constraint firstAttribute="bottom" secondItem="LZa-eH-ngh" secondAttribute="bottom" constant="34" id="S6a-pQ-l9c"/>
+                            <constraint firstItem="Y88-XM-xK6" firstAttribute="centerX" secondItem="oGE-Na-pQ9" secondAttribute="centerX" id="Vvi-RY-DSE"/>
+                            <constraint firstItem="Mwf-sL-M4t" firstAttribute="trailing" secondItem="LZa-eH-ngh" secondAttribute="trailing" id="ZpX-lp-F6X"/>
+                            <constraint firstItem="LZa-eH-ngh" firstAttribute="top" secondItem="oGE-Na-pQ9" secondAttribute="top" constant="44" id="igf-nR-A6x"/>
+                            <constraint firstItem="LZa-eH-ngh" firstAttribute="leading" secondItem="Mwf-sL-M4t" secondAttribute="leading" id="n0t-sg-wEN"/>
+                            <constraint firstItem="Mwf-sL-M4t" firstAttribute="bottom" secondItem="Y88-XM-xK6" secondAttribute="bottom" constant="41" id="xyp-xl-k5T"/>
+                            <constraint firstItem="hoV-t7-rQf" firstAttribute="top" secondItem="Mwf-sL-M4t" secondAttribute="top" id="ywX-gy-XiE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mwf-sL-M4t"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="LZa-eH-ngh" id="KNm-qv-f6Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AXp-vZ-kbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wQX-mF-dyL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4458" y="-381"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4bO-ix-L3o">
             <objects>
                 <tabBarController storyboardIdentifier="TabViewController" id="uTg-UA-shH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JcR-Bg-nbG"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bqx-kQ-paE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -431,6 +489,7 @@
                     <connections>
                         <segue destination="zCb-1D-BKI" kind="relationship" relationship="viewControllers" id="sdB-Oo-kSf"/>
                         <segue destination="XpQ-x4-hQH" kind="relationship" relationship="viewControllers" id="xVE-ZS-JJ3"/>
+                        <segue destination="3aU-l3-eJb" kind="relationship" relationship="viewControllers" id="I0m-FJ-xhv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smA-bZ-POr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -477,19 +536,33 @@
         <!--Map View Controller-->
         <scene sceneID="Kup-xL-nz0">
             <objects>
-                <viewController id="ElU-zr-KLk" customClass="MapViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ElU-zr-KLk" customClass="MapViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vCT-2j-XAX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mwW-KR-XVa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nya-MO-42l">
+                                <rect key="frame" x="16" y="104" width="41" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SnI-FL-QUp"/>
+                                </constraints>
+                                <state key="normal" title="Voltar">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="voltarButton:" destination="ElU-zr-KLk" eventType="touchUpInside" id="HIV-z2-oor"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mwW-KR-XVa" firstAttribute="top" secondItem="68l-Vi-XZJ" secondAttribute="top" id="IbJ-sM-ZbU"/>
                             <constraint firstItem="68l-Vi-XZJ" firstAttribute="trailing" secondItem="mwW-KR-XVa" secondAttribute="trailing" id="KOO-V0-Ih7"/>
+                            <constraint firstItem="nya-MO-42l" firstAttribute="top" secondItem="68l-Vi-XZJ" secondAttribute="top" constant="16" id="b0e-ta-k24"/>
+                            <constraint firstItem="nya-MO-42l" firstAttribute="leading" secondItem="68l-Vi-XZJ" secondAttribute="leading" constant="16" id="moW-e8-lHF"/>
                             <constraint firstItem="68l-Vi-XZJ" firstAttribute="bottom" secondItem="mwW-KR-XVa" secondAttribute="bottom" id="pRe-qX-xR3"/>
                             <constraint firstItem="mwW-KR-XVa" firstAttribute="leading" secondItem="68l-Vi-XZJ" secondAttribute="leading" id="rTt-dk-dKI"/>
                         </constraints>
@@ -498,11 +571,12 @@
                     <navigationItem key="navigationItem" id="aCB-HQ-CHj"/>
                     <connections>
                         <outlet property="mapView" destination="mwW-KR-XVa" id="sGv-YL-S5N"/>
+                        <outlet property="voltarButton" destination="nya-MO-42l" id="een-0n-Du7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIe-nZ-liv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4593" y="-381"/>
+            <point key="canvasLocation" x="2719" y="1113"/>
         </scene>
         <!--Cadastro View Controller-->
         <scene sceneID="YJt-Ba-gDA">
@@ -634,7 +708,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saopaulo3" translatesAutoresizingMaskIntoConstraints="NO" id="Bj4-LJ-VQH">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IzP-1N-6ok">
                                 <rect key="frame" x="16" y="303" width="382" height="290"/>
@@ -755,6 +829,25 @@
             </objects>
             <point key="canvasLocation" x="2719" y="413"/>
         </scene>
+        <!--Mapa-->
+        <scene sceneID="eGb-mm-p4D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3aU-l3-eJb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mapa" image="map" catalog="system" id="IPW-2U-QZ8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XsP-0f-Ac3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ElU-zr-KLk" kind="relationship" relationship="rootViewController" id="rIp-rh-gN9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGf-Yl-Dj9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2016" y="1113"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Sao Paulo" width="1920" height="1275"/>
@@ -762,6 +855,7 @@
         <image name="command" catalog="system" width="64" height="56"/>
         <image name="fechar" width="225" height="225"/>
         <image name="logo_2go" width="626" height="360"/>
+        <image name="map" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="saopaulo3" width="691" height="444"/>
         <image name="voltar" width="459" height="510"/>

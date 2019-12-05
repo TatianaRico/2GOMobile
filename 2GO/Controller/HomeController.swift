@@ -11,7 +11,7 @@ import Foundation
 class HomeController{
     let event  = EventProvider()
     
-    private var categoria: Evento?
+    private var categoria: Localizacao?
     
     func getEvent(completion: @escaping (Bool) -> Void){
         event.alamofireEvent { (event, success) in

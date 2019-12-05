@@ -1,12 +1,12 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let evento = try? newJSONDecoder().decode(Evento.self, from: jsonData)
+//   let localizacao = try? newJSONDecoder().decode(Localizacao.self, from: jsonData)
 
 import Foundation
 
-// MARK: - Evento
-struct Evento: Codable {
+// MARK: - Localizacao
+struct Localizacao: Codable {
     let businesses: [Business]
     let total: Int
     let region: Region
@@ -70,8 +70,8 @@ struct Location: Codable {
 }
 
 enum Address2: String, Codable {
+    case centro = "Centro"
     case empty = ""
-    case loja2729 = "Loja 27-29"
     case rDaCantareira306 = "R. da Cantareira, 306"
 }
 
@@ -339,4 +339,3 @@ class JSONAny: Codable {
         }
     }
 }
-
