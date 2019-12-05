@@ -20,8 +20,9 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var cpfTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
-    @IBOutlet weak var confirmacaoSenhaTextField: UITextField!
+//    @IBOutlet weak var confirmacaoSenhaTextField: UITextField!
     
+    var activeTextField = UITextField()
     
     
     
@@ -44,7 +45,8 @@ class CadastroViewController: UIViewController {
         self.cpfTextField.delegate = self
         self.emailTextField.delegate = self
         self.senhaTextField.delegate = self
-        self.confirmacaoSenhaTextField.delegate = self
+//        self.confirmacaoSenhaTextField.delegate = self
+
     }
     
     func createPickerGenero() {
@@ -105,7 +107,7 @@ class CadastroViewController: UIViewController {
     
     @IBAction func cadastrarButton(_ sender: UIButton) {
         
-        if nomeTextField.text == "" || nascimentoTextField.text == "" || generoTextField.text == "" || cpfTextField.text == "" || emailTextField.text == "" || senhaTextField.text == "" || confirmacaoSenhaTextField.text == "" {
+        if nomeTextField.text == "" || nascimentoTextField.text == "" || generoTextField.text == "" || cpfTextField.text == "" || emailTextField.text == "" || senhaTextField.text == ""  {
             self.mensagemDeErro(mensagem: cadastroController.mensagemErrorCadastrar)
         }else {
             self.criarUsuario()
@@ -125,7 +127,7 @@ class CadastroViewController: UIViewController {
         
     func cadastrarUsuario() {
         
-        cadastroController.cadastrarUsuario(email: self.emailTextField.text ?? "", nascimento: self.nascimentoTextField.text ?? "", cpf: self.cpfTextField.text ?? "", genero: self.generoTextField.text ?? "", senha: self.senhaTextField.text ?? "", nome: self.nomeTextField.text ?? "") { (sucesso) in
+        cadastroController.cadastrarUsuario(email: self.emailTextField.text ?? "", nascimento: self.nascimentoTextField.text ?? "", cpf: self.cpfTextField.text ?? "", genero: self.generoTextField.text ?? "", senha: self.senhaTextField.text ?? "", nome: self.nomeTextField.text ?? "", imagem: self.perfilImage.image) { (sucesso) in
             if sucesso {
                 self.vaiParaHome()
             } else {
@@ -188,6 +190,7 @@ extension CadastroViewController: UIImagePickerControllerDelegate, UINavigationC
 extension CadastroViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextField = textField
         if textField .isEqual(self.generoTextField) {
             textField.text = cadastroController.generoRow(row: 0)
         }
@@ -206,9 +209,7 @@ extension CadastroViewController: UITextFieldDelegate {
         }else if textField .isEqual(self.emailTextField) {
             self.senhaTextField.becomeFirstResponder()
         }else if textField .isEqual(self.senhaTextField) {
-            self.confirmacaoSenhaTextField.becomeFirstResponder()
-        }else if textField .isEqual(self.confirmacaoSenhaTextField) {
-            self.view.endEditing(true)
+             self.view.endEditing(true)
         }
         return true
     }

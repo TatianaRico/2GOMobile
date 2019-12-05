@@ -46,7 +46,7 @@ class CadastroController {
         }
     }
     
-    func cadastrarUsuario(email: String, nascimento: String, cpf: String, genero: String, senha: String, nome: String, completion: @escaping (Bool) -> Void) {
+    func cadastrarUsuario(email: String, nascimento: String, cpf: String, genero: String, senha: String, nome: String, imagem: UIImage?, completion: @escaping (Bool) -> Void) {
         
         let ref: DatabaseReference! = Database.database().reference()
 
@@ -64,11 +64,35 @@ class CadastroController {
                 
                 let userDefaults = UserDefaults.standard
                 userDefaults.set(email, forKey: "email")
+                
+                if let image = imagem {
+                    let imageData = NSKeyedArchiver.archivedData(withRootObject: image) as NSData?
+                    userDefaults.set(imageData, forKey: "imagePerfil")
+                    
+                }
+                
                 userDefaults.synchronize()
                 
                 completion(true)
             
             }
         }
+    }
+}
+
+extension UserDefaults {
+    func imageForKey(key: String) -> UIImage? {
+        var image: UIImage?
+        if let imageData = data(forKey: key) {
+            image = NSKeyedUnarchiver.unarchiveObject(with: imageData) as? UIImage
+        }
+        return image
+    }
+    func setImage(image: UIImage?, forKey key: String) {
+        var imageData: NSData?
+        if let image = image {
+            imageData = NSKeyedArchiver.archivedData(withRootObject: image) as NSData?
+        }
+        set(imageData, forKey: key)
     }
 }

@@ -12,5 +12,6 @@ target '2GO' do
    pod 'lottie-ios'
    pod 'Alamofire'
    pod 'SDWebImage'
+   pod 'IQKeyboardManagerSwift'
    
 end

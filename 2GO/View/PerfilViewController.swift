@@ -46,7 +46,12 @@ class PerfilViewController: UIViewController {
             return
         }
         
-        var userDate = NSMutableDictionary()
+        
+        if let imageData = userDefaults.data(forKey: "imagePerfil"),
+           let image = NSKeyedUnarchiver.unarchiveObject(with: imageData) as? UIImage {
+            
+            self.perfilImage.image = image
+        }
         
         let ref: DatabaseReference! = Database.database().reference()
         
