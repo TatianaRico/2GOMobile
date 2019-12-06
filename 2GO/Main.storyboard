@@ -206,7 +206,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ur-06-Hr1">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_2go" translatesAutoresizingMaskIntoConstraints="NO" id="jFe-m4-Q9O">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_sp2" translatesAutoresizingMaskIntoConstraints="NO" id="jFe-m4-Q9O">
                                         <rect key="frame" x="0.0" y="0.0" width="137" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="Ec8-3b-W1k"/>
@@ -891,7 +891,6 @@
         <image name="camera" width="100" height="100"/>
         <image name="command" catalog="system" width="64" height="56"/>
         <image name="fechar" width="225" height="225"/>
-        <image name="logo_2go" width="626" height="360"/>
         <image name="logo_sp2" width="1037" height="360"/>
         <image name="map" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
