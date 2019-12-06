@@ -100,6 +100,7 @@ class MapViewController: UIViewController {
         
         self.mapView.addAnnotations(arrayLocais)
         self.mapView.showAnnotations(arrayLocais, animated: true)
+        self.mapView.delegate = self
         
     }
 
@@ -140,12 +141,31 @@ class Annotation: NSObject, MKAnnotation {
     }
 }
 
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let coordinate = view.annotation?.coordinate else {return}
+        self.openWaze(location: coordinate)
+    }
+    
+    func openWaze(location : CLLocationCoordinate2D) {
+        if UIApplication.shared.canOpenURL(URL(string: "waze://")!) {
+            let urlStr: String = "waze://?ll=\(location.latitude),\(location.longitude)&navigate=yes"
+            UIApplication.shared.open(URL(string: urlStr)!)
+        }
+        else {
+            UIApplication.shared.open(URL(string: "http://itunes.apple.com/us/app/id323229106")!)
+        }
+    }
+}
+
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         checkLocationAuthorizationStatus()
     }
+    
+    
 }
 
 
