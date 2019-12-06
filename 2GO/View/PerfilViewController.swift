@@ -23,7 +23,10 @@ class PerfilViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let toqueImagemPerfil = UITapGestureRecognizer(target: self, action: #selector(self.fotoButton))
+        toqueImagemPerfil.numberOfTouchesRequired = 1
+        self.perfilImage.isUserInteractionEnabled = true
+        self.perfilImage.addGestureRecognizer(toqueImagemPerfil)
         self.getUserData()
 
         // Do any additional setup after loading the view.
@@ -36,6 +39,14 @@ class PerfilViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func alteracaoButton(_ sender: UIButton) {
+         let userDefaults = UserDefaults.standard
+        if let image = self.perfilImage.image {
+                           let imageData = NSKeyedArchiver.archivedData(withRootObject: image) as NSData?
+                           userDefaults.set(imageData, forKey: "imagePerfil")
+                           
+                       }
+                       
+                       userDefaults.synchronize()
     }
     
     func getUserData() {
@@ -78,4 +89,43 @@ class PerfilViewController: UIViewController {
         print(userInfo)
     }
     
+    @objc func fotoButton(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Alerta", message: "Selecione o tipo desejado", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+            self.getImage(fromSourceType: .camera)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Album", style: .default, handler: { (action) in
+            self.getImage(fromSourceType: .photoLibrary)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = sourceType
+            self.present(imagePickerController, animated: true, completion: nil)
+        }
+    }
+    
 }
+
+extension PerfilViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        self.perfilImage.image = image
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+}
+
