@@ -13,6 +13,7 @@ import MapKit
 class DetalheRotaMapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var rotaButton: UIButton!
     
     var localSp: Business?
     var minhaRota : MKRoute!

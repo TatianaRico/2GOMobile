@@ -446,18 +446,20 @@
                                     <constraint firstAttribute="width" constant="46" id="nLZ-1m-Iav"/>
                                     <constraint firstAttribute="height" constant="46" id="tGV-3g-1Bo"/>
                                 </constraints>
-                                <state key="normal" title="Voltar"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Voltar">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="btnVoltar:" destination="AcU-uI-FoI" eventType="touchUpInside" id="zh9-eS-eD1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y88-XM-xK6">
-                                <rect key="frame" x="170.5" y="791" width="73" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="b8z-lh-6zY"/>
-                                    <constraint firstAttribute="height" constant="30" id="m1S-cX-pWS"/>
-                                </constraints>
-                                <state key="normal" title="Fazer Rota"/>
+                                <rect key="frame" x="160" y="791" width="94" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Traçar Rota">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="btnRota:" destination="wQX-mF-dyL" eventType="touchUpInside" id="ime-ZQ-8gY"/>
                                     <action selector="fazerRota:" destination="AcU-uI-FoI" eventType="touchUpInside" id="kMK-Ug-rOj"/>
@@ -466,19 +468,21 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Mwf-sL-M4t" firstAttribute="trailing" secondItem="Y88-XM-xK6" secondAttribute="trailing" constant="160" id="1oT-ea-eiE"/>
+                            <constraint firstItem="Y88-XM-xK6" firstAttribute="top" secondItem="Mwf-sL-M4t" secondAttribute="top" constant="747" id="6tF-nz-gWp"/>
                             <constraint firstItem="hoV-t7-rQf" firstAttribute="leading" secondItem="Mwf-sL-M4t" secondAttribute="leading" id="7aI-LL-L1R"/>
+                            <constraint firstItem="Y88-XM-xK6" firstAttribute="leading" secondItem="Mwf-sL-M4t" secondAttribute="leading" constant="160" id="EEP-l5-3bg"/>
                             <constraint firstAttribute="bottom" secondItem="LZa-eH-ngh" secondAttribute="bottom" constant="34" id="S6a-pQ-l9c"/>
-                            <constraint firstItem="Y88-XM-xK6" firstAttribute="centerX" secondItem="oGE-Na-pQ9" secondAttribute="centerX" id="Vvi-RY-DSE"/>
                             <constraint firstItem="Mwf-sL-M4t" firstAttribute="trailing" secondItem="LZa-eH-ngh" secondAttribute="trailing" id="ZpX-lp-F6X"/>
                             <constraint firstItem="LZa-eH-ngh" firstAttribute="top" secondItem="oGE-Na-pQ9" secondAttribute="top" constant="44" id="igf-nR-A6x"/>
                             <constraint firstItem="LZa-eH-ngh" firstAttribute="leading" secondItem="Mwf-sL-M4t" secondAttribute="leading" id="n0t-sg-wEN"/>
-                            <constraint firstItem="Mwf-sL-M4t" firstAttribute="bottom" secondItem="Y88-XM-xK6" secondAttribute="bottom" constant="41" id="xyp-xl-k5T"/>
                             <constraint firstItem="hoV-t7-rQf" firstAttribute="top" secondItem="Mwf-sL-M4t" secondAttribute="top" id="ywX-gy-XiE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mwf-sL-M4t"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="LZa-eH-ngh" id="KNm-qv-f6Y"/>
+                        <outlet property="rotaButton" destination="Y88-XM-xK6" id="ORy-Oy-raR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXp-vZ-kbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

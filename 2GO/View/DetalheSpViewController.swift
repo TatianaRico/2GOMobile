@@ -24,16 +24,6 @@ class DetalheSpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setGradientToView(colorOne: UIColor.systemBlue, colorTwo: UIColor.systemPurple)
-//        self.nomeLocalLabel.layer.cornerRadius = nomeLocalLabel.frame.size.height/2
-//        self.nomeLocalLabel.layer.masksToBounds = true
-//        self.enderecoLabel.layer.cornerRadius = enderecoLabel.frame.size.height/2
-//        self.enderecoLabel.layer.masksToBounds = true
-//        self.telefoneLabel.layer.cornerRadius = telefoneLabel.frame.size.height/2
-//        self.telefoneLabel.layer.masksToBounds = true
-//        self.horariofuncLabel.layer.cornerRadius = horariofuncLabel.frame.size.height/2
-//        self.horariofuncLabel.layer.masksToBounds = true
-//        self.avaliacaoLabel.layer.cornerRadius = avaliacaoLabel.frame.size.height/2
-//        self.avaliacaoLabel.layer.masksToBounds = true
         self.wazeBotao.layer.cornerRadius = wazeBotao.frame.size.height/2
               self.wazeBotao.clipsToBounds = false
         let rua: String? =  localSp?.location.displayAddress[0]
