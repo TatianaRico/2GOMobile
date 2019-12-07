@@ -12,6 +12,7 @@ import FirebaseDatabase
 class PerfilViewController: UIViewController {
 
 
+    @IBOutlet weak var salvarBotao: UIButton!
     @IBOutlet weak var perfilImage: UIImageView!
     
     @IBOutlet weak var nomeTextField: UITextField!
@@ -23,6 +24,20 @@ class PerfilViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.nomeTextField.layer.cornerRadius = nomeTextField.frame.size.height/2
+        self.nomeTextField.layer.masksToBounds = true
+        self.nascimentoTextField.layer.cornerRadius = nascimentoTextField.frame.size.height/2
+        self.nascimentoTextField.layer.masksToBounds = true
+        self.generoTextField.layer.cornerRadius = generoTextField.frame.size.height/2
+        self.generoTextField.layer.masksToBounds = true
+        self.cpfTextField.layer.cornerRadius = cpfTextField.frame.size.height/2
+        self.cpfTextField.layer.masksToBounds = true
+        self.emailTextField.layer.cornerRadius = emailTextField.frame.size.height/2
+        self.emailTextField.layer.masksToBounds = true
+        self.salvarBotao.layer.cornerRadius = salvarBotao.frame.size.height/2
+        self.salvarBotao.clipsToBounds = true
+
+        
         let toqueImagemPerfil = UITapGestureRecognizer(target: self, action: #selector(self.fotoButton))
         toqueImagemPerfil.numberOfTouchesRequired = 1
         self.perfilImage.isUserInteractionEnabled = true

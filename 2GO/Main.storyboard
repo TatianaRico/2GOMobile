@@ -859,6 +859,7 @@
                         <outlet property="nascimentoTextField" destination="F8X-fa-b0P" id="fKO-b8-BhY"/>
                         <outlet property="nomeTextField" destination="bPH-xw-CnA" id="Oye-vt-E3l"/>
                         <outlet property="perfilImage" destination="aiW-Iz-GAQ" id="1Au-Vq-By8"/>
+                        <outlet property="salvarBotao" destination="UHk-nd-Piv" id="gHf-mF-TF5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBN-Hp-Z7q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
