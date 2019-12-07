@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="307" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="saopaulo3" translatesAutoresizingMaskIntoConstraints="NO" id="gJl-nD-yfC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sao Paulo" translatesAutoresizingMaskIntoConstraints="NO" id="gJl-nD-yfC">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
@@ -35,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="saopaulo3" width="691" height="444"/>
+        <image name="Sao Paulo" width="1920" height="1275"/>
     </resources>
 </document>

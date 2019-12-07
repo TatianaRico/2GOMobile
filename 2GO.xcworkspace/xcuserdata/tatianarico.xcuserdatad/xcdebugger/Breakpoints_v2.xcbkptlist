@@ -48,7 +48,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
-            landmarkName = "criarUsuario()"
+            landmarkName = "cadastrarButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,9 +78,9 @@
             filePath = "2GO/View/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "vaiParaTelaDeCadastro()"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "vaiPraHome()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

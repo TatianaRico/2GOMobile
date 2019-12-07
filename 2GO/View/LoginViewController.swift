@@ -12,9 +12,14 @@ import FirebaseDatabase
 
 class LoginViewController: BaseViewController {
     
+    @IBOutlet var myView: UIView!
     @IBOutlet weak var twoGoImage: UIImageView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
+    
+    @IBOutlet weak var btnEntrar: UIButton!
+    @IBOutlet weak var btnEsqueciSenha: UIButton!
+    @IBOutlet weak var btnCadastrar: UIButton!
     
     let loginController = LoginController()
     
@@ -22,6 +27,17 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         self.loginTextField.text = "tatianarico1702@gmail.com"
         self.senhaTextField.text = "123456"
+        self.loginTextField.layer.cornerRadius = loginTextField.frame.size.height/2
+        self.loginTextField.layer.masksToBounds = true
+        self.senhaTextField.layer.cornerRadius = senhaTextField.frame.size.height/2
+        self.senhaTextField.layer.masksToBounds = true
+        self.btnEntrar.layer.cornerRadius = btnEntrar.frame.size.height/2
+        self.btnEntrar.clipsToBounds = true
+        self.btnCadastrar.layer.cornerRadius = btnCadastrar.frame.size.height/2
+        self.btnCadastrar.clipsToBounds = true
+        self.btnEsqueciSenha.layer.cornerRadius = btnEsqueciSenha.frame.size.height/2
+        self.btnEsqueciSenha.clipsToBounds = false
+        view.setGradientToView(colorOne: UIColor.systemBlue, colorTwo: UIColor.systemPurple)
     }
     
     @IBAction func esqueciSenhaButton(_ sender: UIButton) {
@@ -35,7 +51,6 @@ class LoginViewController: BaseViewController {
             self.showLoading()
             self.verificarLogin()
         }
-        
     }
     
     func verificarLogin() {
@@ -53,6 +68,7 @@ class LoginViewController: BaseViewController {
                 strongSelf.mensagemDeErro(mensagem: strongSelf.loginController.mensagemErrorEmailOuSenhaIncorreto)
             }
         }
+        
     }
     
     func mensagemDeErro(mensagem:String) {
@@ -78,13 +94,11 @@ class LoginViewController: BaseViewController {
         }
     }
     
-    @IBAction func acessarFacebookButton(_ sender: UIButton) {
-    }
     
     @IBAction func semLoginButton(_ sender: UIButton) {
         self.vaiParaTelaDeCadastro()
     }
-    
 }
+
 
 

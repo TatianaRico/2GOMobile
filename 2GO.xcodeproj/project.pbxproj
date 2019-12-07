@@ -18,6 +18,7 @@
 		B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9382F56232F12DF00F81D44 /* LoginViewController.swift */; };
 		B94FE2EC2373A94900664A5B /* evento.json in Resources */ = {isa = PBXBuildFile; fileRef = B94FE2EB2373A94900664A5B /* evento.json */; };
 		B94FE2EE2373A95D00664A5B /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FE2ED2373A95D00664A5B /* Evento.swift */; };
+		B9504041239B2C4500BA460E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9504040239B2C4500BA460E /* UIViewExtension.swift */; };
 		B95D71D423986CF7007796BB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D71D323986CF7007796BB /* HomeController.swift */; };
 		B95D71D62398793B007796BB /* DetalheRotaMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D71D52398793B007796BB /* DetalheRotaMapViewController.swift */; };
 		B95ED53C23742C090033AA38 /* EventProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95ED53B23742C090033AA38 /* EventProvider.swift */; };
@@ -51,6 +52,7 @@
 		B9382F56232F12DF00F81D44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B94FE2EB2373A94900664A5B /* evento.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = evento.json; sourceTree = "<group>"; };
 		B94FE2ED2373A95D00664A5B /* Evento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
+		B9504040239B2C4500BA460E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B95D71D323986CF7007796BB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		B95D71D52398793B007796BB /* DetalheRotaMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheRotaMapViewController.swift; sourceTree = "<group>"; };
 		B95ED53B23742C090033AA38 /* EventProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventProvider.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				B91F829823836A3400EF01D2 /* DetalheSpViewController.swift */,
 				B95D71D52398793B007796BB /* DetalheRotaMapViewController.swift */,
 				B9E6292923588F0D00AB1459 /* MapViewController.swift */,
+				B9504040239B2C4500BA460E /* UIViewExtension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				B95ED53C23742C090033AA38 /* EventProvider.swift in Sources */,
 				B91F829923836A3500EF01D2 /* DetalheSpViewController.swift in Sources */,
 				B97F042B238CA97D00490AAB /* LoginController.swift in Sources */,
+				B9504041239B2C4500BA460E /* UIViewExtension.swift in Sources */,
 				B9E6292A23588F0D00AB1459 /* MapViewController.swift in Sources */,
 				BEC7C5A6237E1088002502FB /* RecoverPasswordViewController.swift in Sources */,
 				2827DE70232E5CDC00912312 /* AppDelegate.swift in Sources */,

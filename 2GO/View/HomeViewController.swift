@@ -27,10 +27,12 @@ class HomeViewController: BaseViewController {
         self.showLoading()
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
+        
         self.controller.getEvent { (success) in
             if success {
                 self.homeCollectionView.reloadData()
                 self.hiddenLoading()
+        
             }
         }
         
