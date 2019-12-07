@@ -15,13 +15,17 @@ class RecoverPasswordViewController: UIViewController {
     let recoverPasswordController = RecoverPasswordController()
     
     @IBOutlet weak var emailTextField: UITextField!
-    
+    @IBOutlet weak var btnEnviar: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailTextField.layer.cornerRadius = emailTextField.frame.size.height/2
         self.emailTextField.layer.masksToBounds = true
+        self.btnEnviar.layer.cornerRadius = btnEnviar.frame.size.height/2
+        self.btnEnviar.clipsToBounds = true
+        
     }
+    
     @IBAction func voltarButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
