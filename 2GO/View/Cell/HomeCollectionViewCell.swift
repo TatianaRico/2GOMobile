@@ -26,7 +26,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
         func setup(bussiness: Business) {
             titleCategoryLabel.text = bussiness.name
-            eventoImage?.sd_setImage(with: URL(string: localSp?.imageURL ?? ""))
+            eventoImage?.sd_setImage(with: URL(string: bussiness.imageURL ?? ""))
         }
     }
 
