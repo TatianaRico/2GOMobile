@@ -34,3 +34,4 @@ class BaseViewController: UIViewController{
         self.animacaoLoadingView?.stop()
     }
 }
+
