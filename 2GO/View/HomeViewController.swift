@@ -10,14 +10,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
-    
-    
-    @IBOutlet weak var searchView: UIView!
-    @IBOutlet weak var searchUiSearch: UISearchBar!
-    
-    @IBOutlet weak var eventoImagem: UIImageView!
-    
-    @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var homeTableView: UITableView!
     
     let controller = HomeController()
     let event  = EventProvider()
@@ -25,18 +18,15 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showLoading()
-        homeCollectionView.delegate = self
-        homeCollectionView.dataSource = self
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
         
         self.controller.getEvent { (success) in
             if success {
-                self.homeCollectionView.reloadData()
+                self.homeTableView.reloadData()
                 self.hiddenLoading()
-        
             }
         }
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,28 +35,33 @@ class HomeViewController: BaseViewController {
     
 }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return controller.numberOfItemsInSection()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellXib", for: indexPath) as? HomeCollectionViewCell
-        
-        cell?.setup(bussiness: controller.getItemByIndex(indexPath: indexPath))
-        
-        return cell ?? HomeCollectionViewCell()
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 199
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
+        
+        cell.setup(bussiness: controller.getItemByIndex(indexPath: indexPath))
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetalheSpViewController") as? DetalheSpViewController {
             vc.localSp = controller.getItemByIndex(indexPath: indexPath)
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
-    
 }

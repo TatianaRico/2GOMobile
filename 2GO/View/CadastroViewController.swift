@@ -33,23 +33,9 @@ class CadastroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.nomeTextField.layer.cornerRadius = nomeTextField.frame.size.height/2
-        self.nomeTextField.layer.masksToBounds = true
-        self.nascimentoTextField.layer.cornerRadius = nascimentoTextField.frame.size.height/2
-        self.nascimentoTextField.layer.masksToBounds = true
-        self.generoTextField.layer.cornerRadius = generoTextField.frame.size.height/2
-        self.generoTextField.layer.masksToBounds = true
-        self.nomeTextField.layer.cornerRadius = nomeTextField.frame.size.height/2
-        self.nomeTextField.layer.masksToBounds = true
-        self.cpfTextField.layer.cornerRadius = cpfTextField.frame.size.height/2
-        self.cpfTextField.layer.masksToBounds = true
-        self.emailTextField.layer.cornerRadius = emailTextField.frame.size.height/2
-        self.emailTextField.layer.masksToBounds = true
-        self.senhaTextField.layer.cornerRadius = senhaTextField.frame.size.height/2
-        self.senhaTextField.layer.masksToBounds = true
+        
         self.cadastrarBotao.layer.cornerRadius = cadastrarBotao.frame.size.height/2
         self.cadastrarBotao.clipsToBounds = true
-        
         
         let toqueImagemPerfil = UITapGestureRecognizer(target: self, action: #selector(self.fotoButton))
         toqueImagemPerfil.numberOfTouchesRequired = 1

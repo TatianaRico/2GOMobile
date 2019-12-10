@@ -23,7 +23,7 @@ class DetalheSpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setGradientToView(colorOne: UIColor.systemBlue, colorTwo: UIColor.systemPurple)
+//        view.setGradientToView(colorOne: UIColor.systemBlue, colorTwo: UIColor.systemPurple)
         self.wazeBotao.layer.cornerRadius = wazeBotao.frame.size.height/2
               self.wazeBotao.clipsToBounds = false
         let rua: String? =  localSp?.location.displayAddress[0]
@@ -53,6 +53,10 @@ class DetalheSpViewController: UIViewController {
             self.present(vc, animated: true, completion: nil)
         }
         
+    }
+    
+    @IBAction func voltarButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

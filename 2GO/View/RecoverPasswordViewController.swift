@@ -19,8 +19,6 @@ class RecoverPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emailTextField.layer.cornerRadius = emailTextField.frame.size.height/2
-        self.emailTextField.layer.masksToBounds = true
         self.btnEnviar.layer.cornerRadius = btnEnviar.frame.size.height/2
         self.btnEnviar.clipsToBounds = true
         

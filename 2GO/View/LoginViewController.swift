@@ -16,7 +16,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var twoGoImage: UIImageView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
-    
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var btnEntrar: UIButton!
     @IBOutlet weak var btnEsqueciSenha: UIButton!
     @IBOutlet weak var btnCadastrar: UIButton!
@@ -37,7 +37,8 @@ class LoginViewController: BaseViewController {
         self.btnCadastrar.clipsToBounds = true
         self.btnEsqueciSenha.layer.cornerRadius = btnEsqueciSenha.frame.size.height/2
         self.btnEsqueciSenha.clipsToBounds = false
-        view.setGradientToView(colorOne: UIColor.systemBlue, colorTwo: UIColor.systemPurple)
+
+    
     }
     
     @IBAction func esqueciSenhaButton(_ sender: UIButton) {

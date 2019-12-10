@@ -24,19 +24,6 @@ class PerfilViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.nomeTextField.layer.cornerRadius = nomeTextField.frame.size.height/2
-        self.nomeTextField.layer.masksToBounds = true
-        self.nascimentoTextField.layer.cornerRadius = nascimentoTextField.frame.size.height/2
-        self.nascimentoTextField.layer.masksToBounds = true
-        self.generoTextField.layer.cornerRadius = generoTextField.frame.size.height/2
-        self.generoTextField.layer.masksToBounds = true
-        self.cpfTextField.layer.cornerRadius = cpfTextField.frame.size.height/2
-        self.cpfTextField.layer.masksToBounds = true
-        self.emailTextField.layer.cornerRadius = emailTextField.frame.size.height/2
-        self.emailTextField.layer.masksToBounds = true
-        self.salvarBotao.layer.cornerRadius = salvarBotao.frame.size.height/2
-        self.salvarBotao.clipsToBounds = true
-
         
         let toqueImagemPerfil = UITapGestureRecognizer(target: self, action: #selector(self.fotoButton))
         toqueImagemPerfil.numberOfTouchesRequired = 1
@@ -50,9 +37,7 @@ class PerfilViewController: UIViewController {
     @IBAction func fecharButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func voltarButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    
     @IBAction func alteracaoButton(_ sender: UIButton) {
          let userDefaults = UserDefaults.standard
         if let image = self.perfilImage.image {

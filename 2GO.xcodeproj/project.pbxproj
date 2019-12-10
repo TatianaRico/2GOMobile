@@ -11,6 +11,7 @@
 		2827DE77232E5CE600912312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2827DE76232E5CE600912312 /* Assets.xcassets */; };
 		2827DE7A232E5CE700912312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2827DE78232E5CE700912312 /* LaunchScreen.storyboard */; };
 		2A6BB7C2235CFD57000AA1A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A6BB7C1235CFD57000AA1A0 /* GoogleService-Info.plist */; };
+		429C70EF23A007AC004C3360 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429C70EE23A007AC004C3360 /* UIButtonExtension.swift */; };
 		539668B85424BC481A9AE5F4 /* Pods_2GO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E770FA3D49056E68373223 /* Pods_2GO.framework */; };
 		B90DC621235400A1006B6C23 /* Tatiana.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC620235400A1006B6C23 /* Tatiana.storyboard */; };
 		B90DC62323540340006B6C23 /* Monica.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90DC62223540340006B6C23 /* Monica.storyboard */; };
@@ -25,13 +26,14 @@
 		B97F042B238CA97D00490AAB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F042A238CA97D00490AAB /* LoginController.swift */; };
 		B9B3868A235A870900EB7DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B38689235A870900EB7DB6 /* Main.storyboard */; };
 		B9E629262356A34F00AB1459 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629252356A34F00AB1459 /* HomeViewController.swift */; };
-		B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */; };
+		B9E629282356A3B000AB1459 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E629272356A3B000AB1459 /* HomeTableViewCell.swift */; };
 		B9E6292A23588F0D00AB1459 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6292923588F0D00AB1459 /* MapViewController.swift */; };
 		B9F21FC72364BE0700E607AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F21FC62364BE0700E607AD /* BaseViewController.swift */; };
 		B9F21FE92364FE8800E607AD /* animacao.json in Resources */ = {isa = PBXBuildFile; fileRef = B9F21FE82364FE8800E607AD /* animacao.json */; };
 		BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40A4E72330298B00CCB773 /* CadastroViewController.swift */; };
 		BE4A609F238DE8D00099523A /* CadastroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A609E238DE8D00099523A /* CadastroController.swift */; };
 		BE4A60A1238F2BED0099523A /* RecoverPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A60A0238F2BED0099523A /* RecoverPasswordController.swift */; };
+		BE91A6EA239F1F72009BEFF0 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = BE91A6E9239F1F72009BEFF0 /* loading.json */; };
 		BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */; };
 		BEC7C5A6237E1088002502FB /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7C5A5237E1088002502FB /* RecoverPasswordViewController.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +47,7 @@
 		2827DE79232E5CE700912312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2827DE7B232E5CE700912312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A6BB7C1235CFD57000AA1A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		429C70EE23A007AC004C3360 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		5A94DF0DBE297984FF7EDD2D /* Pods-2GO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GO.debug.xcconfig"; path = "Target Support Files/Pods-2GO/Pods-2GO.debug.xcconfig"; sourceTree = "<group>"; };
 		B90DC620235400A1006B6C23 /* Tatiana.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tatiana.storyboard; sourceTree = "<group>"; };
 		B90DC62223540340006B6C23 /* Monica.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monica.storyboard; sourceTree = "<group>"; };
@@ -59,13 +62,14 @@
 		B97F042A238CA97D00490AAB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B9B38689235A870900EB7DB6 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B9E629252356A34F00AB1459 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B9E629272356A3B000AB1459 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B9E6292923588F0D00AB1459 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B9F21FC62364BE0700E607AD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B9F21FE82364FE8800E607AD /* animacao.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animacao.json; sourceTree = "<group>"; };
 		BE40A4E72330298B00CCB773 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		BE4A609E238DE8D00099523A /* CadastroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroController.swift; sourceTree = "<group>"; };
 		BE4A60A0238F2BED0099523A /* RecoverPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordController.swift; sourceTree = "<group>"; };
+		BE91A6E9239F1F72009BEFF0 /* loading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		BE93ACF4235D0CC100708C08 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		BEC7C5A5237E1088002502FB /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +100,7 @@
 		0C101DD6233D7F0900419B80 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				429C70ED23A00794004C3360 /* Extensions */,
 				B92813DF2377A89B004AA5D5 /* Cell */,
 				B9F21FC62364BE0700E607AD /* BaseViewController.swift */,
 				B9382F56232F12DF00F81D44 /* LoginViewController.swift */,
@@ -106,7 +111,6 @@
 				B91F829823836A3400EF01D2 /* DetalheSpViewController.swift */,
 				B95D71D52398793B007796BB /* DetalheRotaMapViewController.swift */,
 				B9E6292923588F0D00AB1459 /* MapViewController.swift */,
-				B9504040239B2C4500BA460E /* UIViewExtension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +153,15 @@
 			path = 2GO;
 			sourceTree = "<group>";
 		};
+		429C70ED23A00794004C3360 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				429C70EE23A007AC004C3360 /* UIButtonExtension.swift */,
+				B9504040239B2C4500BA460E /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B1D4A7737CF5BC877173FC5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +173,7 @@
 		B92813DF2377A89B004AA5D5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B9E629272356A3B000AB1459 /* HomeCollectionViewCell.swift */,
+				B9E629272356A3B000AB1459 /* HomeTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -170,6 +183,7 @@
 			children = (
 				B94FE2EB2373A94900664A5B /* evento.json */,
 				B94FE2ED2373A95D00664A5B /* Evento.swift */,
+				BE91A6E9239F1F72009BEFF0 /* loading.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +281,7 @@
 				2A6BB7C2235CFD57000AA1A0 /* GoogleService-Info.plist in Resources */,
 				B9F21FE92364FE8800E607AD /* animacao.json in Resources */,
 				B94FE2EC2373A94900664A5B /* evento.json in Resources */,
+				BE91A6EA239F1F72009BEFF0 /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +336,7 @@
 			files = (
 				B95D71D62398793B007796BB /* DetalheRotaMapViewController.swift in Sources */,
 				B9382F57232F12DF00F81D44 /* LoginViewController.swift in Sources */,
+				429C70EF23A007AC004C3360 /* UIButtonExtension.swift in Sources */,
 				B94FE2EE2373A95D00664A5B /* Evento.swift in Sources */,
 				B95ED53C23742C090033AA38 /* EventProvider.swift in Sources */,
 				B91F829923836A3500EF01D2 /* DetalheSpViewController.swift in Sources */,
@@ -335,7 +351,7 @@
 				B9F21FC72364BE0700E607AD /* BaseViewController.swift in Sources */,
 				BE40A4E82330298B00CCB773 /* CadastroViewController.swift in Sources */,
 				BE93ACF5235D0CC100708C08 /* PerfilViewController.swift in Sources */,
-				B9E629282356A3B000AB1459 /* HomeCollectionViewCell.swift in Sources */,
+				B9E629282356A3B000AB1459 /* HomeTableViewCell.swift in Sources */,
 				B95D71D423986CF7007796BB /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

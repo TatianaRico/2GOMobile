@@ -16,16 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOo-u8-qPs">
-                                <rect key="frame" x="0.0" y="0.0" width="307" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sao Paulo" translatesAutoresizingMaskIntoConstraints="NO" id="gJl-nD-yfC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sao Paulo" translatesAutoresizingMaskIntoConstraints="NO" id="gJl-nD-yfC">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_sp2" translatesAutoresizingMaskIntoConstraints="NO" id="U16-Ei-m2t">
+                                <rect key="frame" x="50" y="278" width="315" height="340"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="U16-Ei-m2t" secondAttribute="height" multiplier="63:68" id="llg-Jb-ehC"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U16-Ei-m2t" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="B22-fh-GfE"/>
+                            <constraint firstItem="gJl-nD-yfC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="LqV-iV-Nyh"/>
+                            <constraint firstItem="U16-Ei-m2t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="MO6-qX-XwY"/>
+                            <constraint firstItem="gJl-nD-yfC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QWF-Ja-5bg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U16-Ei-m2t" secondAttribute="trailing" constant="49" id="a8C-IW-1Xl"/>
+                            <constraint firstAttribute="bottom" secondItem="gJl-nD-yfC" secondAttribute="bottom" id="gwX-mp-YH5"/>
+                            <constraint firstItem="gJl-nD-yfC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q6a-bb-d51"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -36,5 +47,6 @@
     </scenes>
     <resources>
         <image name="Sao Paulo" width="1920" height="1275"/>
+        <image name="logo_sp2" width="1037" height="360"/>
     </resources>
 </document>

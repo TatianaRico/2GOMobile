@@ -18,7 +18,6 @@ class MapViewController: UIViewController {
     let regionradius: CLLocationDistance = 1000
     let locationManager: CLLocationManager = CLLocationManager()
     
-    @IBOutlet weak var voltarButton: UIButton!
     private var categoria: Localizacao?
     
     let event  = EventProvider()
@@ -27,16 +26,10 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         if let latitude = localSp?.coordinates.latitude, let longitude = localSp?.coordinates.longitude {
-            self.voltarButton.isHidden = false
             self.centerLocation(location: CLLocation(latitude: latitude, longitude: longitude))
         }else {
-            self.voltarButton.isHidden = true
             self.carregarLocais()
         }
-    }
-    @IBAction func voltarButton(_ sender: UIButton) {
-        
-        self.dismiss(animated: true, completion: nil)
     }
     
     func centerLocation(location: CLLocation) {

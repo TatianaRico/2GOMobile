@@ -24,6 +24,8 @@ class DetalheRotaMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.rotaButton.layer.cornerRadius = rotaButton.frame.size.height/2
+        self.rotaButton.clipsToBounds = true
         checkLocationAuthorizationStatus()
     }
     

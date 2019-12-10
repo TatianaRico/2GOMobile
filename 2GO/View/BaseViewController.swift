@@ -22,7 +22,7 @@ class BaseViewController: UIViewController{
         
         self.animacaoLoadingView?.frame = self.view.frame
          
-        let pulseLoading = Animation.named("animacao")
+        let pulseLoading = Animation.named("loading")
         animacaoLoadingView?.animation = pulseLoading
         
         self.view.addSubview(self.animacaoLoadingView ?? UIView())
