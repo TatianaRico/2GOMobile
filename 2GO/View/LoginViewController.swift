@@ -37,8 +37,6 @@ class LoginViewController: BaseViewController {
         self.btnCadastrar.clipsToBounds = true
         self.btnEsqueciSenha.layer.cornerRadius = btnEsqueciSenha.frame.size.height/2
         self.btnEsqueciSenha.clipsToBounds = false
-
-    
     }
     
     @IBAction func esqueciSenhaButton(_ sender: UIButton) {
@@ -69,7 +67,6 @@ class LoginViewController: BaseViewController {
                 strongSelf.mensagemDeErro(mensagem: strongSelf.loginController.mensagemErrorEmailOuSenhaIncorreto)
             }
         }
-        
     }
     
     func mensagemDeErro(mensagem:String) {
@@ -94,7 +91,6 @@ class LoginViewController: BaseViewController {
             }
         }
     }
-    
     
     @IBAction func semLoginButton(_ sender: UIButton) {
         self.vaiParaTelaDeCadastro()

@@ -21,12 +21,8 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var cpfTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
-//    @IBOutlet weak var confirmacaoSenhaTextField: UITextField!
     
     var activeTextField = UITextField()
-    
-    
-    
     var ref: DatabaseReference! = Database.database().reference()
     
     let cadastroController = CadastroController()
@@ -50,8 +46,6 @@ class CadastroViewController: UIViewController {
         self.cpfTextField.delegate = self
         self.emailTextField.delegate = self
         self.senhaTextField.delegate = self
-//        self.confirmacaoSenhaTextField.delegate = self
-
     }
     
     func createPickerGenero() {
@@ -129,7 +123,7 @@ class CadastroViewController: UIViewController {
             }
         }
     }
-        
+    
     func cadastrarUsuario() {
         
         cadastroController.cadastrarUsuario(email: self.emailTextField.text ?? "", nascimento: self.nascimentoTextField.text ?? "", cpf: self.cpfTextField.text ?? "", genero: self.generoTextField.text ?? "", senha: self.senhaTextField.text ?? "", nome: self.nomeTextField.text ?? "", imagem: self.perfilImage.image) { (sucesso) in
@@ -139,29 +133,6 @@ class CadastroViewController: UIViewController {
                 self.mensagemDeErro(mensagem: self.cadastroController.mensagemErrorCriarUsuario)
             }
         }
-        
-        
-        
-//
-//        self.ref.child("usuarios").childByAutoId().setValue(["nome": self.nomeTextField.text,
-//                                                             "nascimento": self.nascimentoTextField.text,
-//                                                             "cpf": self.cpfTextField.text,
-//                                                             "genero": self.generoTextField.text,
-//                                                             "senha": self.senhaTextField.text,
-//                                                             "email": self.emailTextField.text])
-//        { (error:Error?, ref:DatabaseReference) in
-//            if let _ = error {
-//                self.mensagemDeErro(mensagem: "houve um erro ao cadastrar no nosso banco.")
-//            } else {
-//                print("cadastrou!")
-//
-//                let userDefaults = UserDefaults.standard
-//                userDefaults.set(self.emailTextField.text, forKey: "email")
-//                userDefaults.synchronize()
-//
-//                self.vaiParaHome()
-//            }
-//        }
     }
     
     func mensagemDeErro(mensagem:String) {
@@ -177,7 +148,6 @@ class CadastroViewController: UIViewController {
             self.present(proximaTela, animated: true, completion: nil)
         }
     }
-    
 }
 
 extension CadastroViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -214,21 +184,19 @@ extension CadastroViewController: UITextFieldDelegate {
         }else if textField .isEqual(self.emailTextField) {
             self.senhaTextField.becomeFirstResponder()
         }else if textField .isEqual(self.senhaTextField) {
-             self.view.endEditing(true)
+            self.view.endEditing(true)
         }
         return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-         if textField .isEqual(self.cpfTextField) && string != ""  {
+        if textField .isEqual(self.cpfTextField) && string != ""  {
             if textField.text?.count ?? 0 > 13 {
                 return false
             }
-            
         }
         return true
     }
-    
 }
 
 extension CadastroViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -247,6 +215,5 @@ extension CadastroViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         cadastroController.setSelectGenero(genero: cadastroController.generoRow(row: row))
         generoTextField.text = cadastroController.getSelectGenero()
-        
     }
 }

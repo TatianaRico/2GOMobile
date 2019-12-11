@@ -37,11 +37,8 @@ class RecoverPasswordViewController: UIViewController {
             } else {
                 self.sendPasswordReset()
             }
-            
-            
         }
     }
-    
     
     func sendPasswordReset () {
         
@@ -49,26 +46,13 @@ class RecoverPasswordViewController: UIViewController {
             if sucesso {
                 let userMessage: String = "Enviamos um email para \(self.emailTextField.text ?? "")"
                 self.displayMessage(userMessage: userMessage)
-
+                
             } else {
                 self.displayMessage(userMessage: mensagem)
-
+                
             }
         }
     }
-
-    //
-    //    func criarUsuario() {
-    //
-    //        cadastroController.criarUsuario(email: self.emailTextField.text ?? "", senha: self.emailTextField.text ?? "") { (sucesso) in
-    //            if sucesso {
-    //                self.cadastrarUsuario()
-    //            } else {
-    //                self.mensagemDeErro(mensagem: self.cadastroController.mensagemErrorCriarUsuario)
-    //            }
-    //        }
-    //    }
-    
     
     func displayMessage(userMessage: String) {
         
@@ -80,6 +64,5 @@ class RecoverPasswordViewController: UIViewController {
         alerta.addAction(okAction)
         self.present(alerta, animated: true, completion: nil)
     }
-    
 }
 

@@ -17,11 +17,12 @@ class BaseViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     func showLoading(){
         self.animacaoLoadingView = AnimationView()
         
         self.animacaoLoadingView?.frame = self.view.frame
-         
+        
         let pulseLoading = Animation.named("loading")
         animacaoLoadingView?.animation = pulseLoading
         
@@ -29,6 +30,7 @@ class BaseViewController: UIViewController{
         
         animacaoLoadingView?.play()
     }
+    
     func hiddenLoading(){
         animacaoLoadingView?.removeFromSuperview()
         self.animacaoLoadingView?.stop()

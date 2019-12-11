@@ -13,7 +13,6 @@ class LoginController {
     
     var mensagemErrorEmailOuSenhaIncorreto = "Email ou Senha Incorreto"
     
-    
     func logar(email: String, senha: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: senha) { authResult, error in
             
@@ -26,15 +25,11 @@ class LoginController {
                 
             } else {
                 completion(false)
-                
             }
         }
     }
     
-    
     func textoVazio(texto: String) -> Bool {
-        return texto.isEmpty 
-        
+        return texto.isEmpty
     }
-    
 }

@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 
-
 class DetalheRotaMapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
@@ -33,11 +32,11 @@ class DetalheRotaMapViewController: UIViewController {
         let destination = CLLocationCoordinate2DMake(localSp?.coordinates.latitude ?? 0, localSp?.coordinates.longitude ?? 0)
         openWaze(location: destination)
     }
-
+    
     @IBAction func btnVoltar(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     func checkLocationAuthorizationStatus() {
         self.locationManager.delegate = self
         self.mapView.delegate = self
