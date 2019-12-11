@@ -12,7 +12,6 @@ import FirebaseAuth
 
 class CadastroController {
     
-    
     private let genero = ["Feminino", "Masculino"]
     private var selectGenero: String?
     
@@ -49,13 +48,13 @@ class CadastroController {
     func cadastrarUsuario(email: String, nascimento: String, cpf: String, genero: String, senha: String, nome: String, imagem: UIImage?, completion: @escaping (Bool) -> Void) {
         
         let ref: DatabaseReference! = Database.database().reference()
-
+        
         ref.child("usuarios").childByAutoId().setValue(["nome": nome,
-                                                             "nascimento": nascimento,
-                                                             "cpf": cpf,
-                                                             "genero": genero,
-                                                             "senha": senha,
-                                                             "email": email])
+                                                        "nascimento": nascimento,
+                                                        "cpf": cpf,
+                                                        "genero": genero,
+                                                        "senha": senha,
+                                                        "email": email])
         { (error:Error?, ref:DatabaseReference) in
             if let _ = error {
                 completion(false)
@@ -66,15 +65,13 @@ class CadastroController {
                 userDefaults.set(email, forKey: "email")
                 
                 if let image = imagem {
-                    let imageData = NSKeyedArchiver.archivedData(withRootObject: image) as NSData?
+                    let imageData = try? NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: false)
                     userDefaults.set(imageData, forKey: "imagePerfil")
-                    
                 }
                 
                 userDefaults.synchronize()
                 
                 completion(true)
-            
             }
         }
     }
@@ -84,14 +81,15 @@ extension UserDefaults {
     func imageForKey(key: String) -> UIImage? {
         var image: UIImage?
         if let imageData = data(forKey: key) {
-            image = NSKeyedUnarchiver.unarchiveObject(with: imageData) as? UIImage
+            image = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(imageData) as? UIImage
         }
         return image
     }
     func setImage(image: UIImage?, forKey key: String) {
         var imageData: NSData?
         if let image = image {
-            imageData = NSKeyedArchiver.archivedData(withRootObject: image) as NSData?
+            imageData = try?
+                NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: false) as NSData?
         }
         set(imageData, forKey: key)
     }

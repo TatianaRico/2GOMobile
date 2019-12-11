@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController {
-
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var localSp: Business?
@@ -37,7 +37,7 @@ class MapViewController: UIViewController {
         self.mapView.setRegion(coordinateRegion, animated: true)
         
         if let local = self.localSp,
-           let annotation = self.addAnnotation(local) {
+            let annotation = self.addAnnotation(local) {
             self.mapView.addAnnotation(annotation)
         }
     }
@@ -54,7 +54,7 @@ class MapViewController: UIViewController {
         
         return annotation
     }
-
+    
     func checkLocationAuthorizationStatus() {
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
@@ -72,7 +72,6 @@ class MapViewController: UIViewController {
             self.categoria = event
             self.carregarPinosNoMapa()
         }
-        
     }
     
     func carregarPinosNoMapa() {
@@ -87,16 +86,13 @@ class MapViewController: UIViewController {
             if let annotation = self.addAnnotation(local) {
                 
                 arrayLocais.append(annotation)
-
             }
         }
         
         self.mapView.addAnnotations(arrayLocais)
         self.mapView.showAnnotations(arrayLocais, animated: true)
         self.mapView.delegate = self
-        
     }
-
 }
 
 class Annotation: NSObject, MKAnnotation {
@@ -117,20 +113,16 @@ class Annotation: NSObject, MKAnnotation {
     
     init(json: [String: String]) {
         
-        //1
         self.title = json["title"] ?? "No Title"
         self.subtitle = json["subtitle"]
         self.category = json["category"]
-        // 2
+      
         if let latitude = Double(json["lat"] ?? ""),
             let longitude = Double(json["lng"] ?? "") {
             self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         } else {
             self.coordinate = CLLocationCoordinate2D()
         }
-        
-        
-        
     }
 }
 
@@ -157,8 +149,6 @@ extension MapViewController: CLLocationManagerDelegate {
         
         checkLocationAuthorizationStatus()
     }
-    
-    
 }
 
 

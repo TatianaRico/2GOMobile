@@ -10,17 +10,14 @@ import UIKit
 import FirebaseDatabase
 
 class PerfilViewController: UIViewController {
-
-
+    
     @IBOutlet weak var salvarBotao: UIButton!
     @IBOutlet weak var perfilImage: UIImageView!
-    
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var nascimentoTextField: UITextField!
     @IBOutlet weak var generoTextField: UITextField!
     @IBOutlet weak var cpfTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +27,6 @@ class PerfilViewController: UIViewController {
         self.perfilImage.isUserInteractionEnabled = true
         self.perfilImage.addGestureRecognizer(toqueImagemPerfil)
         self.getUserData()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func fecharButton(_ sender: UIButton) {
@@ -39,14 +34,12 @@ class PerfilViewController: UIViewController {
     }
     
     @IBAction func alteracaoButton(_ sender: UIButton) {
-         let userDefaults = UserDefaults.standard
+        let userDefaults = UserDefaults.standard
         if let image = self.perfilImage.image {
-                           let imageData = NSKeyedArchiver.archivedData(withRootObject: image) as NSData?
-                           userDefaults.set(imageData, forKey: "imagePerfil")
-                           
-                       }
-                       
-                       userDefaults.synchronize()
+            let imageData = try? NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: false)
+            userDefaults.set(imageData, forKey: "imagePerfil")
+        }
+        userDefaults.synchronize()
     }
     
     func getUserData() {
@@ -57,17 +50,15 @@ class PerfilViewController: UIViewController {
             return
         }
         
-        
         if let imageData = userDefaults.data(forKey: "imagePerfil"),
-           let image = NSKeyedUnarchiver.unarchiveObject(with: imageData) as? UIImage {
-            
+            let image = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(imageData)as? UIImage {
             self.perfilImage.image = image
         }
         
         let ref: DatabaseReference! = Database.database().reference()
         
         ref.child("usuarios").observe(.value, with: { (snapshot) in
-          let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
             
             for userData in postDict.values {
                 if let userEmail = userData["email"] as? String, userEmail == email {
@@ -114,7 +105,6 @@ class PerfilViewController: UIViewController {
             self.present(imagePickerController, animated: true, completion: nil)
         }
     }
-    
 }
 
 extension PerfilViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

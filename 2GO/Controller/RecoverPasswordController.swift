@@ -23,7 +23,6 @@ class RecoverPasswordController {
             } else {
                 completion(false, error?.localizedDescription ?? "")
             }
-            
         }
     }
 }

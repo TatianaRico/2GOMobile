@@ -21,17 +21,14 @@ class HomeController{
             } else {
                 completion(false)
             }
-
         }
     }
     
     func  numberOfItemsInSection() -> Int{
         categoria?.businesses.count ?? 0
-        
     }
     
     func getItemByIndex(indexPath: IndexPath) -> Business {
         return categoria?.businesses[indexPath.row] ?? Business(id: "", alias: "", name: "", imageURL: "", isClosed: false, url: "", reviewCount: 0, categories: [], rating: 0.0, coordinates: Center(latitude: 0.0, longitude: 0.0), transactions: [], price: "", location: Location(address1: "", address2: nil, address3: nil, city: City(rawValue: "")!, zipCode: "", country: Country(rawValue: "")!, state: State(rawValue: "")!, displayAddress: []), phone: "", displayPhone: "", distance: 0)
     }
-    
 }

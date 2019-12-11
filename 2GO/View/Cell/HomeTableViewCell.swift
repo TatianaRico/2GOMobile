@@ -9,20 +9,19 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var titleCategoryLabel: UILabel!
     @IBOutlet weak var eventoImage: UIImageView!
     
-        var localSp: Business?
-        
-        
-        override func awakeFromNib() {
-            super.awakeFromNib()
-        }
-
-        func setup(bussiness: Business) {
-            titleCategoryLabel.text = bussiness.name
-            eventoImage?.sd_setImage(with: URL(string: bussiness.imageURL))
-        }
+    var localSp: Business?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
+    
+    func setup(bussiness: Business) {
+        titleCategoryLabel.text = bussiness.name
+        eventoImage?.sd_setImage(with: URL(string: bussiness.imageURL))
+    }
+}
 
