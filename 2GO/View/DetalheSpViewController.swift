@@ -18,6 +18,7 @@ class DetalheSpViewController: UIViewController {
     @IBOutlet weak var telefoneLabel: UILabel!
     @IBOutlet weak var horariofuncLabel: UILabel!
     @IBOutlet weak var avaliacaoLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var localSp: Business?
     
@@ -35,6 +36,7 @@ class DetalheSpViewController: UIViewController {
         self.telefoneLabel.text =  "Telefone:\(localSp?.displayPhone ?? "")"
         self.horariofuncLabel.text = "Funcionamento:  \(self.checkIsOpen(value: localSp?.isClosed ?? false))"
         self.avaliacaoLabel.text = String("Avaliação: \(localSp?.rating ?? 0)")
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: 1000)
     }
     
     @IBAction func voltarHomeButton(_ sender: UIButton) {
