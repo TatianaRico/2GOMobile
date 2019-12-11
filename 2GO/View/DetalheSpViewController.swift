@@ -32,9 +32,14 @@ class DetalheSpViewController: UIViewController {
         self.localImagem?.sd_setImage(with: URL(string: localSp?.imageURL ?? ""), placeholderImage: UIImage(named: "placeholderimage"), options: .handleCookies, progress: .none, completed: nil)
         self.nomeLocalLabel.text = localSp?.name
         self.enderecoLabel.text = "\(rua ?? ""), \(cidade ?? "")"
-        self.telefoneLabel.text = localSp?.displayPhone
-        self.horariofuncLabel.text = self.checkIsOpen(value: localSp?.isClosed ?? false)
-        self.avaliacaoLabel.text = String(localSp?.rating ?? 0)
+        self.telefoneLabel.text =  "Telefone:\(localSp?.displayPhone ?? "")"
+        self.horariofuncLabel.text = "Funcionamento:  \(self.checkIsOpen(value: localSp?.isClosed ?? false))"
+        self.avaliacaoLabel.text = String("Avaliação: \(localSp?.rating ?? 0)")
+    }
+    
+    @IBAction func voltarHomeButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true
+        )
     }
     
     func checkIsOpen(value: Bool) -> String {
