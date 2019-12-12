@@ -25,8 +25,8 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loginTextField.text = "tatianarico1702@gmail.com"
-        self.senhaTextField.text = "123456"
+        self.loginTextField.text = ""
+        self.senhaTextField.text = ""
         self.loginTextField.layer.cornerRadius = loginTextField.frame.size.height/2
         self.loginTextField.layer.masksToBounds = true
         self.senhaTextField.layer.cornerRadius = senhaTextField.frame.size.height/2

@@ -13,5 +13,5 @@ target '2GO' do
    pod 'Alamofire'
    pod 'SDWebImage'
    pod 'IQKeyboardManagerSwift'
-   
+   pod "JMMaskTextField-Swift"
 end
